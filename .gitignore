@@ -1,0 +1,10 @@
+build/*
+vendor/*
+*.gradle
+.dat.nosync*
+.gradle.dat*
+*.DS_STORE
+.repl_history
+*.mobileprovision
+provisioning
+gemfile.lock
