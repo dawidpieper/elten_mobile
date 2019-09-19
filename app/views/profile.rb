@@ -30,30 +30,14 @@ class ProfileScreen < UI::Screen
     message.on(:tap) { self.navigation.push(MessagesNewScreen.new(@user)) }
     background.add_child(message)
 
-    Net.get(create_query("profile", {"user" => @user})) do |rsp|
-      resp = rsp.body
-      if resp["code"] == 200
+    erequest("profile", {"user" => @user}) do |resp|
+            if resp["code"] == 200
         if resp["status"] != ""
           status = UI::Label.new
           status.height = 80
           status.text = resp["status"]
           background.add_child(status)
         end
-        if resp["avatar"] != nil
-          $streamer = Player.new
-          avatar = UI::Button.new
-          avatar.height = 50
-          avatar.title = resp["avatar"]
-          avatar.on :tap do
-            if $streamer.state == Player::StateNone or $streamer.duration == $streamer.position
-              $streamer.play(resp["avatar"])
-            elsif $streamer.state == Player::Playing
-              $streamer.pause
-            else
-              $streamer.resume
-            end
-          end
-          background.add_child(avatar)
         end
         if resp["fullname"] != "" and resp["fullname"] != nil
           fullname = UI::Label.new
@@ -83,7 +67,6 @@ class ProfileScreen < UI::Screen
           vc.height = 150
           vc.text = resp["visitingcard"]
           background.add_child(vc)
-        end
         self.view.update_layout
       else
         UI.alert(:title => "Error", :message => resp["errmsg"]) { }
@@ -94,9 +77,5 @@ class ProfileScreen < UI::Screen
   end
 
   def before_on_disappear
-    if $streamer != nil
-      $streamer.stop if $streamer.error == ""
-      $streamer = nil
-    end
   end
 end

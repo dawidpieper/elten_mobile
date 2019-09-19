@@ -17,9 +17,8 @@ class MainScreen < UI::Screen
       $tmptask = nil
     end
 
-    Net.get(create_query("handshake")) do |rsp|
-      resp = rsp.body
-      if resp["code"] == 200
+    erequest("handshake") do |resp|
+            if resp["code"] == 200
         self.navigation.title = resp["handshake"]
       end
     end
@@ -54,9 +53,9 @@ class MainScreen < UI::Screen
           if r == :default
             params = {}
             params = {"autotoken" => Store["autotoken"]} if Store["autotoken"] != nil
-            Net.get(create_query("logout", params)) do |rsp|
-              if rsp.body["code"] != 200
-                UI.alert({:title => "Unexpected error occurred", :message => rsp.body["errmsg"]}) { }
+            erequest("logout", params) do |resp|
+              if resp["code"] != 200
+                UI.alert({:title => "Unexpected error occurred", :message => resp["errmsg"]}) { }
               else
                 Store.delete("name")
                 Store.delete("autotoken")

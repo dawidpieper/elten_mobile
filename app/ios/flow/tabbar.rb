@@ -1,6 +1,8 @@
 module UI
-  class TabBar < View
+  class TabBar < UITabBarController
     include Eventable
+
+attr_accessor :navigation
 
     def initialize
       super
@@ -10,18 +12,11 @@ module UI
     def tabBar(tabBar, didSelectItem: item)
     end
 
-    attr_reader :items
-
-    def items=(itm)
-      @items = itm
-      proxy.setItems([itm[0].proxy])
-    end
+attr_reader :items
 
     def proxy
       @proxy ||= begin
-        tabbar = UITabBar.alloc.init
-        tabbar.delegate = self
-        tabbar.sizeToFit
+        tabbar = UITabBarController.alloc.init
 
         tabbar
       end
@@ -29,14 +24,20 @@ module UI
   end
 
   class TabBarItem < View
-    def initialize(title = "")
-      @title = title
+    def initialize(title = "",tag=0)
+      @title,@tag = title,tag
+super
+proxy
     end
 
     def proxy
       @proxy ||= begin
         tabbaritem = UITabBarItem.alloc.init
         tabbaritem.setTitle(@title)
+tabbaritem.setTag(@tag)
+
+
+
         tabbaritem
       end
     end

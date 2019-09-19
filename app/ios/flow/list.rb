@@ -26,5 +26,25 @@ module UI
     def scroll(index)
       proxy.scrollToRowAtIndexPath(NSIndexPath.indexPathForRow(index, inSection: 0), atScrollPosition: UITableViewScrollPositionMiddle, animated: false)
     end
+
+    def tableView(table_view, cellForRowAtIndexPath: index_path)
+      row_klass = @render_row_block.call(index_path.section, index_path.row)
+      data = @data_source[index_path.row]
+      cell_identifier = CustomListCell::IDENTIFIER + row_klass.name
+      cell = table_view.dequeueReusableCellWithIdentifier(cell_identifier)
+      unless cell
+        row = (@cached_rows[data] ||= row_klass.new)
+        row.list = self if row.respond_to?(:list=)
+        cell = CustomListCell.alloc.initWithStyle(UITableViewCellStyleDefault, reuseIdentifier: cell_identifier)
+        cell.selectionStyle = UITableViewCellSelectionStyleNone
+        cell.content_view = row
+        cell.list = self
+      end
+      cell.content_view.update(data) if cell.content_view.respond_to?(:update)
+      cell.content_view.update_layout
+      _set_row_height(index_path, cell.content_view, true)
+      cell
+    end
+
   end
 end

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 # ELTEN Mobile Code
 # Copyright (C) Dawid Pieper
@@ -16,10 +17,35 @@ class ForumScreenTemplate < UI::Screen
     @background.background_color = :white
     self.view.add_child(@background)
 
+if defined?(task)!=nil and !self.navigation.screen.is_a?(PostsScreen)
+@refresh=UI::Button.new
+@refresh.height=20
+@refresh.title="Refresh"
+@refresh.on(:tap) {task}
+@background.add_child(@refresh)
+end
+
     @list = UI::List.new
     @list.margin = [20, 20]
-    @list.height = 420
+    @list.height = 350
     @background.add_child(@list)
+  end
+  
+  def getcache(&block)
+      erequest("forum/struct", {"cat" => "groups", 'listgroups'=>'joined'},true) do |resp|
+            if resp["code"] != 200
+        UI.alert({:title => "Error occurred", :message => resp["errmsg"]}) { }
+      else
+	  @groups = []
+		resp['groups'].values.each {|g| @groups.push(g) if g['open']==1 or g['public']==1 or g['role']==1 or g['role']==2 }
+		        		@forums=resp['forums'].values
+		@threads=resp['threads'].values
+		@groups.sort! {|a,b| a['id']<=>b['id']}
+		@forums.sort! {|a,b| a['pos']<=>b['pos']}
+		@threads.sort! {|a,b| b['lastupdate']<=>a['lastupdate']}
+	  block.call if block!=nil
+	  end
+        end
   end
 end
 
@@ -27,14 +53,9 @@ class ForumScreen < ForumScreenTemplate
   def on_show
     self.navigation.show_bar if self.navigation.bar_hidden?
     self.navigation.title = "Forum"
-    @groups = []
+    @sgroups = []
     update_groups
-    if $frmforumstask != nil
-      $frmforumstask.stop
-      $frmforumstask = nil
-    end
     @maxid = 0
-    task(false)
   end
 
   def on_load
@@ -42,7 +63,7 @@ class ForumScreen < ForumScreenTemplate
 
     @list.on :select do |opt, ind|
       if ind > 0
-        group_screen = GroupScreen.new(@groups[ind - 1]["id"], @groups[ind - 1]["name"])
+        group_screen = GroupScreen.new(@sgroups[ind - 1]['id'], @sgroups[ind - 1]['name'])
         self.navigation.push(group_screen)
       else
         threads_screen = ThreadsScreen.new("_followed", "Followed Threads")
@@ -50,37 +71,43 @@ class ForumScreen < ForumScreenTemplate
       end
     end
     self.view.update_layout
+task(false)
   end
 
   def task(doUpdate = true)
     if self.navigation.screen == self
-      Net.get(create_query("forum/maxid")) do |rsp|
-        if rsp.body["code"] == 200 and @maxid < rsp.body["maxid"].to_i
-          @maxid = rsp.body["maxid"].to_i
+      erequest("forum/maxid",{},doUpdate) do |resp|
+        if resp["code"] == 200 and (@maxid||0) < resp["maxid"].to_i
+          @maxid = resp["maxid"].to_i
           if doUpdate
             update_groups
             play("forum_update")
           end
         end
       end
-      $tmptask = Task.after(10) { task }
     end
   end
 
   def update_groups
-    Net.get(create_query("forum/list", {"cat" => "groups"})) do |rsp|
-      resp = rsp.body
-      if resp["code"] != 200
-        UI.alert({:title => "Error occurred", :message => resp["errmsg"]}) { }
-      else
-        @groups = resp["groups"]
-        grp = []
-        resp["groups"].each do |r|
-          grp.push(r["name"] + "\r\nForums: " + r["forums"].to_s + "\r\nThreads: " + r["threads"].to_s + "\r\nPosts: " + r["posts"].to_s + "\r\nNew: " + (r["posts"].to_i - r["readposts"].to_i).to_s)
+getcache do
+@sgroups=[]
+@groups.each {|g| @sgroups.push(g) if g['role']==1 or g['role']==2 or g['recommended']==1}
+grp = []
+        @sgroups.each do |r|
+          grp.push(r["name"] + "\r\nForums: " + r["cnt_forums"].to_s + "\r\nThreads: " + r["cnt_threads"].to_s + "\r\nPosts: " + r["cnt_posts"].to_s + "\r\nNew: " + (r["cnt_posts"].to_i - r["cnt_readposts"].to_i).to_s)
         end
-        @list.data_source = ["Followed threads\r\nThreads: #{resp["foll_threads"].to_s}\r\nPosts: #{resp["foll_posts"].to_s}\r\nNew: #{(resp["foll_posts"].to_i - resp["foll_readposts"].to_i).to_s}"] + grp
+foll_threads=0
+		foll_posts=0
+		foll_readposts=0
+				@threads.each {|t|
+		if t['followed']==1
+		foll_threads+=1
+		foll_posts+=t['cnt_posts'].to_i
+		foll_readposts+=t['cnt_readposts'].to_i
+		end
+		}
+        @list.data_source = ["Followed threads\r\nThreads: #{foll_threads.to_s}\r\nPosts: #{foll_posts.to_s}\r\nNew: #{(foll_posts.to_i - foll_readposts.to_i).to_s}"] + grp
       end
-    end
   end
 end
 
@@ -96,52 +123,43 @@ class GroupScreen < ForumScreenTemplate
     self.navigation.title = @name
     @forums = []
     update_forums
-    if $frmthreadstask != nil
-      $frmthreadstask.stop
-      $frmthreadstask = nil
-    end
     @maxid = 0
-    task(false)
   end
 
   def on_load
     super
 
     @list.on :select do |opt, ind|
-      threads_screen = ThreadsScreen.new(@forums[ind]["id"], @forums[ind]["name"])
+      threads_screen = ThreadsScreen.new(@sforums[ind]["id"], @sforums[ind]["name"])
       self.navigation.push(threads_screen)
     end
     self.view.update_layout
+task(false)
   end
 
   def task(doUpdate = true)
     if self.navigation.screen == self
-      Net.get(create_query("forum/maxid")) do |rsp|
-        if rsp.body["code"] == 200 and @maxid < rsp.body["maxid"].to_i
-          @maxid = rsp.body["maxid"].to_i
+      erequest("forum/maxid",{},doUpdate) do |resp|
+        if resp["code"] == 200 and (@maxid||0) < resp["maxid"].to_i
+          @maxid = resp["maxid"].to_i
           if doUpdate
             update_forums
             play("forum_update")
           end
         end
       end
-      $frmforumstask = Task.after(10) { task }
     end
   end
 
   def update_forums
-    Net.get(create_query("forum/list", {"cat" => "forums", "groupid" => @id})) do |rsp|
-      resp = rsp.body
-      if resp["code"] != 200
-        UI.alert({:title => "Error occurred", :message => resp["errmsg"]}) { }
-      else
-        @forums = resp["forums"]
+getcache do
+@sforums=[]
+@forums.each {|f| @sforums.push(f) if f['groupid'].to_i==@id.to_i}
         frm = []
-        resp["forums"].each do |r|
-          frm.push(r["name"] + "\r\nThreads: " + r["threads"].to_s + "\r\nPosts: " + r["posts"].to_s + "\r\nNew: " + (r["posts"].to_i - r["readposts"].to_i).to_s)
+        @sforums.each do |r|
+          frm.push(r["name"] + "\r\nThreads: " + r["cnt_threads"].to_s + "\r\nPosts: " + r["cnt_posts"].to_s + "\r\nNew: " + (r["cnt_posts"].to_i - r["cnt_readposts"].to_i).to_s)
         end
         @list.data_source = frm
-      end
     end
   end
 end
@@ -154,24 +172,28 @@ class ThreadsScreen < ForumScreenTemplate
     super
   end
 
+def btn_tapped(sender)
+p 'fff'
+end
+
   def on_show
     self.navigation.show_bar if self.navigation.bar_hidden?
+#self.navigation.items={:back_button => {:title=>'test', :action=>'btn_tapped:'}}
     self.navigation.title = @name
-    @threads = []
+    @sthreads = []
     update_threads
     if $frmpoststask != nil
       $frmpoststask.stop
       $frmpoststask = nil
     end
     @maxid = 0
-    task(false)
   end
 
   def on_load
     super
 
     @list.on :select do |opt, ind|
-      posts_screen = PostsScreen.new(@threads[ind]["id"], @threads[ind]["name"])
+      posts_screen = PostsScreen.new(@sthreads[ind]["id"], @sthreads[ind]["name"])
       self.navigation.push(posts_screen)
     end
 
@@ -182,6 +204,7 @@ class ThreadsScreen < ForumScreenTemplate
     @newbutton.on :tap do
       newthread_screen = ThreadsNewScreen.new(@id, @type)
       self.navigation.push(newthread_screen)
+task(false)
     end
 
     self.view.update_layout
@@ -189,57 +212,50 @@ class ThreadsScreen < ForumScreenTemplate
 
   def task(doUpdate = true)
     if self.navigation.screen == self
-      Net.get(create_query("forum/maxid")) do |rsp|
-        if rsp.body["code"] == 200 and @maxid < rsp.body["maxid"].to_i
-          @maxid = rsp.body["maxid"].to_i
+      erequest("forum/maxid",{},doUpdate) do |resp|
+        if resp["code"] == 200 and (@maxid||0) < resp["maxid"].to_i
+          @maxid = resp["maxid"].to_i
           if doUpdate
             update_threads
             play("forum_update")
           end
         end
       end
-      $frmthreadstask = Task.after(10) { task }
     end
   end
 
   def update_threads
-    Net.get(create_query("forum/list", {"cat" => "threads", "forumid" => @id})) do |rsp|
-      resp = rsp.body
-      if resp["code"] != 200
-        UI.alert({:title => "Error occurred", :message => resp["errmsg"]}) { }
-      else
-        @type = resp["forumtype"].to_i
-        if (@type == 1 and (Recorder.permitted?) != false) or @type == -1
-          @background.delete_child(@newbutton)
+    getcache do
+	@type=0
+	@forums.each {|f| @type=f['type'] if f['id']==@id}
+        if (@type == 1 and (Recorder.permitted?) == false) or @type == -1 or @id[0..0]=="_"
+         @background.delete_child(@newbutton)
           self.view.update_layout
-        end
-        @threads = []
+       end
+        @sthreads = []
         thr = []
         acs = []
-        resp["threads"].each do |r|
-          @threads.push(r.clone)
+		@threads.each {|r|           @sthreads.push(r.clone) if r['forumid']==@id  or (@id=="_followed" and r['followed']==1)}
+        @sthreads.each do |r|
           acs.push({})
           s = "Follow thread"
           s = "Unfollow thread" if r["followed"] == 1
           acs.last[s] = Proc.new { |opt, ind| chfollow(ind) }
-          thr.push(((r["readposts"].to_i < r["posts"].to_i) ? "(NEW): " : "") + r["name"] + "\r\nPosts: " + r["posts"].to_s + "\r\nNew: " + (r["posts"].to_i - r["readposts"].to_i).to_s)
+          thr.push(((r["cnt_readposts"].to_i < r["cnt_posts"].to_i) ? "(NEW): " : "") + r["name"] + "\r\nPosts: " + r["cnt_posts"].to_s + "\r\nNew: " + (r["cnt_posts"].to_i - r["cnt_readposts"].to_i).to_s)
         end
         @list.data_source = thr
         @list.actions = acs
-      end
     end
   end
 
   def chfollow(row)
     ind = row.row
-    q = create_query("forum/follow", {"cat" => "thread", "threadid" => @threads[ind]["id"], "ac" => (@threads[ind]["followed"] == 1) ? "unfollow" : "follow"})
-    Net.get(q) do |resp|
-      rsp = resp.body
-      if rsp["code"] == 200
-        @threads[ind]["followed"] = (@threads[ind]["followed"] == 0) ? 1 : 0
-        @list.actions[ind] = {(@threads[ind]["followed"] == 0) ? "Follow thread" : "Unfollow thread" => Proc.new { |opt, ind| chfollow(ind) }}
+    erequest("forum/follow", {"cat" => "thread", "threadid" => @sthreads[ind]["id"], "ac" => (@sthreads[ind]["followed"] == 1) ? "unfollow" : "follow"}) do |resp|
+                if resp["code"] == 200
+        @sthreads[ind]["followed"] = (@sthreads[ind]["followed"] == 0) ? 1 : 0
+        @list.actions[ind] = {(@sthreads[ind]["followed"] == 0) ? "Follow thread" : "Unfollow thread" => Proc.new { |opt, ind| chfollow(ind) }}
       else
-        UI.alert(:title => "Error", :message => rsp["errmsg"]) { }
+        UI.alert(:title => "Error", :message => resp["errmsg"]) { }
       end
     end
   end
@@ -327,11 +343,13 @@ class ThreadsNewScreen < UI::Screen
           head = {"Content-Type" => "application/json"}
           body = {"threadname" => @title_field.text, "post" => post_view.text}
           Net.post(url, {:body => body, :headers => head}) do |rsp|
+		  if rsp.body.is_a?(Hash)
             if rsp.body["code"] != 200
               UI.alert({:title => "Unexpected error occurred while creating thread", :message => rsp.body["errmsg"]}) { }
             else
               self.navigation.pop
             end
+			end
           end
         end
       end
@@ -401,12 +419,14 @@ class ThreadsNewScreen < UI::Screen
     url = create_query("forum/edit", {"ac" => "add", "threadid" => "new", "forum" => @forum.to_s, "src" => "-", "type" => "audio", "threadname" => @title_field.text})
     head = {"Content-Type" => "application/aac"}
     Net.post(url, {:body => rece, :headers => head}) do |rsp|
-      if rsp.body["code"] != 200
+      if rsp.body.is_a?(Hash)
+	  if rsp.body["code"] != 200
         UI.alert({:title => "Error while sending your reply", :message => rsp.body["errmsg"]}) { }
       else
         self.navigation.pop
       end
     end
+	end
   end
 end
 
@@ -433,7 +453,7 @@ class PostsScreen < ForumScreenTemplate
   def on_load
     super
 
-    @list.height = 250
+    @list.height = 300
 
     @list.on :select do |opt, ind|
       post = @posts[ind]
@@ -452,6 +472,7 @@ class PostsScreen < ForumScreenTemplate
     end
 
     self.view.update_layout
+task(false)
   end
 
   def before_on_disappear
@@ -464,8 +485,8 @@ class PostsScreen < ForumScreenTemplate
 
   def task(doUpdate = true)
     if self.navigation.screen == self
-      Net.get(create_query("forum/thread_maxid", {"thread" => @id.to_s})) do |rsp|
-        if rsp.body["code"] == 200 and @maxid < rsp.body["maxid"].to_i and doUpdate
+      erequest("forum/thread_maxid", {"thread" => @id.to_s},true) do |resp|
+        if resp["code"] == 200 and (@maxid||0) < resp["maxid"].to_i and doUpdate
           update_posts
           play("forum_update")
         end
@@ -475,9 +496,8 @@ class PostsScreen < ForumScreenTemplate
   end
 
   def update_posts(doScroll = false)
-    Net.get(create_query("forum/posts", {"thread" => @id.to_s})) do |rsp|
-      resp = rsp.body
-      if resp["code"] != 200
+    erequest("forum/posts", {"thread" => @id.to_s},true) do |resp|
+            if resp["code"] != 200
         UI.alert({:title => "Error occurred", :message => resp["errmsg"]}) { }
       else
         @posts = resp["posts"]
@@ -486,13 +506,14 @@ class PostsScreen < ForumScreenTemplate
         cnt = 0
         resp["posts"].each do |r|
           act.push({"Show profile" => Proc.new { |act, row| self.navigation.push(ProfileScreen.new(@posts[row.row]["author"])) }})
+return if self.navigation.screen!=self
           if $streamer == nil and r["audio_url"] != nil and r["audio_url"] != ""
             $streamer = Player.new
             if @record == nil and (Recorder.permitted?) != false
               @record = UI::Button.new
               @record.title = "Record Post"
               @record.margin = [5, 5]
-              @record.height = 70
+              @record.height = 30
               @background.add_child(@record)
               @record.on(:tap) { record_btn }
             end
@@ -514,7 +535,7 @@ class PostsScreen < ForumScreenTemplate
         @reply = UI::Text.new
         @reply.editable = true
         @reply.margin = [0, 0]
-        @reply.height = 100
+        @reply.height = 50
         @reply.width = 400
         @reply.placeholder = "Your reply"
         @background.add_child(@reply)
@@ -526,19 +547,21 @@ class PostsScreen < ForumScreenTemplate
         @button = UI::Button.new
         @button.title = "Post reply"
         @button.margin = [0, 0]
-        @button.height = 80
+        @button.height = 20
         @background.add_child(@button)
 
         @button.on :tap do
           url = create_query("forum/edit", {"ac" => "add", "threadid" => @id.to_s})
           head = {"Content-Type" => "application/json"}
           Net.post(url, {:body => {"post" => @reply.text}, :headers => head}) do |rsp|
+		  if rsp.body.is_a?(Hash)
             if rsp.body["code"] != 200
               UI.alert({:title => "Error while sending your reply", :message => rsp.body["errmsg"]}) { }
             else
               update_posts
               @reply.text = ""
             end
+			end
           end
         end
         self.view.update_layout
@@ -605,6 +628,7 @@ class PostsScreen < ForumScreenTemplate
     Net.post(url, {:body => rece, :headers => head}) do |rsp|
       @record.title = "Record post"
       @record.enabled = true
+	  if rsp.body.is_a?(Hash)
       if rsp.body["code"] != 200
         @background.add_child(@sendrec)
         UI.alert({:title => "Error while sending your reply", :message => rsp.body["errmsg"]}) { }
@@ -614,5 +638,6 @@ class PostsScreen < ForumScreenTemplate
         @background.delete_child(@play)
       end
     end
+	end
   end
 end

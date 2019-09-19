@@ -9,7 +9,7 @@ class AppDelegate
   attr_accessor :window
 
   def application(application, didFinishLaunchingWithOptions: launchOptions)
-    $appcode = "ElMoIPB2"
+    $appcode = "elten"
 
     # An identifier used for two-factor authentication and APNS
     if Store["appid"] == nil
@@ -42,8 +42,9 @@ class AppDelegate
 
     # Create Navigation Instance and Proceed to the Welcome Screen
     welcome_screen = WelcomeScreen.new
-    $navigation = UI::Navigation.new(welcome_screen)
-    $app = UI::Application.new($navigation, self)
+    navigation = UI::Navigation.new(welcome_screen)
+$appdelegate=self
+    $app = UI::Application.new(navigation, self)
     $app.start
   end
 
@@ -62,11 +63,11 @@ class AppDelegate
   def application(application, didRegisterForRemoteNotificationsWithDeviceToken: device_token)
     # The Device Token we will send base64-encoded cause it is saved in binary format
 
-    Net.get(create_query("apns", {"ac" => "register", "appid" => Store["appid"], "devicetoken" => device_token.MSBase64Encoding})) { |rsp|
-      if rsp.body["code"] == 200
+    erequest("apns", {"ac" => "register", "appid" => Store["appid"], "devicetoken" => device_token.MSBase64Encoding}) { |rpl|
+      if rpl["code"] == 200
         $apns_token = device_token
       else
-        UI.alert({:title => "Failed to register for Push Notifications", :message => rsp.body["errmsg"]}) { }
+        UI.alert({:title => "Failed to register for Push Notifications", :message => rpl["errmsg"]}) { }
       end
     }
   end

@@ -15,9 +15,17 @@ class MessagesScreenTemplate < UI::Screen
     @background.background_color = :white
     self.view.add_child(@background)
 
+if defined?(task)!=nil and !self.navigation.screen.is_a?(TopicScreen)
+@refresh=UI::Button.new
+@refresh.height=20
+@refresh.title="Refresh"
+@refresh.on(:tap) {task}
+@background.add_child(@refresh)
+end
+
     @list = UI::List.new
     @list.margin = [5, 5]
-    @list.height = 450
+    @list.height = 400
     @background.add_child(@list)
 
     @compose_button = UI::Button.new
@@ -33,14 +41,9 @@ class MessagesScreen < MessagesScreenTemplate
     self.navigation.title = "Messages"
     @users = []
 
-    if $msgconversationstask != nil
-      $msgconversationstask.stop
-      $msgconversationstask = nil
-    end
 
     update_users
 
-    task(false)
   end
 
   def on_load
@@ -56,24 +59,24 @@ class MessagesScreen < MessagesScreenTemplate
     @compose_button.on(:tap) { self.navigation.push(MessagesNewScreen.new) }
 
     self.view.update_layout
+task(false)
   end
 
   def task(doUpdate = true)
     if self.navigation.screen == self
-      Net.get(create_query("messages/maxid", {"cat" => "users"})) do |rsp|
-        if doUpdate and rsp.body["code"] == 200 and rsp.body["maxid"].to_i > @maxid
+      erequest("messages/maxid", {"cat" => "users"},doUpdate) do |resp|
+        if doUpdate and resp["code"] == 200 and resp["maxid"].to_i > @maxid
+		@maxid=resp['maxid'].to_i
           update_users
           play("messages_update")
         end
       end
-      $tmptask = Task.after(5) { task }
     end
   end
 
   def update_users
-    Net.get(create_query("messages/list", {"cat" => "users"})) do |rsp|
-      resp = rsp.body
-      if resp["code"] != 200
+    erequest("messages/list", {"cat" => "users"}) do |resp|
+            if resp["code"] != 200
         UI.alert({:title => "Error occurred", :message => resp["errmsg"]}) { }
       else
         @users = resp["users"]
@@ -109,7 +112,6 @@ class ConversationsScreen < MessagesScreenTemplate
 
     update_conversations
 
-    task(false)
   end
 
   def on_load
@@ -125,26 +127,26 @@ class ConversationsScreen < MessagesScreenTemplate
     @compose_button.on(:tap) { self.navigation.push(MessagesNewScreen.new(@user)) }
 
     self.view.update_layout
+task(false)
   end
 
   def task(doUpdate = true)
     if self.navigation.screen == self
-      Net.get(create_query("messages/maxid", {"cat" => "conversations", "user" => @user})) do |rsp|
-        if doUpdate and rsp.body["code"] == 200 and rsp.body["maxid"].to_i > @maxid
+      erequest("messages/maxid", {"cat" => "conversations", "user" => @user},doUpdate) do |resp|
+        if doUpdate and resp["code"] == 200 and resp["maxid"].to_i > @maxid
+		@maxid=resp['maxid'].to_i
           update_conversations
           play("messages_update")
         end
       end
-      $msgconversationstask = Task.after(5) { task }
     end
   end
 
   def update_conversations
     @conversations = []
 
-    Net.get(create_query("messages/list", {"cat" => "conversations", "user" => @user})) do |rsp|
-      resp = rsp.body
-      if resp["code"] != 200
+    erequest("messages/list", {"cat" => "conversations", "user" => @user},true) do |resp|
+            if resp["code"] != 200
         UI.alert({:title => "Error occurred", :message => resp["errmsg"]}) { }
       else
         @conversations = resp["conversations"]
@@ -170,14 +172,14 @@ class TopicScreen < MessagesScreenTemplate
   def on_show
     self.navigation.show_bar if self.navigation.bar_hidden?
     self.navigation.title = @subj
-    update_topic
+    update_topic(true)
     task(false)
   end
 
   def on_load
     super
 
-    @list.height = 250
+    @list.height = 300
 
     @list.on :select do |opt, ind|
       msg = @messages[ind]
@@ -197,11 +199,30 @@ class TopicScreen < MessagesScreenTemplate
 
     @maxid ||= 0
 
-    @record = UI::Button.new
-    @record.title = "Record Audio Message"
-    @record.height = 50
-    @record.on(:touchdown) { record_btn_hold }
-    @record.on(:tap) {
+    @reply = UI::TextInput.new
+    @reply.margin = [0, 0]
+    @reply.height = 50
+    @reply.placeholder = "Your reply"
+    @reply.enter { send }
+    @background.add_child(@reply)
+
+    @reply.on(:focus) { @background.scale(1, 0.5) }
+
+    @reply.on(:blur) { @background.scale(1, 1) }
+
+    @compose_button.on(:tap) { self.navigation.push(MessagesNewScreen.new(@user, @subj)) }
+@compose_button.height=30
+
+    @send = UI::Button.new
+    @send.title = "Record audio message"
+    @send.margin = [0, 0]
+    @send.height = 50
+    @background.add_child(@send)
+
+    @send.on(:tap) {
+if @reply.text!=""
+send
+else
       if @recording != nil
         tim = (tm = Time.now).to_i * 1000000 + tm.usec
         if (tim - @recording) < 10000
@@ -212,31 +233,21 @@ class TopicScreen < MessagesScreenTemplate
           recording_send
         end
       end
-    }
-    @background.add_child(@record) if (Recorder.permitted?) != false
+end
+}
 
-    @reply = UI::TextInput.new
-    @reply.margin = [0, 0]
-    @reply.height = 100
-    @reply.placeholder = "Your reply"
-    @reply.enter { send }
-    @background.add_child(@reply)
+@send.on(:touchdown) { record_btn_hold if @reply.text==""}
 
-    @reply.on(:focus) { @background.scale(1, 0.5) }
-
-    @reply.on(:blur) { @background.scale(1, 1) }
-
-    @compose_button.on(:tap) { self.navigation.push(MessagesNewScreen.new(@user, @subj)) }
-
-    @send = UI::Button.new
-    @send.title = "Post reply"
-    @send.margin = [0, 0]
-    @send.height = 30
-    @background.add_child(@send)
-
-    @send.on(:tap) { send }
+@reply.on(:change) do
+if @reply.text==""
+@send.title="Record audio message"
+else
+@send.title="Send"
+end
+end
 
     self.view.update_layout
+task(false)
   end
 
   def send
@@ -244,6 +255,7 @@ class TopicScreen < MessagesScreenTemplate
       url = create_query("messages/send", {"to" => @user, "subj" => "RE: " + @subj})
       head = {"Content-Type" => "application/json"}
       Net.post(url, {:body => {"msg" => @reply.text}, :headers => head}) do |rsp|
+	  if rsp.body.is_a?(Hash)
         if rsp.body["code"] != 200
           UI.alert({:title => "Error while sending your reply", :message => rsp.body["errmsg"]}) { }
         else
@@ -251,6 +263,7 @@ class TopicScreen < MessagesScreenTemplate
           @reply.text = ""
         end
       end
+	  end
     end
   end
 
@@ -264,8 +277,9 @@ class TopicScreen < MessagesScreenTemplate
 
   def task(doUpdate = true)
     if self.navigation.screen == self
-      Net.get(create_query("messages/maxid", {"cat" => "messages", "user" => @user, "subj" => @subj})) do |rsp|
-        if doUpdate and rsp.body["code"] == 200 and rsp.body["maxid"].to_i > @maxid
+      erequest("messages/maxid", {"cat" => "messages", "user" => @user, "subj" => @subj},doUpdate) do |resp|
+        if doUpdate and resp["code"] == 200 and resp["maxid"].to_i > @maxid
+		@maxid=resp['maxid'].to_i
           update_topic
           play("messages_update")
         end
@@ -274,11 +288,10 @@ class TopicScreen < MessagesScreenTemplate
     end
   end
 
-  def update_topic
+  def update_topic(doScroll=false)
     @messages = []
-    Net.get(create_query("messages/list", {"cat" => "messages", "user" => @user, "subj" => @subj})) do |rsp|
-      resp = rsp.body
-      if resp["code"] != 200
+    erequest("messages/list", {"cat" => "messages", "user" => @user, "subj" => @subj}) do |resp|
+            if resp["code"] != 200
         UI.alert({:title => "Error occurred", :message => resp["errmsg"]}) { }
       else
         @messages = resp["messages"]
@@ -290,6 +303,13 @@ class TopicScreen < MessagesScreenTemplate
           @maxid = r["id"].to_i if (@maxid || 0) < r["id"].to_i
         end
         @list.data_source = msg
+		if doScroll
+          scroller = 0
+          for i in 0...resp['messages'].size
+		  scroller=i if resp['messages'][i]['read'].to_i==0 and resp['messages'][i]['sender']!=$session.name and scroller==0
+		  end
+          @list.scroll(scroller)
+        end
       end
     end
   end
@@ -297,7 +317,7 @@ class TopicScreen < MessagesScreenTemplate
   def record_btn_hold
     if (Recorder.permitted?) == nil
       Recorder.request_permission(
-        Proc.new { @background.delete_child(@record) },
+        Proc.new {},
         Proc.new { recording_start },
         Proc.new { }
       )
@@ -314,10 +334,9 @@ class TopicScreen < MessagesScreenTemplate
       @cancel.height = 120
       @cancel.on(:tap) { recording_stop }
     end
-    @background.delete_child(@send)
     @background.delete_child(@reply)
     @background.add_child(@cancel)
-    @record.title = "Stop recording"
+    @send.title = "Stop recording"
     @recording_file ||= ENV["TMPDIR"] + "/audiomessage.m4a"
     File.delete(@recording_file) if FileTest.exists?(@recording_file)
     AudioConfig.category_tospeaker = AudioConfig::CategoryPlayAndRecord
@@ -330,10 +349,11 @@ class TopicScreen < MessagesScreenTemplate
   def recording_stop
     @recorder.stop
     AudioConfig.category = AudioConfig::CategoryAmbient
-    @record.title = "Record Audio Message"
+    @send.title = "Record Audio Message"
     @background.delete_child(@cancel)
+@background.delete_child(@send)
     @background.add_child(@reply)
-    @background.add_child(@send)
+@background.add_child(@send)
     @recording = nil
     play("quickrecording_stop")
     self.view.update_layout
@@ -347,12 +367,14 @@ class TopicScreen < MessagesScreenTemplate
     url = create_query("messages/send", {"to" => @to, "subj" => @sbj, "src" => "-", "type" => "audio"})
     head = {"Content-Type" => "application/aac"}
     Net.post(url, {:body => rece, :headers => head}) do |rsp|
+	if rsp.body.is_a?(Hash)
       if rsp.body["code"] != 200
         UI.alert({:title => "Error while sending your reply", :message => rsp.body["errmsg"]}) { }
       else
         update_topic
       end
     end
+  end
   end
 end
 
@@ -452,12 +474,14 @@ class MessagesNewScreen < UI::Screen
           head = {"Content-Type" => "application/json"}
           body = {"subj" => @sbj, "msg" => @message_view.text}
           Net.post(url, {:body => body, :headers => head}) do |rsp|
+		  if rsp.body.is_a?(Hash)
             if rsp.body["code"] != 200
               UI.alert({:title => "Unexpected error occurred while sending this message", :message => rsp.body["errmsg"]}) { }
             else
               self.navigation.pop
             end
           end
+		  end
         end
       else
         recording_send
@@ -547,11 +571,13 @@ class MessagesNewScreen < UI::Screen
     url = create_query("messages/send", {"to" => @to, "subj" => @sbj, "src" => "-", "type" => "audio"})
     head = {"Content-Type" => "application/aac"}
     Net.post(url, {:body => rece, :headers => head}) do |rsp|
+	if rsp.body.is.a?(Hash)
       if rsp.body["code"] != 200
         UI.alert({:title => "Error while sending your reply", :message => rsp.body["errmsg"]}) { }
       else
         self.navigation.pop
       end
     end
+	end
   end
 end

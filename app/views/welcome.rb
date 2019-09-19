@@ -57,8 +57,7 @@ class WelcomeScreen < UI::Screen
 
     # Autologin
     if Store["name"] != nil and Store["autotoken"] != nil
-      Net.get(create_query("login", {"name" => Store["name"], "token" => Store["autotoken"], "appid" => Store["appid"]})) do |rsp|
-        rpl = rsp.body
+      erequest("login", {"name" => Store["name"], "token" => Store["autotoken"], "appid" => Store["appid"]}) do |rpl|
         if rpl["code"] != 200
           UI.alert({:title => "Autologin failed", :message => rpl["errmsg"], :cancel => "Close"}) { }
           Store.delete("autotoken")
@@ -75,9 +74,8 @@ class WelcomeScreen < UI::Screen
   def login(authcode = nil)
     logindata = {"name" => @login_field.text, "pass" => @pass_field.text, "appid" => Store["appid"]}
     logindata["authcode"] = authcode if authcode != nil
-    Net.get(create_query("login", logindata)) do |rsp|
-      rpl = rsp.body
-      if rpl["code"] != 200
+    erequest("login", logindata) do |rpl|
+            if rpl["code"] != 200
         UI.alert({:title => "Login failed", :message => rpl["errmsg"], :cancel => "Close"}) { }
       else
         if rpl["required"] == "twofactor"
@@ -86,9 +84,8 @@ class WelcomeScreen < UI::Screen
           $session = Elten_Session.new({"name" => rpl["name"], "token" => rpl["token"]})
           UI.alert({:title => "Do you wish to setup autologin?", :message => "After enabling autologin, you would be no longer prompted for username and password everytime Elten is launched.", :default => "Yes", :cancel => "No"}) { |ind|
             if ind == :default
-              Net.get(create_query("autologin", {"action" => "register", "device" => UIDevice.currentDevice.name.to_s})) do |autrsp|
-                autrpl = autrsp.body
-                if autrpl["code"] != 200
+              erequest("autologin", {"action" => "register", "device" => UIDevice.currentDevice.name.to_s}) do |autrpl|
+                                if autrpl["code"] != 200
                   UI.alert({:title => "Autologin verification failed", :message => rpl["errmsg"], :cancel => "Close"}) { }
                 else
                   Store["name"] = $session.name
@@ -157,7 +154,11 @@ class WelcomeScreen < UI::Screen
 
   def proceed
     return if $session == nil # ignore if no session established
-    main_screen = MainScreen.new
-    self.navigation.replace(main_screen)
+    forum_screen = ForumScreen.new
+    messages_screen = MessagesScreen.new
+main_screen=MainScreen.new
+navigations=[UI::Navigation.new(forum_screen),UI::Navigation.new(messages_screen), UI::Navigation.new(main_screen)]
+$app.tabbars(["Forum","Messages","More"], navigations)
+#    self.navigation.replace(main_screen)
   end
 end

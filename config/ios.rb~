@@ -8,34 +8,23 @@
 # Elten Mobile iOS Configuration
 
 require 'rubygems'
-#require 'motion-cocoapods'
-
-
+require 'motion-cocoapods'
 Motion::Project::App.setup do |app|
     app.name = 'Elten'
-app.version='0.01'
-app.short_version = '0.01'
+app.version='0.03'
+app.short_version = '0.03'
 
 app.identifier='eu.elten-net.eltenmobile'
 #app.libs<<'/usr/lib/libstdc++.6.0.9.dylib'
 
-#app.frameworks<<'coreaudio'
-app.frameworks << "AudioToolbox"
 app.frameworks << "AVFoundation"
-app.frameworks << "CoreMedia"
 
-#app.pods do
-#use_frameworks!
-#pod 'libopus'
-#pod 'OrigamiEngine'
-#pod 'APAudioPlayer'
-#end
-
-app.vendor_project('vendor/bass', :static)
-app.vendor_project("vendor/OrigamiEngine", :xcode)
-
+app.pods do
+pod 'OrigamiEngine/Opus'
+end
 
 app.info_plist['UIRequiredDeviceCapabilities']=['arm64']
+app.info_plist['NSMicrophoneUsageDescription']='Elten requires access to your microphone in order to record audio posts, messages and so on.'
 
 app.release do
 app.codesign_certificate = 'iPhone Distribution: Dawid Pieper (YC6NP473J2)'

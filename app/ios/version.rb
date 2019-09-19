@@ -5,15 +5,15 @@ module Elten
     end
 
     def version
-      0.02
+      0.05
     end
 
     def beta
-      2
+      5
     end
 
     def versioninfo
-      "Elten Mobile Beta 2"
+      "Elten Mobile Beta 5"
     end
   end
 end
