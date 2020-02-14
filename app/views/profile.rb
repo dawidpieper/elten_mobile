@@ -25,51 +25,51 @@ class ProfileScreen < UI::Screen
     self.view.add_child(background)
 
     message = UI::Button.new
-    message.title = "Send message"
-    message.height = 50
+    message.title = _("Send message")
+    message.height = self.view.height * 0.1
     message.on(:tap) { self.navigation.push(MessagesNewScreen.new(@user)) }
     background.add_child(message)
 
-    erequest("profile", {"user" => @user}) do |resp|
-            if resp["code"] == 200
+    erequest("profile", { "user" => @user }) do |resp|
+      if resp["code"] == 200
         if resp["status"] != ""
           status = UI::Label.new
-          status.height = 80
+          status.height = self.view.height * 0.2
           status.text = resp["status"]
           background.add_child(status)
         end
-        end
-        if resp["fullname"] != "" and resp["fullname"] != nil
-          fullname = UI::Label.new
-          fullname.height = 20
-          fullname.text = resp["fullname"]
-          background.add_child(fullname)
-        end
-        if resp["gender"] != nil
-          gender = UI::Label.new
-          gender.height = 20
-          gender.text = "Gender: " + ((resp["gender"].to_i == 1) ? "male" : "female")
-          background.add_child(gender)
-        end
-        if resp["age"] != nil and resp["age"] > 0
-          age = UI::Label.new
-          age.height = 20
-          age.text = "Age: " + resp["age"].to_s
-          background.add_child(age)
-        end
-        if resp["visitingcard"] != nil
-          vchead = UI::Label.new
-          vchead.header = true
-          vchead.height = 50
-          vchead.text = "Visitingcard"
-          background.add_child(vchead)
-          vc = UI::StaticText.new
-          vc.height = 150
-          vc.text = resp["visitingcard"]
-          background.add_child(vc)
+      end
+      if resp["fullname"] != "" and resp["fullname"] != nil
+        fullname = UI::Label.new
+        fullname.height = self.view.height * 0.05
+        fullname.text = resp["fullname"]
+        background.add_child(fullname)
+      end
+      if resp["gender"] != nil
+        gender = UI::Label.new
+        gender.height = self.view.height * 0.05
+        gender.text = "#{_("Gender")}: " + ((resp["gender"].to_i == 1) ? _("male") : _("female"))
+        background.add_child(gender)
+      end
+      if resp["age"] != nil and resp["age"] > 0
+        age = UI::Label.new
+        age.height = self.view.height * 0.05
+        age.text = "#{_("Age")}: " + resp["age"].to_s
+        background.add_child(age)
+      end
+      if resp["visitingcard"] != nil
+        vchead = UI::Label.new
+        vchead.header = true
+        vchead.height = self.view.height * 0.1
+        vchead.text = _("Visitingcard")
+        background.add_child(vchead)
+        vc = UI::StaticText.new
+        vc.height = self.view.height * 0.3
+        vc.text = resp["visitingcard"]
+        background.add_child(vc)
         self.view.update_layout
       else
-        UI.alert(:title => "Error", :message => resp["errmsg"]) { }
+        UI.alert(:title => _("Error"), :message => resp["errmsg"]) { }
       end
     end
 

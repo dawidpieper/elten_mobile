@@ -46,5 +46,49 @@ module UI
       cell
     end
 
+    def update_begin
+      proxy.beginUpdates
+    end
+
+    def update_end
+      proxy.endUpdates
+    end
+
+    def insert(x, r, a = {})
+      inses = []
+      i = @data_source.size - 1
+      if i >= x
+        @data_source.push("")
+        inses.push(NSIndexPath.indexPathForRow(@data_source.size - 1, inSection: 0))
+        while i >= x
+          @data_source[i + 1] = @data_source[i]
+          i -= 1
+          actions[i + 1] = actions[i]
+        end
+      else
+        for j in i...x
+          @data_source.push("")
+          inses.push(NSIndexPath.indexPathForRow(@data_source.size - 1, inSection: 0))
+        end
+      end
+      edit(x, r, a)
+      proxy.insertRowsAtIndexPaths(inses, withRowAnimation: UITableViewRowAnimationBottom)
+    end
+
+    def edit(x, r, a = [])
+      return insert(x, r, a) if x >= @data_source.size
+      @data_source[x] = r
+      actions[x] = a
+    end
+
+    def add(r, a = [])
+      insert(@data_source.size, r, a)
+    end
+
+    def multiadd(r, a = [])
+      for i in 0...r.size
+        add(r[i], a[i])
+      end
+    end
   end
 end

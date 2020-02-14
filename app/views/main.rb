@@ -18,7 +18,7 @@ class MainScreen < UI::Screen
     end
 
     erequest("handshake") do |resp|
-            if resp["code"] == 200
+      if resp["code"] == 200
         self.navigation.title = resp["handshake"]
       end
     end
@@ -34,7 +34,7 @@ class MainScreen < UI::Screen
     self.view.add_child(background)
 
     list = UI::List.new
-    list.data_source = ["Messages", "Forum", "Log out", "Show debug info"]
+    list.data_source = [_("Messages"), _("Forum"), _("Log out"), _("Show debug info")]
     list.margin = 5
     list.height = 250
     background.add_child(list)
@@ -49,13 +49,13 @@ class MainScreen < UI::Screen
         forum_screen = ForumScreen.new
         self.navigation.push(forum_screen)
       when 2 #logout
-        UI.alert({:title => "Confirm", :message => "Are you sure you want to log out of Elten?", :default => "Yes", :cancel => "No"}) { |r|
+        UI.alert({ :title => "Confirm", :message => "Are you sure you want to log out of Elten?", :default => "Yes", :cancel => "No" }) { |r|
           if r == :default
             params = {}
-            params = {"autotoken" => Store["autotoken"]} if Store["autotoken"] != nil
+            params = { "autotoken" => Store["autotoken"] } if Store["autotoken"] != nil
             erequest("logout", params) do |resp|
               if resp["code"] != 200
-                UI.alert({:title => "Unexpected error occurred", :message => resp["errmsg"]}) { }
+                UI.alert({ :title => "Unexpected error occurred", :message => resp["errmsg"] }) { }
               else
                 Store.delete("name")
                 Store.delete("autotoken")
@@ -67,22 +67,22 @@ class MainScreen < UI::Screen
         }
       when 3 #debug
         dbg = ""
-        dbg = "Platform: #{Elten.platform}\r\n"
-        dbg += "Version: #{Elten.versioninfo}\r\n"
-        dbg += "Elten Client ID: #{Store["appid"]}\r\n"
-        dbg += "APNS Token: " + $apns_token.MSHexString + "\r\n"
-        dbg += "User Interface Idiom: #{UIDevice.currentDevice.userInterfaceIdiom.to_s}\r\n"
-        dbg += "Orientation: #{UIDevice.currentDevice.orientation.to_s}\r\n"
-        dbg += "Name: #{UIDevice.currentDevice.name.to_s}\r\n"
-        dbg += "System Version: #{UIDevice.currentDevice.systemVersion.to_s}\r\n"
-        dbg += "Model: #{UIDevice.currentDevice.model}\r\n"
-        dbg += "System name: #{UIDevice.currentDevice.systemName}\r\n"
-        dbg += "buildVersion: #{UIDevice.currentDevice.buildVersion.to_s}\r\n"
-        dbg += "Is Multitasking Supported: #{UIDevice.currentDevice.isMultitaskingSupported.to_s}\r\n"
+        dbg = "Platform: #{Elten.platform}\n"
+        dbg += "Version: #{Elten.versioninfo}\n"
+        dbg += "Elten Client ID: #{Store["appid"]}\n"
+        dbg += "APNS Token: " + $apns_token.MSHexString + "\n"
+        dbg += "User Interface Idiom: #{UIDevice.currentDevice.userInterfaceIdiom.to_s}\n"
+        dbg += "Orientation: #{UIDevice.currentDevice.orientation.to_s}\n"
+        dbg += "Name: #{UIDevice.currentDevice.name.to_s}\n"
+        dbg += "System Version: #{UIDevice.currentDevice.systemVersion.to_s}\n"
+        dbg += "Model: #{UIDevice.currentDevice.model}\n"
+        dbg += "System name: #{UIDevice.currentDevice.systemName}\n"
+        dbg += "buildVersion: #{UIDevice.currentDevice.buildVersion.to_s}\n"
+        dbg += "Is Multitasking Supported: #{UIDevice.currentDevice.isMultitaskingSupported.to_s}\n"
         for v in ENV.keys
-          dbg += v + ": " + ENV[v] + "\r\n"
+          dbg += v + ": " + ENV[v] + "\n"
         end
-        UI.alert({:title => "Elten Debug Info", :message => dbg, :cancel => "Close"}) { }
+        UI.alert({ :title => "Elten Debug Info", :message => dbg, :cancel => "Close" }) { }
       end
     end
 

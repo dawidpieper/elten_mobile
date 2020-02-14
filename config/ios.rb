@@ -11,7 +11,7 @@ require 'rubygems'
 require 'motion-cocoapods'
 Motion::Project::App.setup do |app|
     app.name = 'Elten'
-app.version='0.05'
+app.version='0.06'
 app.short_version = '0.04'
 
 app.identifier='eu.elten-net.eltenmobile'
@@ -41,3 +41,4 @@ app.entitlements['aps-environment'] = 'development'
 end
 
 end
+

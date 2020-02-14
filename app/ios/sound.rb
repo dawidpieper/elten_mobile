@@ -45,9 +45,9 @@ module EltenAPI
         end
       end
       def self.request_permission(fail = Proc.new { }, suc = Proc.new { }, ign = Proc.new { })
-        UI.alert(:title => "Do you wish to enable microphone access?", :message => "Elten requires microphone access in order to record audio data. Do you wish to grant it now?", :default => "Yes", :cancel => "Not now") { |ind|
+        UI.alert(:title => _("Do you wish to enable microphone access?"), :message => _("Elten requires microphone access in order to record audio data. Do you wish to grant it now?"), :default => _("Yes"), :cancel => _("Not now")) { |ind|
           if ind == :default
-            AVAudioSession.sharedInstance.requestRecordPermission(-> granted {
+            AVAudioSession.sharedInstance.requestRecordPermission(->granted {
               if granted == false
                 fail.call
               else
@@ -69,7 +69,8 @@ module EltenAPI
       def initialize(file, quality = QualityHigh, ch = 2, freq = 44100)
         @file, @ch, @freq, @quality = file, ch, freq, quality
         @url = NSURL.fileURLWithPath(@file)
-        configs = {AVFormatIDKey => (KAudioFormatMPEG4AAC), AVNumberOfChannelsKey => ch, AVEncoderAudioQualityKey => quality, AVSampleRateKey => freq}
+        kAudioFormatMPEG4AAC = 1633772320
+        configs = { AVFormatIDKey => kAudioFormatMPEG4AAC, AVNumberOfChannelsKey => ch, AVEncoderAudioQualityKey => quality, AVSampleRateKey => freq }
         @err_ptr = Pointer.new(:object)
         @recorder = AVAudioRecorder.alloc.initWithURL(@url, settings: configs, error: @err_ptr)
       end

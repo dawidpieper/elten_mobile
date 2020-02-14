@@ -9,7 +9,7 @@ class AppDelegate
   attr_accessor :window
 
   def application(application, didFinishLaunchingWithOptions: launchOptions)
-    $appcode = "elten"
+    $appcode = "ElMoIPB6"
 
     # An identifier used for two-factor authentication and APNS
     if Store["appid"] == nil
@@ -25,7 +25,7 @@ class AppDelegate
     # Permission for sending Push Notifications
     if Store["notificationsasked"] == nil
       Store["notificationsasked"] = true
-      UI.alert({:title => "Do you want to enable notifications?", :message => "If you wish, you can configure Elten to receive push notifications regarding new messages, posts in followed threads and so on.", :default => "Yes", :cancel => "No"}) { |ans|
+      UI.alert({ :title => _("Do you want to enable notifications?"), :message => _("If you wish, you can configure Elten to receive push notifications regarding new messages, posts in followed threads and so on."), :default => _("Yes"), :cancel => _("No") }) { |ans|
         if ans == :default
           registernotifications
           Store["registernotifications"] = true
@@ -43,7 +43,7 @@ class AppDelegate
     # Create Navigation Instance and Proceed to the Welcome Screen
     welcome_screen = WelcomeScreen.new
     navigation = UI::Navigation.new(welcome_screen)
-$appdelegate=self
+    $appdelegate = self
     $app = UI::Application.new(navigation, self)
     $app.start
   end
@@ -63,17 +63,17 @@ $appdelegate=self
   def application(application, didRegisterForRemoteNotificationsWithDeviceToken: device_token)
     # The Device Token we will send base64-encoded cause it is saved in binary format
 
-    erequest("apns", {"ac" => "register", "appid" => Store["appid"], "devicetoken" => device_token.MSBase64Encoding}) { |rpl|
+    erequest("apns", { "ac" => "register", "appid" => Store["appid"], "devicetoken" => device_token.MSBase64Encoding }) { |rpl|
       if rpl["code"] == 200
         $apns_token = device_token
       else
-        UI.alert({:title => "Failed to register for Push Notifications", :message => rpl["errmsg"]}) { }
+        UI.alert({ :title => _("Failed to register for Push Notifications"), :message => rpl["errmsg"] }) { }
       end
     }
   end
 
   def application(application, didFailToRegisterForRemoteNotificationsWithError: error)
-    Net.get(create_query("apns", {"ac" => "unregister", "appid" => Store["appid"]})) { }
+    Net.get(create_query("apns", { "ac" => "unregister", "appid" => Store["appid"] })) { }
   end
 
   def applicationDidBecomeActive(application)
@@ -82,6 +82,7 @@ $appdelegate=self
   end
 
   def application(application, didReceiveRemoteNotification: userInfo)
+    $forumcachetime = 0
     snd = userInfo["aps"]["sound"]
     play($1) if snd != nil and ((/audio\/([^.]+)\.m4a/) =~ snd) != nil
   end

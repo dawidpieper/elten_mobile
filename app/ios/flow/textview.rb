@@ -75,20 +75,20 @@ module UI
 
     def proxy
       @proxy ||= begin
-        view = UITextView.alloc.init
-        view.delegate = self
-        view.frame = CGRectMake(0, 0, 200, 150)
-        view.translatesAutoresizingMaskIntoConstraints = false
+          view = UITextView.alloc.init
+          view.delegate = self
+          view.frame = CGRectMake(0, 0, 200, 150)
+          view.translatesAutoresizingMaskIntoConstraints = false
 
-        view.setSelectable(true)
-        view.setScrollingEnabled(true)
-        view.setPagingEnabled(true)
-        view.editable = true
-        view.sizeToFit
-        view.backgroundColor = UIColor.grayColor
-        view.userInteractionEnabled = true
-        view
-      end
+          view.setSelectable(true)
+          view.setScrollingEnabled(true)
+          view.setPagingEnabled(true)
+          view.editable = true
+          view.sizeToFit
+          view.backgroundColor = UIColor.grayColor
+          view.userInteractionEnabled = true
+          view
+        end
     end
   end
 
@@ -109,7 +109,7 @@ module UI
     def link_color=(color)
       if @link_color != color
         @link_color = color
-        proxy.linkTextAttributes = {NSForegroundColorAttributeName => UI.Color(color).proxy}
+        proxy.linkTextAttributes = { NSForegroundColorAttributeName => UI.Color(color).proxy }
       end
     end
 
@@ -144,14 +144,14 @@ module UI
 
     def proxy
       @proxy ||= begin
-        view = UITextView.alloc.init
-        view.delegate = self
-        view.editable = false
-        view.selectable = false
-        view.scrollingEnabled = true
-        view.sizeToFit
-        view
-      end
+          view = UITextView.alloc.init
+          view.delegate = self
+          view.editable = false
+          view.selectable = false
+          view.scrollingEnabled = true
+          view.sizeToFit
+          view
+        end
     end
   end
 end
