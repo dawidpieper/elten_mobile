@@ -161,7 +161,7 @@ class WelcomeScreen < UI::Screen
     messages_screen = MessagesScreen.new
     main_screen = MainScreen.new
     navigations = [UI::Navigation.new(forum_screen), UI::Navigation.new(messages_screen), UI::Navigation.new(main_screen)]
-    $app.tabbars(["Forum", "Messages", "More"], navigations)
+    $app.tabbars([_("Forum"), _("Messages"), _("More")], navigations)
     #    self.navigation.replace(main_screen)
   end
 end

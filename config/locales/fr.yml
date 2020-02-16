@@ -1,0 +1,544 @@
+--- 
+fr: 
+  ? "Accept invitation"
+  : 
+    default: "Accept invitation"
+    file: views/forum.rb
+    line: "143"
+    reference: "views/forum.rb:143"
+    translation: "Accepter l'invitation"
+  ? "All groups"
+  : 
+    default: "All groups"
+    file: views/forum.rb
+    line: "172"
+    reference: "views/forum.rb:172"
+    translation: "Tous les groupes"
+  ? "All the typed text will be lost"
+  : 
+    default: "All the typed text will be lost."
+    file: "views/forum.rb:494 views/messages.rb"
+    line: "472"
+    reference: "views/forum.rb:494 views/messages.rb:472"
+    translation: "Tout le texte tapé sera perdu."
+  ? "Are you sure you want to cancel the compossing of new message?"
+  : 
+    default: "Are you sure you want to cancel the compossing of new message?"
+    file: views/messages.rb
+    line: "472"
+    reference: "views/messages.rb:472"
+    translation: "Voulez-vous vraiment annuler la création d'un nouveau message?"
+  ? "Are you sure you want to cancel the creation of new thread?"
+  : 
+    default: "Are you sure you want to cancel the creation of new thread?"
+    file: views/forum.rb
+    line: "494"
+    reference: "views/forum.rb:494"
+    translation: "Voulez-vous vraiment annuler la création d'un nouveau fil?"
+  ? "Are you sure you want to join "
+  : 
+    default: "Are you sure you want to join "
+    file: views/forum.rb
+    line: "188"
+    reference: "views/forum.rb:188"
+    translation: "Êtes-vous sûr de vouloir joindre"
+  ? "Are you sure you want to leave "
+  : 
+    default: "Are you sure you want to leave "
+    file: views/forum.rb
+    line: "189"
+    reference: "views/forum.rb:189"
+    translation: "Êtes-vous sûr de vouloir quitter "
+  ? "Are you sure you want to request to join "
+  : 
+    default: "Are you sure you want to request to join "
+    file: views/forum.rb
+    line: "190"
+    reference: "views/forum.rb:190"
+    translation: "Êtes-vous sûr de vouloir demander à joindre "
+  ? "Authentication code"
+  : 
+    default: "Authentication code"
+    file: views/welcome.rb
+    line: "133"
+    reference: "views/welcome.rb:133"
+    translation: "Code d'authentification"
+  ? "Autologin failed"
+  : 
+    default: "Autologin failed"
+    file: views/welcome.rb
+    line: "64"
+    reference: "views/welcome.rb:64"
+    translation: "Échec de la connexion automatique"
+  ? "Autologin failed, please sign in manually"
+  : 
+    default: "Autologin failed, please sign in manually"
+    file: views/welcome.rb
+    line: "66"
+    reference: "views/welcome.rb:66"
+    translation: "Échec de la connexion automatique, veuillez vous connecter manuellement"
+  ? "Autologin verification failed"
+  : 
+    default: "Autologin verification failed"
+    file: views/welcome.rb
+    line: "92"
+    reference: "views/welcome.rb:92"
+    translation: "Échec de la vérification de la connexion automatique"
+  Cancel: 
+    default: Cancel
+    file: "views/forum.rb:486 views/messages.rb:464 views/welcome.rb"
+    line: "138"
+    reference: "views/forum.rb:486 views/messages.rb:464 views/welcome.rb:138"
+    translation: Annuler
+  ? "Cancel recording"
+  : 
+    default: "Cancel recording"
+    file: views/messages.rb
+    line: "349"
+    reference: "views/messages.rb:349"
+    translation: "Annuler l'enregistrement"
+  ? "Compose new message"
+  : 
+    default: "Compose new message"
+    file: views/messages.rb
+    line: "33"
+    reference: "views/messages.rb:33"
+    translation: "Créer un nouveau message"
+  Continue: 
+    default: Continue
+    file: views/welcome.rb
+    line: "142"
+    reference: "views/welcome.rb:142"
+    translation: Continuer
+  ? "Create thread"
+  : 
+    default: "Create thread"
+    file: views/forum.rb
+    line: "502"
+    reference: "views/forum.rb:502"
+    translation: "Créer un fil"
+  ? "Do you want to enable notifications?"
+  : 
+    default: "Do you want to enable notifications?"
+    file: ios/app_delegate.rb
+    line: "28"
+    reference: "ios/app_delegate.rb:28"
+    translation: "Voulez-vous activer les notifications?"
+  ? "Do you wish to enable microphone access?"
+  : 
+    default: "Do you wish to enable microphone access?"
+    file: ios/sound.rb
+    line: "48"
+    reference: "ios/sound.rb:48"
+    translation: "Voulez-vous activer l'accès au microphone?"
+  ? "Do you wish to setup autologin?"
+  : 
+    default: "Do you wish to setup autologin?"
+    file: views/welcome.rb
+    line: "88"
+    reference: "views/welcome.rb:88"
+    translation: "Voulez-vous activer la connexion automatique?"
+  Error: 
+    default: Error
+    file: "views/messages.rb:360 views/messages.rb:543 views/profile.rb"
+    line: "72"
+    reference: "views/messages.rb:360 views/messages.rb:543 views/profile.rb:72"
+    translation: Erreur
+  ? "Error occurred"
+  : 
+    default: "Error occurred"
+    file: "views/messages.rb:151 views/messages.rb"
+    line: "306"
+    reference: "views/messages.rb:151 views/messages.rb:306"
+    translation: "Erreur est survenue"
+  ? "Error while sending your reply"
+  : 
+    default: "Error while sending your reply"
+    file: "views/messages.rb:267 views/messages.rb:388 views/messages.rb"
+    line: "592"
+    reference: "views/messages.rb:267 views/messages.rb:388 views/messages.rb:592"
+    translation: "Erreur lors de l'envoi de votre réponse"
+  ? "Failed to register for Push Notifications"
+  : 
+    default: "Failed to register for Push Notifications"
+    file: ios/app_delegate.rb
+    line: "70"
+    reference: "ios/app_delegate.rb:70"
+    translation: "Échec de l'inscription aux notifications push"
+  ? "Follow thread"
+  : 
+    default: "Follow thread"
+    file: views/forum.rb
+    line: "399"
+    reference: "views/forum.rb:399"
+    translation: "Suivre ce fil"
+  ? "Followed threads"
+  : 
+    default: "Followed threads"
+    file: views/forum.rb
+    line: "164"
+    reference: "views/forum.rb:164"
+    translation: "Fils suivis"
+  Forum: 
+    default: Forum
+    file: views/main.rb
+    line: "37"
+    reference: "views/main.rb:37"
+    translation: Forum
+  Information: 
+    default: Information
+    file: views/messages.rb
+    line: "237"
+    reference: "views/messages.rb:237"
+    translation: Information
+  Join: 
+    default: Join
+    file: views/forum.rb
+    line: "141"
+    reference: "views/forum.rb:141"
+    translation: Joindre
+  Leave: 
+    default: Leave
+    file: views/forum.rb
+    line: "139"
+    reference: "views/forum.rb:139"
+    translation: Quitter
+  ? "Log out"
+  : 
+    default: "Log out"
+    file: views/main.rb
+    line: "37"
+    reference: "views/main.rb:37"
+    translation: "Se déconnecter"
+  Login: 
+    default: Login
+    file: views/welcome.rb
+    line: "35"
+    reference: "views/welcome.rb:35"
+    translation: "Nom d'utilisateur"
+  ? "Login failed"
+  : 
+    default: "Login failed"
+    file: views/welcome.rb
+    line: "82"
+    reference: "views/welcome.rb:82"
+    translation: "Échec de la connexion"
+  Members: 
+    default: Members
+    file: views/forum.rb
+    line: "136"
+    reference: "views/forum.rb:136"
+    translation: Membres
+  ? "Members of"
+  : 
+    default: "Members of"
+    file: views/forum.rb
+    line: "215"
+    reference: "views/forum.rb:215"
+    translation: "Membres de"
+  Messages: 
+    default: Messages
+    file: "views/main.rb:37 views/messages.rb"
+    line: "41"
+    reference: "views/main.rb:37 views/messages.rb:41"
+    translation: Messages
+  ? "New Thread"
+  : 
+    default: "New Thread"
+    file: views/forum.rb
+    line: "438"
+    reference: "views/forum.rb:438"
+    translation: "Nouveau fil"
+  ? "New message"
+  : 
+    default: "New message"
+    file: "views/messages.rb:406 views/messages.rb:419 views/messages.rb"
+    line: "420"
+    reference: "views/messages.rb:406 views/messages.rb:419 views/messages.rb:420"
+    translation: "Nouveau message"
+  ? "New thread"
+  : 
+    default: "New thread"
+    file: "views/forum.rb:354 views/forum.rb"
+    line: "451"
+    reference: "views/forum.rb:354 views/forum.rb:451"
+    translation: "Nouveau fil"
+  ? "No"
+  : 
+    default: "No"
+    file: views/welcome.rb
+    line: "88"
+    reference: "views/welcome.rb:88"
+    translation: Non
+  ? "Not now"
+  : 
+    default: "Not now"
+    file: ios/sound.rb
+    line: "48"
+    reference: "ios/sound.rb:48"
+    translation: "Pas maintenant"
+  ? "Open groups"
+  : 
+    default: "Open groups"
+    file: views/forum.rb
+    line: "173"
+    reference: "views/forum.rb:173"
+    translation: "Groupes ouverts"
+  Password: 
+    default: Password
+    file: views/welcome.rb
+    line: "44"
+    reference: "views/welcome.rb:44"
+    translation: "Mot de passe"
+  ? "Play recorded message"
+  : 
+    default: "Play recorded message"
+    file: views/messages.rb
+    line: "555"
+    reference: "views/messages.rb:555"
+    translation: "Jouer un message enregistré"
+  ? "Play recorded post"
+  : 
+    default: "Play recorded post"
+    file: "views/forum.rb:565 views/forum.rb"
+    line: "789"
+    reference: "views/forum.rb:565 views/forum.rb:789"
+    translation: "Lire le post enregistré"
+  Post: 
+    default: Post
+    file: views/forum.rb
+    line: "472"
+    reference: "views/forum.rb:472"
+    translation: Post
+  ? "Post reply"
+  : 
+    default: "Post reply"
+    file: views/forum.rb
+    line: "729"
+    reference: "views/forum.rb:729"
+    translation: "Envoyer une réponse"
+  Receiver: 
+    default: Receiver
+    file: views/messages.rb
+    line: "433"
+    reference: "views/messages.rb:433"
+    translation: Destinataire
+  ? "Record Audio Message"
+  : 
+    default: "Record Audio Message"
+    file: views/messages.rb
+    line: "368"
+    reference: "views/messages.rb:368"
+    translation: "Enregistrer un message audio"
+  ? "Record Post"
+  : 
+    default: "Record Post"
+    file: views/forum.rb
+    line: "692"
+    reference: "views/forum.rb:692"
+    translation: "Enregistrer un post"
+  ? "Record again"
+  : 
+    default: "Record again"
+    file: "views/forum.rb:563 views/forum.rb:787 views/messages.rb"
+    line: "552"
+    reference: "views/forum.rb:563 views/forum.rb:787 views/messages.rb:552"
+    translation: "enregistrer à nouveau"
+  ? "Record audio message"
+  : 
+    default: "Record audio message"
+    file: "views/messages.rb:224 views/messages.rb"
+    line: "250"
+    reference: "views/messages.rb:224 views/messages.rb:250"
+    translation: "Enregistrer un message audio"
+  ? "Record message"
+  : 
+    default: "Record message"
+    file: views/messages.rb
+    line: "459"
+    reference: "views/messages.rb:459"
+    translation: "Enregistrer un message"
+  ? "Record post"
+  : 
+    default: "Record post"
+    file: "views/forum.rb:478 views/forum.rb"
+    line: "812"
+    reference: "views/forum.rb:478 views/forum.rb:812"
+    translation: "Enregistrer le post"
+  Refresh: 
+    default: Refresh
+    file: "views/forum.rb:23 views/messages.rb"
+    line: "21"
+    reference: "views/forum.rb:23 views/messages.rb:21"
+    translation: Rafraîchir
+  Request: 
+    default: Request
+    file: views/forum.rb
+    line: "145"
+    reference: "views/forum.rb:145"
+    translation: Demande
+  ? "Return to text editor"
+  : 
+    default: "Return to text editor"
+    file: views/messages.rb
+    line: "562"
+    reference: "views/messages.rb:562"
+    translation: "Retourner à l'éditeur de texte"
+  Send: 
+    default: Send
+    file: views/messages.rb
+    line: "479"
+    reference: "views/messages.rb:479"
+    translation: Envoyer
+  ? "Send message"
+  : 
+    default: "Send message"
+    file: views/profile.rb
+    line: "28"
+    reference: "views/profile.rb:28"
+    translation: Envoyer
+  Sending: 
+    default: Sending...
+    file: "views/forum.rb:580 views/forum.rb"
+    line: "804"
+    reference: "views/forum.rb:580 views/forum.rb:804"
+    translation: "Envoi en cours..."
+  ? "Show debug info"
+  : 
+    default: "Show debug info"
+    file: views/main.rb
+    line: "37"
+    reference: "views/main.rb:37"
+    translation: "Afficher les informations de débogage"
+  ? "Show profile"
+  : 
+    default: "Show profile"
+    file: "views/forum.rb:687 views/messages.rb"
+    line: "84"
+    reference: "views/forum.rb:687 views/messages.rb:84"
+    translation: "Montrer le profile"
+  ? "Sign In to Elten"
+  : 
+    default: "Sign In to Elten"
+    file: views/welcome.rb
+    line: "24"
+    reference: "views/welcome.rb:24"
+    translation: "Connecter à Elten"
+  ? "Signing in, please wait"
+  : 
+    default: "Signing in, please wait"
+    file: views/welcome.rb
+    line: "61"
+    reference: "views/welcome.rb:61"
+    translation: "Connexion en cours, veuillez patienter"
+  ? "Stop recording"
+  : 
+    default: "Stop recording"
+    file: views/messages.rb
+    line: "538"
+    reference: "views/messages.rb:538"
+    translation: "Arrêter d'enregistrer"
+  Subject: 
+    default: Subject
+    file: views/messages.rb
+    line: "442"
+    reference: "views/messages.rb:442"
+    translation: Sujet
+  Submit: 
+    default: Submit
+    file: views/welcome.rb
+    line: "52"
+    reference: "views/welcome.rb:52"
+    translation: Envoyer
+  Title: 
+    default: Title
+    file: views/forum.rb
+    line: "458"
+    reference: "views/forum.rb:458"
+    translation: Titre
+  ? "Two-Factor Authentication"
+  : 
+    default: "Two-Factor Authentication"
+    file: views/welcome.rb
+    line: "124"
+    reference: "views/welcome.rb:124"
+    translation: "Authentification en deux étapes"
+  ? "Unexpected error occurred while creating thread"
+  : 
+    default: "Unexpected error occurred while creating thread"
+    file: views/forum.rb
+    line: "514"
+    reference: "views/forum.rb:514"
+    translation: "Une erreur inattendue s'est produite lors de la création du thread"
+  ? "Unexpected error occurred while sending this message"
+  : 
+    default: "Unexpected error occurred while sending this message"
+    file: views/messages.rb
+    line: "495"
+    reference: "views/messages.rb:495"
+    translation: "Une erreur inattendue s'est produite lors de l'envoi de ce message"
+  ? "Unfollow thread"
+  : 
+    default: "Unfollow thread"
+    file: views/forum.rb
+    line: "400"
+    reference: "views/forum.rb:400"
+    translation: "Supprimer des fils suivis"
+  Visitingcard: 
+    default: Visitingcard
+    file: views/profile.rb
+    line: "64"
+    reference: "views/profile.rb:64"
+    translation: "Carte de visite"
+  ? "Waiting invitations"
+  : 
+    default: "Waiting invitations"
+    file: views/forum.rb
+    line: "174"
+    reference: "views/forum.rb:174"
+    translation: "Invitations en attente"
+  ? "Yes"
+  : 
+    default: "Yes"
+    file: "views/messages.rb:472 views/welcome.rb"
+    line: "88"
+    reference: "views/messages.rb:472 views/welcome.rb:88"
+    translation: Oui
+  ? "Your message"
+  : 
+    default: "Your message"
+    file: views/messages.rb
+    line: "452"
+    reference: "views/messages.rb:452"
+    translation: "Ton message"
+  ? "Your reply"
+  : 
+    default: "Your reply"
+    file: "views/forum.rb:721 views/messages.rb"
+    line: "212"
+    reference: "views/forum.rb:721 views/messages.rb:212"
+    translation: "Votre réponse"
+  female: 
+    default: female
+    file: views/profile.rb
+    line: "51"
+    reference: "views/profile.rb:51"
+    translation: Femme
+  join: 
+    default: join
+    file: views/forum.rb
+    line: "186"
+    reference: "views/forum.rb:186"
+    translation: Joindre
+  leave: 
+    default: leave
+    file: views/forum.rb
+    line: "187"
+    reference: "views/forum.rb:187"
+    translation: Quitter
+  male: 
+    default: male
+    file: views/profile.rb
+    line: "51"
+    reference: "views/profile.rb:51"
+    translation: Homme

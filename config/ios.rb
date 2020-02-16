@@ -9,6 +9,8 @@
 
 require 'rubygems'
 require 'motion-cocoapods'
+require 'motion-i18n'
+
 Motion::Project::App.setup do |app|
     app.name = 'Elten'
 app.version='0.06'
