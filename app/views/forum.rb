@@ -32,6 +32,8 @@ class ForumScreenTemplate < UI::Screen
     @list.margin = [5, 5]
     @list.height = self.view.height * 0.8
     @background.add_child(@list)
+
+
   end
 
   def getcache(must = false, &block)
