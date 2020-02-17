@@ -25,7 +25,7 @@ class MessagesScreenTemplate < UI::Screen
 
     @list = UI::List.new
     @list.margin = [5, 5]
-    @list.height = self.view.height * 0.85
+    @list.height = self.view.height * 0.8
     @background.add_child(@list)
 
     @compose_button = UI::Button.new
@@ -50,7 +50,7 @@ class MessagesScreen < MessagesScreenTemplate
     @maxid ||= 0
 
     @list.on :select do |opt, ind|
-      conversations_screen = ConversationsScreen.new(@users[ind]["user"])
+      conversations_screen = ConversationsScreen.new(@users[ind]["user"], @users[ind]["name"])
       self.navigation.push(conversations_screen)
     end
 
@@ -61,7 +61,6 @@ class MessagesScreen < MessagesScreenTemplate
   end
 
   def task(doUpdate = true)
-    if self.navigation.screen == self
       erequest("messages/maxid", { "cat" => "users" }, doUpdate) do |resp|
         if doUpdate and resp["code"] == 200 and resp["maxid"].to_i > @maxid
           @maxid = resp["maxid"].to_i
@@ -69,7 +68,6 @@ class MessagesScreen < MessagesScreenTemplate
           play("messages_update")
         end
       end
-    end
   end
 
   def update_users
@@ -83,7 +81,7 @@ class MessagesScreen < MessagesScreenTemplate
         resp["users"].each do |r|
           act.push({ _("Show profile") => Proc.new { |act, row| self.navigation.push(ProfileScreen.new(@users[row.row]["user"])) } })
           mdate = Time.at(r["date"].to_i)
-          usr.push(((r["read"].to_i == 0 and r["last"] != $session.name) ? "(#{_("New")}): " : "") + r["user"] + "\n" + r["last"] + ": " + r["subj"] + "\n" + mdate.strftime("%Y-%m-%d %H:%M:%S"))
+          usr.push(((r["read"].to_i == 0 and r["last"] != $session.name) ? "("+_("New")+"): " : "") + (r["name"]||r["user"]) + "\n" + r["last"] + ": " + r["subj"] + "\n" + mdate.strftime("%Y-%m-%d %H:%M:%S"))
           @maxid = r["id"].to_i if (@maxid || 0) < r["id"].to_i
         end
         @list.update_begin
@@ -98,19 +96,15 @@ class MessagesScreen < MessagesScreenTemplate
 end
 
 class ConversationsScreen < MessagesScreenTemplate
-  def initialize(user = $session.name)
+  def initialize(user = $session.name, name=nil)
     @user = user
+@name=name||user
     super
   end
 
   def on_show
     self.navigation.show_bar if self.navigation.bar_hidden?
-    self.navigation.title = "#{_("Conversations with")} " + @user
-
-    if $msgtopictask != nil
-      $msgtopictask.stop
-      $msgtopictask = nil
-    end
+    self.navigation.title = _("Conversations with %{user}", "user"=>@name)
 
     update_conversations
   end
@@ -132,7 +126,6 @@ class ConversationsScreen < MessagesScreenTemplate
   end
 
   def task(doUpdate = true)
-    if self.navigation.screen == self
       erequest("messages/maxid", { "cat" => "conversations", "user" => @user }, doUpdate) do |resp|
         if doUpdate and resp["code"] == 200 and resp["maxid"].to_i > @maxid
           @maxid = resp["maxid"].to_i
@@ -140,7 +133,6 @@ class ConversationsScreen < MessagesScreenTemplate
           play("messages_update")
         end
       end
-    end
   end
 
   def update_conversations
@@ -150,11 +142,14 @@ class ConversationsScreen < MessagesScreenTemplate
       if resp["code"] != 200
         UI.alert({ :title => _("Error occurred"), :message => resp["errmsg"] }) { }
       else
+if resp['canreply']==0
+@background.delete_chilld(@compose_button)
+end
         @conversations = resp["conversations"]
         cnv = []
         resp["conversations"].each do |r|
           mdate = Time.at(r["date"].to_i)
-          cnv.push(((r["read"].to_i == 0 and r["last"] != $session.name) ? "(#{_("New")}): " : "") + ((r["subj"] != "") ? r["subj"] : "No Subject") + "\n" + r["last"] + "\n" + mdate.strftime("%Y-%m-%d %H:%M:%S"))
+          cnv.push(((r["read"].to_i == 0 and r["last"] != $session.name) ? "("+_("New")+"): " : "") + ((r["subj"] != "") ? r["subj"] : "No Subject") + "\n" + r["last"] + "\n" + mdate.strftime("%Y-%m-%d %H:%M:%S"))
           @maxid = r["id"].to_i if (@maxid || 0) < r["id"].to_i
         end
         for i in 0...cnv.size
@@ -275,19 +270,19 @@ class TopicScreen < MessagesScreenTemplate
   end
 
   def before_on_disappear
+play 'signal'
     if $streamer != nil
       $streamer.stop
       $streamer = nil
     end
     recording_stop if @recording != nil
-    if $msgtopictask != nil
-      $msgtopictask.stop
-      $msgtopictask = nil
+    if @task != nil
+      @task.stop
+      @task = nil
     end
   end
 
   def task(doUpdate = true)
-    if self.navigation.screen == self
       erequest("messages/maxid", { "cat" => "messages", "user" => @user, "subj" => @subj }, doUpdate) do |resp|
         if doUpdate and resp["code"] == 200 and resp["maxid"].to_i > @maxid
           @maxid = resp["maxid"].to_i
@@ -295,8 +290,7 @@ class TopicScreen < MessagesScreenTemplate
           play("messages_update")
         end
       end
-      $msgtopictask = Task.after(5) { task } if self.navigation.screen == self
-    end
+      @task = Task.after(5) { task } if self.navigation.screen == self
   end
 
   def update_topic(doScroll = false)
@@ -305,6 +299,11 @@ class TopicScreen < MessagesScreenTemplate
       if resp["code"] != 200
         UI.alert({ :title => _("Error occurred"), :message => resp["errmsg"] }) { }
       else
+if resp['canreply']==0
+@background.delete_child(@reply)
+@background.delete_child(@compose_button)
+@background.delete_child(@send)
+end
         @messages = resp["messages"]
         msg = []
         resp["messages"].each do |r|
@@ -419,9 +418,9 @@ class MessagesNewScreen < UI::Screen
     label.text = _("New message")
     label.text = _("New message")
     if @subj != nil
-      label.text += " #{_("in thread")} #{@subj}"
+      label.text += " " + _("in topic %{subject}", "subject"=>@subj)
     elsif @to != nil
-      label.text += " #{_("to")} #{@to}"
+      label.text += " " + _("to %{user}", "user"=>@to)
     end
     label.height = self.view.height * 0.1
     label.header = true
@@ -604,7 +603,7 @@ class MessageScreen < UI::Screen
   end
 
   def on_show
-    navigation.title = "#{_("Message from")} #{@message["sender"]}"
+    navigation.title = _("Message from %{sender}", "sender"=>@message['sender'])
   end
 
   def on_load

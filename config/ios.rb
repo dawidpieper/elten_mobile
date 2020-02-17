@@ -31,13 +31,13 @@ app.info_plist['NSMicrophoneUsageDescription']='Elten requires access to your mi
 app.release do
 #app.codesign_certificate = 'iPhone Distribution: Dawid Pieper (YC6NP473J2)'
 app.codesign_certificate = "iPhone developer: Dawid Pieper"
-app.provisioning_profile = "eltenmobile_beta.mobileprovision"
+app.provisioning_profile = "eltenmobile_release.mobileprovision"
 app.entitlements['aps-environment'] = 'production'
 end
 
 app.development do
 app.codesign_certificate = 'iPhone developer: Dawid Pieper'
-app.provisioning_profile = "eltenmobile_beta.mobileprovision"
+app.provisioning_profile = "eltenmobile.mobileprovision"
 
 app.entitlements['aps-environment'] = 'development'
 end

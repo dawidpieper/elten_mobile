@@ -48,10 +48,15 @@ module UI
 
     def update_begin
       proxy.beginUpdates
+@changed=false
     end
 
     def update_end
       proxy.endUpdates
+if @changed==true
+refresh
+@changed=false
+end
     end
 
     def insert(x, r, a = {})
@@ -77,8 +82,11 @@ module UI
 
     def edit(x, r, a = [])
       return insert(x, r, a) if x >= @data_source.size
+if @data_source[x]!=r or actions[x]!=a
       @data_source[x] = r
       actions[x] = a
+@changed=true
+end
     end
 
     def add(r, a = [])
@@ -90,5 +98,15 @@ module UI
         add(r[i], a[i])
       end
     end
+
+def refresh
+selectedRows = proxy.indexPathsForSelectedRows
+proxy.reloadData
+if selectedRows!=nil
+for indexPath in selectedRows
+proxy.selectRowAt(indexPath, animated: false, scrollPosition: UITableViewScrollPositionNone)
+end
+end
+end
   end
 end

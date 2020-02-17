@@ -1,544 +1,102 @@
---- 
-ru: 
-  ? "Accept invitation"
-  : 
-    default: "Accept invitation"
-    file: views/forum.rb
-    line: "143"
-    reference: "views/forum.rb:143"
-    translation: "Принять приглашение"
-  ? "All groups"
-  : 
-    default: "All groups"
-    file: views/forum.rb
-    line: "172"
-    reference: "views/forum.rb:172"
-    translation: "Все группы"
-  ? "All the typed text will be lost"
-  : 
-    default: "All the typed text will be lost."
-    file: "views/forum.rb:494 views/messages.rb"
-    line: "472"
-    reference: "views/forum.rb:494 views/messages.rb:472"
-    translation: "Введённые данные будут потеряны"
-  ? "Are you sure you want to cancel the compossing of new message?"
-  : 
-    default: "Are you sure you want to cancel the compossing of new message?"
-    file: views/messages.rb
-    line: "472"
-    reference: "views/messages.rb:472"
-    translation: "Вы действительно хотите отменить  создание сообщения?"
-  ? "Are you sure you want to cancel the creation of new thread?"
-  : 
-    default: "Are you sure you want to cancel the creation of new thread?"
-    file: views/forum.rb
-    line: "494"
-    reference: "views/forum.rb:494"
-    translation: "Вы действительно хотите отменить создание темы?"
-  ? "Are you sure you want to join "
-  : 
-    default: "Are you sure you want to join "
-    file: views/forum.rb
-    line: "188"
-    reference: "views/forum.rb:188"
-    translation: "Вы действительно хотите присоединиться?"
-  ? "Are you sure you want to leave "
-  : 
-    default: "Are you sure you want to leave "
-    file: views/forum.rb
-    line: "189"
-    reference: "views/forum.rb:189"
-    translation: "Вы действительно хотите выйти из группы?"
-  ? "Are you sure you want to request to join "
-  : 
-    default: "Are you sure you want to request to join "
-    file: views/forum.rb
-    line: "190"
-    reference: "views/forum.rb:190"
-    translation: "Вы действительно хотите отправить заявку на вступление?"
-  ? "Authentication code"
-  : 
-    default: "Authentication code"
-    file: views/welcome.rb
-    line: "133"
-    reference: "views/welcome.rb:133"
-    translation: "Код подтверждения"
-  ? "Autologin failed"
-  : 
-    default: "Autologin failed"
-    file: views/welcome.rb
-    line: "64"
-    reference: "views/welcome.rb:64"
-    translation: "Автовход не удался"
-  ? "Autologin failed, please sign in manually"
-  : 
-    default: "Autologin failed, please sign in manually"
-    file: views/welcome.rb
-    line: "66"
-    reference: "views/welcome.rb:66"
-    translation: "Автовход не удался, попробуйте войти вручную."
-  ? "Autologin verification failed"
-  : 
-    default: "Autologin verification failed"
-    file: views/welcome.rb
-    line: "92"
-    reference: "views/welcome.rb:92"
-    translation: "Проверка автовхода не удалась"
-  Cancel: 
-    default: Cancel
-    file: "views/forum.rb:486 views/messages.rb:464 views/welcome.rb"
-    line: "138"
-    reference: "views/forum.rb:486 views/messages.rb:464 views/welcome.rb:138"
-    translation: Отменить
-  ? "Cancel recording"
-  : 
-    default: "Cancel recording"
-    file: views/messages.rb
-    line: "349"
-    reference: "views/messages.rb:349"
-    translation: "Отменить запись"
-  ? "Compose new message"
-  : 
-    default: "Compose new message"
-    file: views/messages.rb
-    line: "33"
-    reference: "views/messages.rb:33"
-    translation: "Написать сообщение"
-  Continue: 
-    default: Continue
-    file: views/welcome.rb
-    line: "142"
-    reference: "views/welcome.rb:142"
-    translation: Продолжить
-  ? "Create thread"
-  : 
-    default: "Create thread"
-    file: views/forum.rb
-    line: "502"
-    reference: "views/forum.rb:502"
-    translation: "Создать тему"
-  ? "Do you want to enable notifications?"
-  : 
-    default: "Do you want to enable notifications?"
-    file: ios/app_delegate.rb
-    line: "28"
-    reference: "ios/app_delegate.rb:28"
-    translation: "Вы хотите включить уведомления?"
-  ? "Do you wish to enable microphone access?"
-  : 
-    default: "Do you wish to enable microphone access?"
-    file: ios/sound.rb
-    line: "48"
-    reference: "ios/sound.rb:48"
-    translation: "Вы хотите разрешить доступ к микрофону?"
-  ? "Do you wish to setup autologin?"
-  : 
-    default: "Do you wish to setup autologin?"
-    file: views/welcome.rb
-    line: "88"
-    reference: "views/welcome.rb:88"
-    translation: "Вы хотите входить в систему автоматически?"
-  Error: 
-    default: Error
-    file: "views/messages.rb:360 views/messages.rb:543 views/profile.rb"
-    line: "72"
-    reference: "views/messages.rb:360 views/messages.rb:543 views/profile.rb:72"
-    translation: Ошибка
-  ? "Error occurred"
-  : 
-    default: "Error occurred"
-    file: "views/messages.rb:151 views/messages.rb"
-    line: "306"
-    reference: "views/messages.rb:151 views/messages.rb:306"
-    translation: Ошибка
-  ? "Error while sending your reply"
-  : 
-    default: "Error while sending your reply"
-    file: "views/messages.rb:267 views/messages.rb:388 views/messages.rb"
-    line: "592"
-    reference: "views/messages.rb:267 views/messages.rb:388 views/messages.rb:592"
-    translation: "Ошибка при отправке"
-  ? "Failed to register for Push Notifications"
-  : 
-    default: "Failed to register for Push Notifications"
-    file: ios/app_delegate.rb
-    line: "70"
-    reference: "ios/app_delegate.rb:70"
-    translation: "Ошибка доступа к уведомлениям"
-  ? "Follow thread"
-  : 
-    default: "Follow thread"
-    file: views/forum.rb
-    line: "399"
-    reference: "views/forum.rb:399"
-    translation: "Добавить в избранное"
-  ? "Followed threads"
-  : 
-    default: "Followed threads"
-    file: views/forum.rb
-    line: "164"
-    reference: "views/forum.rb:164"
-    translation: "Избранные темы"
-  Forum: 
-    default: Forum
-    file: views/main.rb
-    line: "37"
-    reference: "views/main.rb:37"
-    translation: Группы
-  Information: 
-    default: Information
-    file: views/messages.rb
-    line: "237"
-    reference: "views/messages.rb:237"
-    translation: Информация
-  Join: 
-    default: Join
-    file: views/forum.rb
-    line: "141"
-    reference: "views/forum.rb:141"
-    translation: Присоединиться
-  Leave: 
-    default: Leave
-    file: views/forum.rb
-    line: "139"
-    reference: "views/forum.rb:139"
-    translation: Выйти
-  ? "Log out"
-  : 
-    default: "Log out"
-    file: views/main.rb
-    line: "37"
-    reference: "views/main.rb:37"
-    translation: Выйти
-  Login: 
-    default: Login
-    file: views/welcome.rb
-    line: "35"
-    reference: "views/welcome.rb:35"
-    translation: "Имя пользователя"
-  ? "Login failed"
-  : 
-    default: "Login failed"
-    file: views/welcome.rb
-    line: "82"
-    reference: "views/welcome.rb:82"
-    translation: "Ошибка входа"
-  Members: 
-    default: Members
-    file: views/forum.rb
-    line: "136"
-    reference: "views/forum.rb:136"
-    translation: Участники
-  ? "Members of"
-  : 
-    default: "Members of"
-    file: views/forum.rb
-    line: "215"
-    reference: "views/forum.rb:215"
-    translation: Участники
-  Messages: 
-    default: Messages
-    file: "views/main.rb:37 views/messages.rb"
-    line: "41"
-    reference: "views/main.rb:37 views/messages.rb:41"
-    translation: Сообщения
-  ? "New Thread"
-  : 
-    default: "New Thread"
-    file: views/forum.rb
-    line: "438"
-    reference: "views/forum.rb:438"
-    translation: "Новая тема"
-  ? "New message"
-  : 
-    default: "New message"
-    file: "views/messages.rb:406 views/messages.rb:419 views/messages.rb"
-    line: "420"
-    reference: "views/messages.rb:406 views/messages.rb:419 views/messages.rb:420"
-    translation: "Новое сообщение"
-  ? "New thread"
-  : 
-    default: "New thread"
-    file: "views/forum.rb:354 views/forum.rb"
-    line: "451"
-    reference: "views/forum.rb:354 views/forum.rb:451"
-    translation: "Новая тема"
-  ? "No"
-  : 
-    default: "No"
-    file: views/welcome.rb
-    line: "88"
-    reference: "views/welcome.rb:88"
-    translation: Нет
-  ? "Not now"
-  : 
-    default: "Not now"
-    file: ios/sound.rb
-    line: "48"
-    reference: "ios/sound.rb:48"
-    translation: "Не сейчас"
-  ? "Open groups"
-  : 
-    default: "Open groups"
-    file: views/forum.rb
-    line: "173"
-    reference: "views/forum.rb:173"
-    translation: "Открытые группы"
-  Password: 
-    default: Password
-    file: views/welcome.rb
-    line: "44"
-    reference: "views/welcome.rb:44"
-    translation: Пароль
-  ? "Play recorded message"
-  : 
-    default: "Play recorded message"
-    file: views/messages.rb
-    line: "555"
-    reference: "views/messages.rb:555"
-    translation: "Воспроизвести записанное сообщение"
-  ? "Play recorded post"
-  : 
-    default: "Play recorded post"
-    file: "views/forum.rb:565 views/forum.rb"
-    line: "789"
-    reference: "views/forum.rb:565 views/forum.rb:789"
-    translation: "Воспроизвести записанный пост"
-  Post: 
-    default: Post
-    file: views/forum.rb
-    line: "472"
-    reference: "views/forum.rb:472"
-    translation: "Текст поста"
-  ? "Post reply"
-  : 
-    default: "Post reply"
-    file: views/forum.rb
-    line: "729"
-    reference: "views/forum.rb:729"
-    translation: "Ответить на пост"
-  Receiver: 
-    default: Receiver
-    file: views/messages.rb
-    line: "433"
-    reference: "views/messages.rb:433"
-    translation: Получатель
-  ? "Record Audio Message"
-  : 
-    default: "Record Audio Message"
-    file: views/messages.rb
-    line: "368"
-    reference: "views/messages.rb:368"
-    translation: "Записать голосовое сообщение"
-  ? "Record Post"
-  : 
-    default: "Record Post"
-    file: views/forum.rb
-    line: "692"
-    reference: "views/forum.rb:692"
-    translation: "Записать аудиопост"
-  ? "Record again"
-  : 
-    default: "Record again"
-    file: "views/forum.rb:563 views/forum.rb:787 views/messages.rb"
-    line: "552"
-    reference: "views/forum.rb:563 views/forum.rb:787 views/messages.rb:552"
-    translation: Перезаписать
-  ? "Record audio message"
-  : 
-    default: "Record audio message"
-    file: "views/messages.rb:224 views/messages.rb"
-    line: "250"
-    reference: "views/messages.rb:224 views/messages.rb:250"
-    translation: "Записать голосовое сообщение"
-  ? "Record message"
-  : 
-    default: "Record message"
-    file: views/messages.rb
-    line: "459"
-    reference: "views/messages.rb:459"
-    translation: "Записать голосовое сообщение"
-  ? "Record post"
-  : 
-    default: "Record post"
-    file: "views/forum.rb:478 views/forum.rb"
-    line: "812"
-    reference: "views/forum.rb:478 views/forum.rb:812"
-    translation: "Записать Аудиопост"
-  Refresh: 
-    default: Refresh
-    file: "views/forum.rb:23 views/messages.rb"
-    line: "21"
-    reference: "views/forum.rb:23 views/messages.rb:21"
-    translation: Обновить
-  Request: 
-    default: Request
-    file: views/forum.rb
-    line: "145"
-    reference: "views/forum.rb:145"
-    translation: Заявка
-  ? "Return to text editor"
-  : 
-    default: "Return to text editor"
-    file: views/messages.rb
-    line: "562"
-    reference: "views/messages.rb:562"
-    translation: "Вернуться в текстовый редактор"
-  Send: 
-    default: Send
-    file: views/messages.rb
-    line: "479"
-    reference: "views/messages.rb:479"
-    translation: Отправить
-  ? "Send message"
-  : 
-    default: "Send message"
-    file: views/profile.rb
-    line: "28"
-    reference: "views/profile.rb:28"
-    translation: Отправить
-  Sending: 
-    default: Sending...
-    file: "views/forum.rb:580 views/forum.rb"
-    line: "804"
-    reference: "views/forum.rb:580 views/forum.rb:804"
-    translation: "Подождите, идёт отправка."
-  ? "Show debug info"
-  : 
-    default: "Show debug info"
-    file: views/main.rb
-    line: "37"
-    reference: "views/main.rb:37"
-    translation: "Показать информацию об отладке"
-  ? "Show profile"
-  : 
-    default: "Show profile"
-    file: "views/forum.rb:687 views/messages.rb"
-    line: "84"
-    reference: "views/forum.rb:687 views/messages.rb:84"
-    translation: "Показать профиль"
-  ? "Sign In to Elten"
-  : 
-    default: "Sign In to Elten"
-    file: views/welcome.rb
-    line: "24"
-    reference: "views/welcome.rb:24"
-    translation: "Войти в Elten"
-  ? "Signing in, please wait"
-  : 
-    default: "Signing in, please wait"
-    file: views/welcome.rb
-    line: "61"
-    reference: "views/welcome.rb:61"
-    translation: "Производится вход. Пожалуйста, подождите."
-  ? "Stop recording"
-  : 
-    default: "Stop recording"
-    file: views/messages.rb
-    line: "538"
-    reference: "views/messages.rb:538"
-    translation: "Завершить запись"
-  Subject: 
-    default: Subject
-    file: views/messages.rb
-    line: "442"
-    reference: "views/messages.rb:442"
-    translation: Тема
-  Submit: 
-    default: Submit
-    file: views/welcome.rb
-    line: "52"
-    reference: "views/welcome.rb:52"
-    translation: Войти
-  Title: 
-    default: Title
-    file: views/forum.rb
-    line: "458"
-    reference: "views/forum.rb:458"
-    translation: Название
-  ? "Two-Factor Authentication"
-  : 
-    default: "Two-Factor Authentication"
-    file: views/welcome.rb
-    line: "124"
-    reference: "views/welcome.rb:124"
-    translation: "Двухфакторная аутентификация"
-  ? "Unexpected error occurred while creating thread"
-  : 
-    default: "Unexpected error occurred while creating thread"
-    file: views/forum.rb
-    line: "514"
-    reference: "views/forum.rb:514"
-    translation: "Ошибка при создании темы"
-  ? "Unexpected error occurred while sending this message"
-  : 
-    default: "Unexpected error occurred while sending this message"
-    file: views/messages.rb
-    line: "495"
-    reference: "views/messages.rb:495"
-    translation: "Ошибка при отправке сообщения"
-  ? "Unfollow thread"
-  : 
-    default: "Unfollow thread"
-    file: views/forum.rb
-    line: "400"
-    reference: "views/forum.rb:400"
-    translation: "Удалить из избранного"
-  Visitingcard: 
-    default: Visitingcard
-    file: views/profile.rb
-    line: "64"
-    reference: "views/profile.rb:64"
-    translation: "Визитная карточка"
-  ? "Waiting invitations"
-  : 
-    default: "Waiting invitations"
-    file: views/forum.rb
-    line: "174"
-    reference: "views/forum.rb:174"
-    translation: Приглашения
-  ? "Yes"
-  : 
-    default: "Yes"
-    file: "views/messages.rb:472 views/welcome.rb"
-    line: "88"
-    reference: "views/messages.rb:472 views/welcome.rb:88"
-    translation: Да
-  ? "Your message"
-  : 
-    default: "Your message"
-    file: views/messages.rb
-    line: "452"
-    reference: "views/messages.rb:452"
-    translation: Сообщение
-  ? "Your reply"
-  : 
-    default: "Your reply"
-    file: "views/forum.rb:721 views/messages.rb"
-    line: "212"
-    reference: "views/forum.rb:721 views/messages.rb:212"
-    translation: "Ваш ответ"
-  female: 
-    default: female
-    file: views/profile.rb
-    line: "51"
-    reference: "views/profile.rb:51"
-    translation: Женщина
-  join: 
-    default: join
-    file: views/forum.rb
-    line: "186"
-    reference: "views/forum.rb:186"
-    translation: Присоединиться
-  leave: 
-    default: leave
-    file: views/forum.rb
-    line: "187"
-    reference: "views/forum.rb:187"
-    translation: Выйти
-  male: 
-    default: male
-    file: views/profile.rb
-    line: "51"
-    reference: "views/profile.rb:51"
-    translation: Мужчина
+---
+ru:
+  Do you want to enable notifications?: Вы хотите включить уведомления?
+  If you wish, you can configure Elten to receive push notifications regarding new messages, posts in followed threads and so on.: Elten
+    может отправлять вам уведомления о новых сообщениях, постах в группах и на блогах
+    и так далее. Включите уведомления, чтобы это стало возможным.
+  'Yes': Да
+  'No': Нет
+  Failed to register for Push Notifications: Ошибка доступа к уведомлениям
+  Do you wish to enable microphone access?: Вы хотите разрешить доступ к микрофону?
+  Elten requires microphone access in order to record audio data. Do you wish to grant it now?: Это
+    нужно для голосового общения.
+  Not now: Не сейчас
+  Refresh: Обновить
+  Error occurred: Ошибка
+  Members: Участники
+  Leave: Выйти
+  Join: Присоединиться
+  Accept invitation: Принять приглашение
+  Request: Заявка
+  Followed threads: Избранные темы
+  All groups: Все группы
+  Open groups: Открытые группы
+  Waiting invitations: Приглашения
+  join: Присоединиться
+  leave: Выйти
+  'Are you sure you want to join ': Вы действительно хотите присоединиться?
+  'Are you sure you want to leave ': Вы действительно хотите выйти из группы?
+  'Are you sure you want to request to join ': Вы действительно хотите отправить заявку
+    на вступление?
+  Error: Ошибка
+  Members of: Участники
+  New thread: Новая тема
+  Follow thread: Добавить в избранное
+  Unfollow thread: Удалить из избранного
+  New Thread: Новая тема
+  Title: Название
+  Post: Текст поста
+  Record post: Записать Аудиопост
+  Cancel: Отменить
+  Are you sure you want to cancel the creation of new thread?: Вы действительно хотите
+    отменить создание темы?
+  All the typed text will be lost.: Введённые данные будут потеряны
+  Create thread: Создать тему
+  Unexpected error occurred while creating thread: Ошибка при создании темы
+  Stop recording: Завершить запись
+  Record again: Перезаписать
+  Play recorded post: Воспроизвести записанный пост
+  Send: Отправить
+  Sending...: Подождите, идёт отправка.
+  Error while sending your reply: Ошибка при отправке
+  Show profile: Показать профиль
+  Record Post: Записать аудиопост
+  Your reply: Ваш ответ
+  Post reply: Ответить на пост
+  Messages: Сообщения
+  Forum: Группы
+  Log out: Выйти
+  Show debug info: Показать информацию об отладке
+  Compose new message: Написать сообщение
+  Record audio message: Записать голосовое сообщение
+  Information: Информация
+  Hold this button to record message, release it once record is completed.: 'Чтобы
+    записать сообщение, удерживайте эту кнопку. Отпустите её, когда закончите говорить. '
+  Cancel recording: Отменить запись
+  Record Audio Message: Записать голосовое сообщение
+  New message: Новое сообщение
+  Receiver: Получатель
+  Subject: Тема
+  Your message: Сообщение
+  Record message: Записать голосовое сообщение
+  Are you sure you want to cancel the compossing of new message?: Вы действительно
+    хотите отменить  создание сообщения?
+  Unexpected error occurred while sending this message: Ошибка при отправке сообщения
+  Play recorded message: Воспроизвести записанное сообщение
+  Return to text editor: Вернуться в текстовый редактор
+  Send message: Отправить
+  male: Мужчина
+  female: Женщина
+  Visitingcard: Визитная карточка
+  Sign In to Elten: Войти в Elten
+  Login: Имя пользователя
+  Password: Пароль
+  Submit: Войти
+  Signing in, please wait: Производится вход. Пожалуйста, подождите.
+  Autologin failed: Автовход не удался
+  Autologin failed, please sign in manually: Автовход не удался, попробуйте войти
+    вручную.
+  Login failed: Ошибка входа
+  Do you wish to setup autologin?: Вы хотите входить в систему автоматически?
+  After enabling autologin, you would be no longer prompted for username and password everytime Elten is launched.: Если
+    включить эту опцию, Elten не станет запрашивать имя пользователя и пароль при
+    каждом запуске.
+  Autologin verification failed: Проверка автовхода не удалась
+  Two-Factor Authentication: Двухфакторная аутентификация
+  ? |-
+    The authentication code has been sent to the phone number associated with this account.
+    Enter it below to proceed.
+  : Код подтверждения был выслан на номер, закреплённый за этой учётной записью. Введите
+    его здесь
+  Authentication code: Код подтверждения
+  Continue: Продолжить

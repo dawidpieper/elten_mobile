@@ -1,544 +1,108 @@
---- 
-de: 
-  ? "Accept invitation"
-  : 
-    default: "Accept invitation"
-    file: views/forum.rb
-    line: "143"
-    reference: "views/forum.rb:143"
-    translation: "Einladung akzeptieren"
-  ? "All groups"
-  : 
-    default: "All groups"
-    file: views/forum.rb
-    line: "172"
-    reference: "views/forum.rb:172"
-    translation: "Alle Gruppen"
-  ? "All the typed text will be lost"
-  : 
-    default: "All the typed text will be lost."
-    file: "views/forum.rb:494 views/messages.rb"
-    line: "472"
-    reference: "views/forum.rb:494 views/messages.rb:472"
-    translation: "Der gesamte eingegebene Text geht dabei verloren."
-  ? "Are you sure you want to cancel the compossing of new message?"
-  : 
-    default: "Are you sure you want to cancel the compossing of new message?"
-    file: views/messages.rb
-    line: "472"
-    reference: "views/messages.rb:472"
-    translation: "Sind Sie sicher, dass Sie das Verfassen der Nachricht abbrechen möchten?"
-  ? "Are you sure you want to cancel the creation of new thread?"
-  : 
-    default: "Are you sure you want to cancel the creation of new thread?"
-    file: views/forum.rb
-    line: "494"
-    reference: "views/forum.rb:494"
-    translation: "Sind Sie sicher, dass Sie die Erstellung des neuen Themas abbrechen möchten?"
-  ? "Are you sure you want to join "
-  : 
-    default: "Are you sure you want to join "
-    file: views/forum.rb
-    line: "188"
-    reference: "views/forum.rb:188"
-    translation: "Sind Sie sicher, dass sie beitreten möchten "
-  ? "Are you sure you want to leave "
-  : 
-    default: "Are you sure you want to leave "
-    file: views/forum.rb
-    line: "189"
-    reference: "views/forum.rb:189"
-    translation: "Sind Sie sicher, dass sie verlassen möchten "
-  ? "Are you sure you want to request to join "
-  : 
-    default: "Are you sure you want to request to join "
-    file: views/forum.rb
-    line: "190"
-    reference: "views/forum.rb:190"
-    translation: "Sind Sie sicher, dass sie die Beitrittsanfrage senden möchten für "
-  ? "Authentication code"
-  : 
-    default: "Authentication code"
-    file: views/welcome.rb
-    line: "133"
-    reference: "views/welcome.rb:133"
-    translation: Authentifizierungscode
-  ? "Autologin failed"
-  : 
-    default: "Autologin failed"
-    file: views/welcome.rb
-    line: "64"
-    reference: "views/welcome.rb:64"
-    translation: "Auto-Anmeldung fehlgeschlagen"
-  ? "Autologin failed, please sign in manually"
-  : 
-    default: "Autologin failed, please sign in manually"
-    file: views/welcome.rb
-    line: "66"
-    reference: "views/welcome.rb:66"
-    translation: "Auto-Anmeldung fehlgeschlagen, bitte manuell anmelden"
-  ? "Autologin verification failed"
-  : 
-    default: "Autologin verification failed"
-    file: views/welcome.rb
-    line: "92"
-    reference: "views/welcome.rb:92"
-    translation: "Verifizierung für die Auto-Anmeldung fehlgeschlagen"
-  Cancel: 
-    default: Cancel
-    file: "views/forum.rb:486 views/messages.rb:464 views/welcome.rb"
-    line: "138"
-    reference: "views/forum.rb:486 views/messages.rb:464 views/welcome.rb:138"
-    translation: Abbrechen
-  ? "Cancel recording"
-  : 
-    default: "Cancel recording"
-    file: views/messages.rb
-    line: "349"
-    reference: "views/messages.rb:349"
-    translation: "Aufnahme abbrechen"
-  ? "Compose new message"
-  : 
-    default: "Compose new message"
-    file: views/messages.rb
-    line: "33"
-    reference: "views/messages.rb:33"
-    translation: "Neue Nachricht verfassen"
-  Continue: 
-    default: Continue
-    file: views/welcome.rb
-    line: "142"
-    reference: "views/welcome.rb:142"
-    translation: Fortfahren
-  ? "Create thread"
-  : 
-    default: "Create thread"
-    file: views/forum.rb
-    line: "502"
-    reference: "views/forum.rb:502"
-    translation: "Thema erstellen"
-  ? "Do you want to enable notifications?"
-  : 
-    default: "Do you want to enable notifications?"
-    file: ios/app_delegate.rb
-    line: "28"
-    reference: "ios/app_delegate.rb:28"
-    translation: "Möchten Sie Benachrichtigungen aktivieren?"
-  ? "Do you wish to enable microphone access?"
-  : 
-    default: "Do you wish to enable microphone access?"
-    file: ios/sound.rb
-    line: "48"
-    reference: "ios/sound.rb:48"
-    translation: "Möchten Sie Elten Zugriff auf Ihr Mikrofon gewären?"
-  ? "Do you wish to setup autologin?"
-  : 
-    default: "Do you wish to setup autologin?"
-    file: views/welcome.rb
-    line: "88"
-    reference: "views/welcome.rb:88"
-    translation: "Möchten Sie sich bei jedem Start automatisch anmelden?"
-  Error: 
-    default: Error
-    file: "views/messages.rb:360 views/messages.rb:543 views/profile.rb"
-    line: "72"
-    reference: "views/messages.rb:360 views/messages.rb:543 views/profile.rb:72"
-    translation: Fehler
-  ? "Error occurred"
-  : 
-    default: "Error occurred"
-    file: "views/messages.rb:151 views/messages.rb"
-    line: "306"
-    reference: "views/messages.rb:151 views/messages.rb:306"
-    translation: Fehler
-  ? "Error while sending your reply"
-  : 
-    default: "Error while sending your reply"
-    file: "views/messages.rb:267 views/messages.rb:388 views/messages.rb"
-    line: "592"
-    reference: "views/messages.rb:267 views/messages.rb:388 views/messages.rb:592"
-    translation: "Fehler beim Senden Ihrer Antwort"
-  ? "Failed to register for Push Notifications"
-  : 
-    default: "Failed to register for Push Notifications"
-    file: ios/app_delegate.rb
-    line: "70"
-    reference: "ios/app_delegate.rb:70"
-    translation: "Fehler beim Registrieren für Push-Benachrichtigungen"
-  ? "Follow thread"
-  : 
-    default: "Follow thread"
-    file: views/forum.rb
-    line: "399"
-    reference: "views/forum.rb:399"
-    translation: "Thema folgen"
-  ? "Followed threads"
-  : 
-    default: "Followed threads"
-    file: views/forum.rb
-    line: "164"
-    reference: "views/forum.rb:164"
-    translation: "Verfolgte Themen"
-  Forum: 
-    default: Forum
-    file: views/main.rb
-    line: "37"
-    reference: "views/main.rb:37"
-    translation: Forum
-  Information: 
-    default: Information
-    file: views/messages.rb
-    line: "237"
-    reference: "views/messages.rb:237"
-    translation: Information
-  Join: 
-    default: Join
-    file: views/forum.rb
-    line: "141"
-    reference: "views/forum.rb:141"
-    translation: Beitreten
-  Leave: 
-    default: Leave
-    file: views/forum.rb
-    line: "139"
-    reference: "views/forum.rb:139"
-    translation: Verlassen
-  ? "Log out"
-  : 
-    default: "Log out"
-    file: views/main.rb
-    line: "37"
-    reference: "views/main.rb:37"
-    translation: Abmelden
-  Login: 
-    default: Login
-    file: views/welcome.rb
-    line: "35"
-    reference: "views/welcome.rb:35"
-    translation: Nutzername
-  ? "Login failed"
-  : 
-    default: "Login failed"
-    file: views/welcome.rb
-    line: "82"
-    reference: "views/welcome.rb:82"
-    translation: "Anmeldung fehlgeschlagen"
-  Members: 
-    default: Members
-    file: views/forum.rb
-    line: "136"
-    reference: "views/forum.rb:136"
-    translation: Mitglieder
-  ? "Members of"
-  : 
-    default: "Members of"
-    file: views/forum.rb
-    line: "215"
-    reference: "views/forum.rb:215"
-    translation: "Mitglieder von"
-  Messages: 
-    default: Messages
-    file: "views/main.rb:37 views/messages.rb"
-    line: "41"
-    reference: "views/main.rb:37 views/messages.rb:41"
-    translation: Nachrichten
-  ? "New Thread"
-  : 
-    default: "New Thread"
-    file: views/forum.rb
-    line: "438"
-    reference: "views/forum.rb:438"
-    translation: "Neues Thema"
-  ? "New message"
-  : 
-    default: "New message"
-    file: "views/messages.rb:406 views/messages.rb:419 views/messages.rb"
-    line: "420"
-    reference: "views/messages.rb:406 views/messages.rb:419 views/messages.rb:420"
-    translation: "Neue Nachricht"
-  ? "New thread"
-  : 
-    default: "New thread"
-    file: "views/forum.rb:354 views/forum.rb"
-    line: "451"
-    reference: "views/forum.rb:354 views/forum.rb:451"
-    translation: "Neues Thema"
-  ? "No"
-  : 
-    default: "No"
-    file: views/welcome.rb
-    line: "88"
-    reference: "views/welcome.rb:88"
-    translation: Nein
-  ? "Not now"
-  : 
-    default: "Not now"
-    file: ios/sound.rb
-    line: "48"
-    reference: "ios/sound.rb:48"
-    translation: "Nicht jetzt"
-  ? "Open groups"
-  : 
-    default: "Open groups"
-    file: views/forum.rb
-    line: "173"
-    reference: "views/forum.rb:173"
-    translation: "Offene Gruppen"
-  Password: 
-    default: Password
-    file: views/welcome.rb
-    line: "44"
-    reference: "views/welcome.rb:44"
-    translation: Passwort
-  ? "Play recorded message"
-  : 
-    default: "Play recorded message"
-    file: views/messages.rb
-    line: "555"
-    reference: "views/messages.rb:555"
-    translation: "Aufgenommene Nachricht abspielen"
-  ? "Play recorded post"
-  : 
-    default: "Play recorded post"
-    file: "views/forum.rb:565 views/forum.rb"
-    line: "789"
-    reference: "views/forum.rb:565 views/forum.rb:789"
-    translation: "Aufgenommenen Beitrag abspielen"
-  Post: 
-    default: Post
-    file: views/forum.rb
-    line: "472"
-    reference: "views/forum.rb:472"
-    translation: Beitrag
-  ? "Post reply"
-  : 
-    default: "Post reply"
-    file: views/forum.rb
-    line: "729"
-    reference: "views/forum.rb:729"
-    translation: "Antwort senden"
-  Receiver: 
-    default: Receiver
-    file: views/messages.rb
-    line: "433"
-    reference: "views/messages.rb:433"
-    translation: Empfänger
-  ? "Record Audio Message"
-  : 
-    default: "Record Audio Message"
-    file: views/messages.rb
-    line: "368"
-    reference: "views/messages.rb:368"
-    translation: "Audionachricht aufnehmen"
-  ? "Record Post"
-  : 
-    default: "Record Post"
-    file: views/forum.rb
-    line: "692"
-    reference: "views/forum.rb:692"
-    translation: "Beitrag aufnehmen"
-  ? "Record again"
-  : 
-    default: "Record again"
-    file: "views/forum.rb:563 views/forum.rb:787 views/messages.rb"
-    line: "552"
-    reference: "views/forum.rb:563 views/forum.rb:787 views/messages.rb:552"
-    translation: "Erneut aufnehmen"
-  ? "Record audio message"
-  : 
-    default: "Record audio message"
-    file: "views/messages.rb:224 views/messages.rb"
-    line: "250"
-    reference: "views/messages.rb:224 views/messages.rb:250"
-    translation: "Audionachricht aufnehmen"
-  ? "Record message"
-  : 
-    default: "Record message"
-    file: views/messages.rb
-    line: "459"
-    reference: "views/messages.rb:459"
-    translation: "Nachricht aufnehmen"
-  ? "Record post"
-  : 
-    default: "Record post"
-    file: "views/forum.rb:478 views/forum.rb"
-    line: "812"
-    reference: "views/forum.rb:478 views/forum.rb:812"
-    translation: "Beitrag aufnehmen"
-  Refresh: 
-    default: Refresh
-    file: "views/forum.rb:23 views/messages.rb"
-    line: "21"
-    reference: "views/forum.rb:23 views/messages.rb:21"
-    translation: Aktualisieren
-  Request: 
-    default: Request
-    file: views/forum.rb
-    line: "145"
-    reference: "views/forum.rb:145"
-    translation: Anfragen
-  ? "Return to text editor"
-  : 
-    default: "Return to text editor"
-    file: views/messages.rb
-    line: "562"
-    reference: "views/messages.rb:562"
-    translation: "Zum Texteditor zurückkehren"
-  Send: 
-    default: Send
-    file: views/messages.rb
-    line: "479"
-    reference: "views/messages.rb:479"
-    translation: Senden
-  ? "Send message"
-  : 
-    default: "Send message"
-    file: views/profile.rb
-    line: "28"
-    reference: "views/profile.rb:28"
-    translation: "Nachricht senden"
-  Sending: 
-    default: Sending...
-    file: "views/forum.rb:580 views/forum.rb"
-    line: "804"
-    reference: "views/forum.rb:580 views/forum.rb:804"
-    translation: "Wird gesendet..."
-  ? "Show debug info"
-  : 
-    default: "Show debug info"
-    file: views/main.rb
-    line: "37"
-    reference: "views/main.rb:37"
-    translation: "Debug-Info zeigen"
-  ? "Show profile"
-  : 
-    default: "Show profile"
-    file: "views/forum.rb:687 views/messages.rb"
-    line: "84"
-    reference: "views/forum.rb:687 views/messages.rb:84"
-    translation: "Profil zeigen"
-  ? "Sign In to Elten"
-  : 
-    default: "Sign In to Elten"
-    file: views/welcome.rb
-    line: "24"
-    reference: "views/welcome.rb:24"
-    translation: "In Elten anmelden"
-  ? "Signing in, please wait"
-  : 
-    default: "Signing in, please wait"
-    file: views/welcome.rb
-    line: "61"
-    reference: "views/welcome.rb:61"
-    translation: "Anmeldung läuft, bitte warten"
-  ? "Stop recording"
-  : 
-    default: "Stop recording"
-    file: views/messages.rb
-    line: "538"
-    reference: "views/messages.rb:538"
-    translation: "Aufnahme stoppen"
-  Subject: 
-    default: Subject
-    file: views/messages.rb
-    line: "442"
-    reference: "views/messages.rb:442"
-    translation: Betreff
-  Submit: 
-    default: Submit
-    file: views/welcome.rb
-    line: "52"
-    reference: "views/welcome.rb:52"
-    translation: Senden
-  Title: 
-    default: Title
-    file: views/forum.rb
-    line: "458"
-    reference: "views/forum.rb:458"
-    translation: Titel
-  ? "Two-Factor Authentication"
-  : 
-    default: "Two-Factor Authentication"
-    file: views/welcome.rb
-    line: "124"
-    reference: "views/welcome.rb:124"
-    translation: Zwei-Faktor-Authentifizierung
-  ? "Unexpected error occurred while creating thread"
-  : 
-    default: "Unexpected error occurred while creating thread"
-    file: views/forum.rb
-    line: "514"
-    reference: "views/forum.rb:514"
-    translation: "Ein unerwarteter Fehler ist bei der Erstellung des neuen Themas aufgetreten"
-  ? "Unexpected error occurred while sending this message"
-  : 
-    default: "Unexpected error occurred while sending this message"
-    file: views/messages.rb
-    line: "495"
-    reference: "views/messages.rb:495"
-    translation: "Unerwarteter Fehler beim Senden dieser Nachricht aufgetreten"
-  ? "Unfollow thread"
-  : 
-    default: "Unfollow thread"
-    file: views/forum.rb
-    line: "400"
-    reference: "views/forum.rb:400"
-    translation: "Thema nicht mehr folgen"
-  Visitingcard: 
-    default: Visitingcard
-    file: views/profile.rb
-    line: "64"
-    reference: "views/profile.rb:64"
-    translation: Visitenkarte
-  ? "Waiting invitations"
-  : 
-    default: "Waiting invitations"
-    file: views/forum.rb
-    line: "174"
-    reference: "views/forum.rb:174"
-    translation: "Ausstehende Einladungen"
-  ? "Yes"
-  : 
-    default: "Yes"
-    file: "views/messages.rb:472 views/welcome.rb"
-    line: "88"
-    reference: "views/messages.rb:472 views/welcome.rb:88"
-    translation: Ja
-  ? "Your message"
-  : 
-    default: "Your message"
-    file: views/messages.rb
-    line: "452"
-    reference: "views/messages.rb:452"
-    translation: "Ihre Nachricht"
-  ? "Your reply"
-  : 
-    default: "Your reply"
-    file: "views/forum.rb:721 views/messages.rb"
-    line: "212"
-    reference: "views/forum.rb:721 views/messages.rb:212"
-    translation: "Ihre Antwort"
-  female: 
-    default: female
-    file: views/profile.rb
-    line: "51"
-    reference: "views/profile.rb:51"
-    translation: weiblich
-  join: 
-    default: join
-    file: views/forum.rb
-    line: "186"
-    reference: "views/forum.rb:186"
-    translation: beitreten
-  leave: 
-    default: leave
-    file: views/forum.rb
-    line: "187"
-    reference: "views/forum.rb:187"
-    translation: verlassen
-  male: 
-    default: male
-    file: views/profile.rb
-    line: "51"
-    reference: "views/profile.rb:51"
-    translation: männlich
+---
+de:
+  Do you want to enable notifications?: Möchten Sie Benachrichtigungen aktivieren?
+  If you wish, you can configure Elten to receive push notifications regarding new messages, posts in followed threads and so on.: Wenn
+    Sie möchten, können sie Elten Push-Benachrichtigungen über neue Nachrichten oder
+    neue Beiträge in verfolgten Themen usw. senden lassen.
+  'Yes': Ja
+  'No': Nein
+  Failed to register for Push Notifications: Fehler beim Registrieren für Push-Benachrichtigungen
+  Do you wish to enable microphone access?: Möchten Sie Elten Zugriff auf Ihr Mikrofon
+    gewären?
+  Elten requires microphone access in order to record audio data. Do you wish to grant it now?: Elten
+    erfordert den Zugriff auf Ihr Mikrofon, um Audiodaten aufzuzeichnen. Möchten Sie
+    Elten den Zugriff jetzt gewären?
+  Not now: Nicht jetzt
+  Refresh: Aktualisieren
+  Error occurred: Fehler
+  Members: Mitglieder
+  Leave: Verlassen
+  Join: Beitreten
+  Accept invitation: Einladung akzeptieren
+  Request: Anfragen
+  Followed threads: Verfolgte Themen
+  All groups: Alle Gruppen
+  Open groups: Offene Gruppen
+  Waiting invitations: Ausstehende Einladungen
+  join: beitreten
+  leave: verlassen
+  'Are you sure you want to join ': 'Sind Sie sicher, dass sie beitreten möchten '
+  'Are you sure you want to leave ': 'Sind Sie sicher, dass sie verlassen möchten '
+  'Are you sure you want to request to join ': 'Sind Sie sicher, dass sie die Beitrittsanfrage
+    senden möchten für '
+  Error: Fehler
+  Members of: Mitglieder von
+  New thread: Neues Thema
+  Follow thread: Thema folgen
+  Unfollow thread: Thema nicht mehr folgen
+  New Thread: Neues Thema
+  Title: Titel
+  Post: Beitrag
+  Record post: Beitrag aufnehmen
+  Cancel: Abbrechen
+  Are you sure you want to cancel the creation of new thread?: Sind Sie sicher, dass
+    Sie die Erstellung des neuen Themas abbrechen möchten?
+  All the typed text will be lost.: Der gesamte eingegebene Text geht dabei verloren.
+  Create thread: Thema erstellen
+  Unexpected error occurred while creating thread: Ein unerwarteter Fehler ist bei
+    der Erstellung des neuen Themas aufgetreten
+  Stop recording: Aufnahme stoppen
+  Record again: Erneut aufnehmen
+  Play recorded post: Aufgenommenen Beitrag abspielen
+  Send: Senden
+  Sending...: Wird gesendet...
+  Error while sending your reply: Fehler beim Senden Ihrer Antwort
+  Show profile: Profil zeigen
+  Record Post: Beitrag aufnehmen
+  Your reply: Ihre Antwort
+  Post reply: Antwort senden
+  Messages: Nachrichten
+  Forum: Forum
+  Log out: Abmelden
+  Show debug info: Debug-Info zeigen
+  Compose new message: Neue Nachricht verfassen
+  Record audio message: Audionachricht aufnehmen
+  Information: Information
+  Hold this button to record message, release it once record is completed.: Halten
+    Sie diese Taste während der Aufnahme gedrückt und lassen Sie wieder los, wenn
+    die Aufnahme fertig ist.
+  Cancel recording: Aufnahme abbrechen
+  Record Audio Message: Audionachricht aufnehmen
+  New message: Neue Nachricht
+  Receiver: Empfänger
+  Subject: Betreff
+  Your message: Ihre Nachricht
+  Record message: Nachricht aufnehmen
+  Are you sure you want to cancel the compossing of new message?: Sind Sie sicher,
+    dass Sie das Verfassen der Nachricht abbrechen möchten?
+  Unexpected error occurred while sending this message: Unerwarteter Fehler beim Senden
+    dieser Nachricht aufgetreten
+  Play recorded message: Aufgenommene Nachricht abspielen
+  Return to text editor: Zum Texteditor zurückkehren
+  Send message: Nachricht senden
+  male: männlich
+  female: weiblich
+  Visitingcard: Visitenkarte
+  Sign In to Elten: In Elten anmelden
+  Login: Nutzername
+  Password: Passwort
+  Submit: Senden
+  Signing in, please wait: Anmeldung läuft, bitte warten
+  Autologin failed: Auto-Anmeldung fehlgeschlagen
+  Autologin failed, please sign in manually: Auto-Anmeldung fehlgeschlagen, bitte
+    manuell anmelden
+  Login failed: Anmeldung fehlgeschlagen
+  Do you wish to setup autologin?: Möchten Sie sich bei jedem Start automatisch anmelden?
+  After enabling autologin, you would be no longer prompted for username and password everytime Elten is launched.: Wenn
+    die Auto-Anmeldung aktiviert ist, müssen Sie nicht mehr bei jedem Start von Elten
+    einen Benutzernamen und ein Passwort eingeben.
+  Autologin verification failed: Verifizierung für die Auto-Anmeldung fehlgeschlagen
+  Two-Factor Authentication: Zwei-Faktor-Authentifizierung
+  ? |-
+    The authentication code has been sent to the phone number associated with this account.
+    Enter it below to proceed.
+  : |-
+    Der Authentifizierungscode wurde an die mit diesem Konto verbundene Telefonnummer gesendet.
+    Geben Sie ihn unten ein, um fortzufahren.
+  Authentication code: Authentifizierungscode
+  Continue: Fortfahren

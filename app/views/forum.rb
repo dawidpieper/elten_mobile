@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-# -*- coding: utf-8 -*-
 
 # ELTEN Mobile Code
 # Copyright (C) Dawid Pieper
@@ -88,7 +87,7 @@ class ForumScreen < ForumScreenTemplate
           self.navigation.push(group_screen)
         end
       elsif ind == 0
-        threads_screen = ThreadsScreen.new("_followed", "Followed Threads")
+        threads_screen = ThreadsScreen.new("_followed", _("Followed threads"))
         self.navigation.push(threads_screen)
       else
         self.navigation.push(ForumScreen.new(ind - @sgroups.size))
@@ -99,7 +98,6 @@ class ForumScreen < ForumScreenTemplate
   end
 
   def task(doUpdate = true)
-    if self.navigation.screen == self
       erequest("forum/maxid", {}, doUpdate) do |resp|
         if resp["code"] == 200 and (@maxid || 0) < resp["maxid"].to_i
           @maxid = resp["maxid"].to_i
@@ -109,7 +107,6 @@ class ForumScreen < ForumScreenTemplate
           end
         end
       end
-    end
   end
 
   def update
@@ -134,7 +131,7 @@ class ForumScreen < ForumScreenTemplate
       grp = []
       acs = []
       @sgroups.each do |r|
-        grp.push(r["name"] + "\n#{_("Forums")}: " + r["cnt_forums"].to_s + "\n#{_("Threads")}: " + r["cnt_threads"].to_s + "\n#{_("Posts")}: " + r["cnt_posts"].to_s + "\n#{_("New")}: " + (r["cnt_posts"].to_i - r["cnt_readposts"].to_i).to_s)
+        grp.push(r["name"] + "\n"+_("Forums: %{cnt}", "cnt"=>r['cnt_forums'])+"\n"+_("Threads: %{cnt}", "cnt"=>r['cnt_threads'])+"\n"+_("Posts: %{cnt}", "cnt"=>r['cnt_posts']) + "\n" + _("New: %{newposts}", "newposts" => (r["cnt_posts"].to_i - r["cnt_readposts"].to_i)))
         a = { _("Members") => Proc.new { |opt, ind| d = ind.row; d -= 1 if @type == 0; navigation.push(MembersScreen.new(@sgroups[d])) } }
         k = nil
         if r["founder"] != $session.name and (r["role"] == 1 or r["role"] == 2)
@@ -163,7 +160,7 @@ class ForumScreen < ForumScreenTemplate
         @list.update_begin
         h = 0
         if @type == 0
-          @list.edit(0, _("Followed threads")+"\n#{_("Threads")}: #{foll_threads.to_s}\n#{_("Posts")}: #{foll_posts.to_s}\n#{_("New")}: #{(foll_posts.to_i - foll_readposts.to_i).to_s}")
+          @list.edit(0, _("Followed threads")+"\n"+_("Threads: %{cnt}", "cnt"=>foll_threads)+"\n"+_("Posts: %{cnt}", "cnt"=>foll_posts)+"\n"+_("New: %{newposts}", "newposts"=>(foll_posts.to_i - foll_readposts.to_i)))
           h = 1
         end
         for i in 0...grp.size
@@ -187,10 +184,9 @@ class ForumScreen < ForumScreenTemplate
     g = @sgroups[ind]
     ac = _("join")
     ac = _("leave") if g["role"] == 1 or g["role"] == 2
-    s = _("Are you sure you want to join ")
-    s = _("Are you sure you want to leave ") if ac == "leave"
-    s = _("Are you sure you want to request to join ") if g["open"] == 0
-    s += "\"" + g["name"] + "\"?"
+    s = _("Are you sure you want to join %{groupname}?", g['name'])
+    s = _("Are you sure you want to leave %{groupname}?", "groupname"=>g['name']) if ac == "leave"
+    s = _("Are you sure you want to request to join %{groupname}?", "groupname"=>g['name']) if g["open"] == 0
     UI.alert(:title => "Group membership", :message => s, :default => "Yes", :cancel => "No") { |n|
       if n == :default
         erequest("forum/groups", { "ac" => ac, "groupid" => g["id"].to_s }) { |rsp|
@@ -214,7 +210,7 @@ class MembersScreen < UI::Screen
   end
 
   def on_show
-    self.navigation.title = _("Members of")+" #{@group["name"]}"
+    self.navigation.title = _("Members of %{groupname}", 'groupname'=>@group['name'])
   end
 
   def on_load
@@ -239,11 +235,11 @@ class MembersScreen < UI::Screen
           lst = []
           for m in rsp["members"]
             o = m["user"]
-            o += " (#{_("moderator")})" if m["role"] == 2 and @group["founder"] != m["user"]
-            o += " (#{_("administrator")})" if @group["founder"] == m["user"]
-            o += " (#{_("invited")})" if m["role"] == 5
-            o += " (#{_("waiting")})" if m["role"] == 4
-            o += " (#{_("banned")})" if m["role"] == 3
+            o += " " + _("moderator") if m["role"] == 2 and @group["founder"] != m["user"]
+            o += " " + _("administrator") if @group["founder"] == m["user"]
+            o += " " + _("invited") if m["role"] == 5
+            o += " " + _("waiting") if m["role"] == 4
+            o += " " + _("banned") if m["role"] == 3
             lst.push(o)
             @members.push(m["user"])
           end
@@ -286,7 +282,6 @@ class GroupScreen < ForumScreenTemplate
   end
 
   def task(doUpdate = true)
-    if self.navigation.screen == self
       erequest("forum/maxid", {}, doUpdate) do |resp|
         if resp["code"] == 200 and (@maxid || 0) < resp["maxid"].to_i
           @maxid = resp["maxid"].to_i
@@ -296,7 +291,6 @@ class GroupScreen < ForumScreenTemplate
           end
         end
       end
-    end
   end
 
   def update
@@ -309,7 +303,7 @@ class GroupScreen < ForumScreenTemplate
       @forums.each { |f| @sforums.push(f) if f["groupid"].to_i == @id.to_i }
       frm = []
       @sforums.each do |r|
-        frm.push(r["name"] + "\n#{_("Threads")}: " + r["cnt_threads"].to_s + "\n#{_("Posts")}: " + r["cnt_posts"].to_s + "\n#{_("New")}: " + (r["cnt_posts"].to_i - r["cnt_readposts"].to_i).to_s)
+        frm.push(r["name"] + "\n"+_("Threads: %{cnt}", "cnt"=>r['cnt_threads']) + "\n"+_("Posts: %{cnt}", "cnt"=>r['cnt_posts']) + "\n" + _("New: %{newposts}", "newposts" => (r["cnt_posts"].to_i - r["cnt_readposts"].to_i)))
       end
       if self.navigation.screen == self
         @list.update_begin
@@ -336,10 +330,6 @@ class ThreadsScreen < ForumScreenTemplate
     self.navigation.title = @name
     @sthreads = []
     update_threads
-    if $frmpoststask != nil
-      $frmpoststask.stop
-      $frmpoststask = nil
-    end
     @maxid = 0
   end
 
@@ -367,7 +357,6 @@ class ThreadsScreen < ForumScreenTemplate
   end
 
   def task(doUpdate = true)
-    if self.navigation.screen == self
       erequest("forum/maxid", {}, doUpdate) do |resp|
         if resp["code"] == 200 and (@maxid || 0) < resp["maxid"].to_i
           @maxid = resp["maxid"].to_i
@@ -376,7 +365,6 @@ class ThreadsScreen < ForumScreenTemplate
             play("forum_update")
           end
         end
-      end
     end
   end
 
@@ -401,7 +389,7 @@ class ThreadsScreen < ForumScreenTemplate
         s = _("Follow thread")
         s = _("Unfollow thread") if r["followed"] == 1
         acs.last[s] = Proc.new { |opt, ind| chfollow(ind) }
-        thr.push(((r["cnt_readposts"].to_i < r["cnt_posts"].to_i) ? "(#{_("New")}): " : "") + r["name"] + "\n#{_("Posts")}: " + r["cnt_posts"].to_s + "\n#{_("New")}: " + (r["cnt_posts"].to_i - r["cnt_readposts"].to_i).to_s)
+        thr.push(((r["cnt_readposts"].to_i < r["cnt_posts"].to_i) ? "(" + _("New")+"): " : "") + r["name"] + "\n"+_("Posts: %{cnt}", "cnt"=>r['cnt_posts']) + "\n" + _("New: %{newposts}", "newposts" => (r["cnt_posts"].to_i - r["cnt_readposts"].to_i)))
       end
       if self.navigation.screen == self
         @list.update_begin
@@ -652,22 +640,20 @@ class PostsScreen < ForumScreenTemplate
       $streamer = nil
     end
     recording_stop if @recording == true
-    if $frmpoststask != nil
-      $frmpoststask.stop
-      $frmpoststask = nil
+    if @task != nil
+      @task.stop
+      @task = nil
     end
   end
 
   def task(doUpdate = true)
-    if self.navigation.screen == self
       erequest("forum/thread_maxid", { "thread" => @id.to_s }, true) do |resp|
         if resp["code"] == 200 and (@maxid || 0) < resp["maxid"].to_i and doUpdate
           update_posts
           play("forum_update")
         end
       end
-      $frmpoststask = Task.after(5) { task }
-    end
+      @task = Task.after(5) { task } if self.navigation.screen==self
   end
 
   def update
@@ -833,7 +819,7 @@ class PostScreen < UI::Screen
   end
 
   def on_show
-    navigation.title = "#{_("Post by")} #{@post["author"]}"
+    navigation.title = _("Post by %{author}", "author"=>@post['author'])
   end
 
   def on_load
