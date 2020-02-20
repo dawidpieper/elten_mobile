@@ -1,5 +1,7 @@
 # An abstract class representing Maze of Twisty Little Forums  - all forum-like structures
 class Struct_MTLFContainer
+# Represents whether user can read elements
+attr_accessor :readable
 # Represents whether user can add elements
 attr_accessor :writable
 # determines whether object can be edited by user
@@ -20,13 +22,22 @@ attr_accessor :maxid
 attr_accessor :pos
 # date of modification or creation
 attr_accessor :date
+# determines if model is searchable
+attr_accessor :searchable
 
 def inspect
 return "MTLF Object of type #{self.class.to_s}: id: #{@id}, name: #{@name}, children: #{count}"
 end
 
+def to_s
+return @name
+end
+
 def initialize(*arg)
+@id=0
 @children=[]
+@screens=[]
+@readable=true
 @writable=false
 @editable=false
 @unread=false
@@ -35,11 +46,14 @@ def initialize(*arg)
 @date=0
 @maxid=0
 @pos=0
+@searchable=false
 end
 
+def get
+return @items
+end
 def add(item)
 raise(ArgumentError, "item is not MTLF") if !item.is_a?(Struct_MTLFContainer)
-item.parent=self
 @children.push(item)
 end
 def delete(item)
@@ -59,8 +73,11 @@ def edit(*arg)
 return if !@writable
 end
 
-def refresh
-fetch_data
+def refresh(&block)
+end
+
+def categories
+return []
 end
 
 def count
@@ -70,28 +87,53 @@ def reverse!
 @children.reverse!
 end
 def sort_date!
-@children.sort! {|a,b| a.date<=>b.date}
+@children.sort! {|a,b|
+if a.is_a?(Symbol) or a==nil
+a
+elsif b.is_a?(Symbol) or b==nil
+b
+else
+a.date<=>b.date
+end
+}
 end
 def sort_id!
-@children.sort! {|a,b| a.id<=>b.id}
+@children.sort! {|a,b|
+if a.is_a?(Symbol) or a==nil
+a
+elsif b.is_a?(Symbol) or b==nil
+b
+else
+a.id<=>b.id
+end
+}
 end
 def sort_pos!
-@children.sort! {|a,b| a.pos<=>b.pos}
+@children.sort! {|a,b|
+if a.is_a?(Symbol) or a==nil
+a
+elsif b.is_a?(Symbol) or b==nil
+b
+else
+a.pos<=>b.pos
+end
+}
 end
 def clear
 @children.clear
 end
 
-private
-def fetched(cls, *arg)
+def fetch(cls, *arg)
 child=cls.new(*arg)
-for item in @children
-return child if item.id==child.id
+child.parent=self
+for i in 0...@children.size
+if @children[i].id==child.id
+@children[i]=child
+return child
+end
 end
 add(child)
 return child
-end
-def fetch_data
 end
 end
 
