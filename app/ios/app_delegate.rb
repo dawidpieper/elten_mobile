@@ -9,6 +9,7 @@ class AppDelegate
   attr_accessor :window
 
   def application(application, didFinishLaunchingWithOptions: launchOptions)
+
     $appcode = "ElMoIPB6"
 
     # An identifier used for two-factor authentication and APNS

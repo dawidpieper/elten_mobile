@@ -108,5 +108,37 @@ proxy.selectRowAt(indexPath, animated: false, scrollPosition: UITableViewScrollP
 end
 end
 end
+
+def setFocus
+UIAccessibilityPostNotification(UIAccessibilityScreenChangedNotification, proxy);
+end
+
+def on_refresh
+trigger(:refresh)
+end
+
+def refresh_enable
+proxy.refreshControl = UIRefreshControl.alloc.init
+proxy.refreshControl.addTarget(self, action: :on_refresh, forControlEvents: UIControlEventValueChanged)
+end
+
+def refresh_disable
+proxy.refreshControl=nil
+end
+
+def refresh_begin
+return if proxy.refreshControl==nil
+proxy.refreshControl.beginRefreshing
+end
+
+def refresh_end
+return if proxy.refreshControl==nil
+proxy.refreshControl.endRefreshing
+end
+
+def refreshing?
+return false if proxy.refreshControl==nil
+return proxy.refreshControl.isRefreshing
+end
   end
 end

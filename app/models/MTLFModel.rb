@@ -6,6 +6,8 @@ attr_accessor :readable
 attr_accessor :writable
 # determines whether object can be edited by user
 attr_accessor :editable
+# determines whether object is associated with user profile
+attr_accessor :profilable
 # object parent
 attr_accessor :parent
 # object id
@@ -14,8 +16,6 @@ attr_accessor :id
 attr_accessor :name
 # object creator, administrator etc.
 attr_accessor :author
-# determines whether object should be considered as new
-attr_accessor :unread
 # MaxID used when updating
 attr_accessor :maxid
 # virtual position
@@ -24,6 +24,8 @@ attr_accessor :pos
 attr_accessor :date
 # determines if model is searchable
 attr_accessor :searchable
+# Selected category
+attr_accessor :category
 
 def inspect
 return "MTLF Object of type #{self.class.to_s}: id: #{@id}, name: #{@name}, children: #{count}"
@@ -40,17 +42,21 @@ def initialize(*arg)
 @readable=true
 @writable=false
 @editable=false
-@unread=false
+@profilable=false
 @author=""
 @name=""
 @date=0
 @maxid=0
 @pos=0
 @searchable=false
+@category=0
+end
+
+def setcategory(cat)
 end
 
 def get
-return @items
+return @children
 end
 def add(item)
 raise(ArgumentError, "item is not MTLF") if !item.is_a?(Struct_MTLFContainer)
@@ -139,15 +145,16 @@ end
 
 # Represents an entry
 class Struct_MTLFEntry < Struct_MTLFContainer
-# Entry date
-attr_accessor :date
 # entry value
 attr_accessor :value
 # resource associated with this entry
 attr_accessor :resource
+# resource type
+attr_accessor :resource_type
+attr_accessor :unread
 
 def initialize(*arg)
 super
-
+@unread=false
 end
 end

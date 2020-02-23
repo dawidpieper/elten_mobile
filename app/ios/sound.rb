@@ -127,6 +127,7 @@ module EltenAPI
       end
 
       def stop
+@file=nil
         @player.stop
       end
 

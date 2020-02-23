@@ -4,5 +4,6 @@ module UI
       transform = CGAffineTransformMakeScale(sclx, scly)
       proxy.transform = transform
     end
+
   end
 end

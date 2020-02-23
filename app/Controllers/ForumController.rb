@@ -1,3 +1,2 @@
-# Abstract class for MTFL Controllers
-class Control_Forum
+class Control_Forum < Control_MTLF
 end

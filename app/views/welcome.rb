@@ -157,7 +157,7 @@ class WelcomeScreen < UI::Screen
 
   def proceed
     return if $session == nil # ignore if no session established
-    forum_screen = Scene_Forum.new#ForumScreen.new
+    forum_screen = Scene_Forum.new # ForumScreen.new
     messages_screen = MessagesScreen.new
     main_screen = MainScreen.new
     navigations = [UI::Navigation.new(forum_screen), UI::Navigation.new(messages_screen), UI::Navigation.new(main_screen)]
