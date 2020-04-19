@@ -37,7 +37,7 @@ module Elten
       return url
     end
 
-    def erequest(group, params = {}, errorignore = false, &b)
+def erequest(group, params = {}, errorignore = false, &b)
       $conn_st ||= {}
       $conn_ts ||= {}
       id = rand(1e8)
@@ -74,6 +74,8 @@ module Elten
         return id
       end
     end
+
+
   end
 end
 

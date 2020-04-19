@@ -10,7 +10,7 @@ module UI
     end
 
     def textFieldShouldReturn(textField)
-      @returns.each { |b| b.call }
+      @returns.each { |b| b.call } if @returns.is_a?(Array)
     end
 
     def enter(&block)

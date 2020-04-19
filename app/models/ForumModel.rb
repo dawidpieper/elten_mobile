@@ -62,36 +62,44 @@ if @followedthreads==nil
 @followedthreads = Struct_ForumForum.new(:followedthreads)
 @followedthreads.parent=self
 end
+@followedthreads.clear
 @followedthreads.cnt_threads=0
 @followedthreads.cnt_posts=0
 @followedthreads.cnt_readposts=0
-threads.values.each {|t|
-if t['followed'].to_i==1
-ch=@followedthreads.fetch(Struct_ForumThread, t)
+gh={}
+fh={}
+th={}
+groups.values.each { |o|
+g=fetch(Struct_ForumGroup, o)
+gh[g.id]=g
+}
+forums.values.each {|o|
+f=gh[o['groupid'].to_i].fetch(Struct_ForumForum, o)
+fh[f.id]=f
+}
+threads.values.each {|o|
+t=fh[o['forumid']].fetch(Struct_ForumThread, o)
+if t.followed
+@followedthreads.add(t)
 @followedthreads.cnt_threads+=1
-@followedthreads.cnt_posts+=ch.cnt_posts
-@followedthreads.cnt_readposts+=ch.cnt_readposts
-g=groups[t['id'].to_i]
-if g!=nil
-ch.writable=true if g['role'].to_i==1 or g['role'].to_i==2 or (g['open'].to_i==1 and g['public'].to_i==1)
-ch.editable=true if g['role'].to_i==2
+@followedthreads.cnt_posts+=t.cnt_posts
+@followedthreads.cnt_readposts+=t.cnt_readposts
 end
-end
+th[t.id]=t
 }
 @followedthreads.sort_date!
 @followedthreads.reverse!
-groups.values.each { |g|
-fetch(Struct_ForumGroup, g).subbuild(forums.values, threads.values)
-}
+gh.values.each{|g| g.sort_pos!}
+fh.values.each{|f| f.sort_date!;f.reverse!;}
 sort_id!
 end
 def refresh(&block)
 if @@cache==nil || @@cache[3]<Time.now.to_i-30
-play 'signal'
-erequest("forum/struct", { "cat" => "groups", "listgroups"=>"all" }, true) do |resp|
+erequest("forum", {}, true) do |resp|
 if resp.is_a?(Hash)
 if resp["code"] != 200
-UI.alert({ :title => _("Error occurred"), :message => resp["errmsg"] }) { }
+$j=resp
+UI.alert(:title => _("Error occurred"), :message => resp["errmsg"]||resp["code"].to_s ) { }
 else
 @@cache=[resp['groups'], resp['forums'], resp['threads'], Time.now.to_i]
 build(*@@cache[0..2])
@@ -145,21 +153,23 @@ _("New: %{newposts}", 'newposts'=>(@cnt_posts-@cnt_readposts))
 ].join(", ")
 end
 def get
-if @to_subbuild!=nil
-forums,threads = @to_subbuild
-forums.each {|f|
-fetch(Struct_ForumForum, f).subbuild(threads) if f['groupid'].to_i==@id
-}
-sort_pos!
-@to_subbuild=nil
-end
 return @children
+end
+def enum_members(getlast=false, &b)
+erequest("forum/groups", { "ac" => "members", "groupid" => @id.to_s }) { |rsp|
+if rsp['code']!=200
+UI.alert(:title => _("Error"), :message => rsp["errmsg"], :default => "Cancel") { }
+else
+for m in rsp["members"]
+next if m['user']==""||m['user']==" "||m['user']==nil
+b.call(m['user'], m['role'].to_i)
+end
+b.call(:last) if getlast
+end
+}
 end
 def refresh(&block)
 @parent.refresh(&block) if @parent!=nil
-end
-def subbuild(forums,threads)
-@to_subbuild=[forums,threads]
 end
 end
 
@@ -168,6 +178,7 @@ attr_accessor :cnt_threads
 attr_accessor :cnt_posts
 attr_accessor :cnt_readposts
 attr_accessor :type
+attr_accessor :closed
 def initialize(s)
 super
 if s.is_a?(Hash)
@@ -175,9 +186,17 @@ if s.is_a?(Hash)
 @name=s['name']
 @pos=s['pos'].to_i
 @type=s['type'].to_i
+@closed=(s['closed'].to_i==1)
 @cnt_threads = s['cnt_threads'].to_i
 @cnt_posts = s['cnt_posts'].to_i
 @cnt_readposts = s['cnt_readposts'].to_i
+if @type==0
+@creation_types=[:text]
+elsif @type==1
+@creation_types=[:audio]
+elsif @type==2
+@creation_types=[:audio, :text]
+end
 elsif s == :followedthreads
 @id=-1
 @name=_("Followed threads")
@@ -186,8 +205,10 @@ elsif s == :followedthreads
 @cnt_threads=0
 @cnt_posts=0
 @cnt_readposts=0
+@closed=false
 @editable=false
 @writable=false
+@closed=false
 else
 raise(ArgumentError, "wrong constructor data")
 end
@@ -196,7 +217,7 @@ def parent=(p)
 @parent=p
 if @parent.is_a?(Struct_ForumGroup)
 @editable=@parent.editable
-@writable=(@parent.public&&@parent.open)||(@parent.role==1||@parent.role==2)
+@writable=((@parent.public&&@parent.open)||(@parent.role==1||@parent.role==2))&&!@closed
 end
 end
 def to_s
@@ -208,24 +229,10 @@ _("New: %{newposts}", 'newposts'=>(@cnt_posts-@cnt_readposts))
 ].join(", ")
 end
 def get
-if @to_subbuild!=nil
-threads=@to_subbuild
-if @id!=-1
-threads.each {|t|
-fetch(Struct_ForumThread, t) if t['forumid']==@id
-}
-end
-sort_date!
-reverse!
-@to_subbuild=nil
-end
 return @children
 end
 def refresh(&block)
 @parent.refresh(&block) if @parent!=nil
-end
-def subbuild(threads)
-@to_subbuild=threads
 end
 end
 
@@ -244,16 +251,19 @@ raise(ArgumentError, "hash was expected") if !s.is_a?(Hash)
 @author=s['author']
 @date=s['lastupdate'].to_i
 @type=0
+@creation_types = [:text]
 @cnt_posts = s['cnt_posts'].to_i
 @cnt_readposts = s['cnt_readposts'].to_i
-@closed=(s['closed'].to_i==1)
 @pinned=(s['pinned'].to_i==1)
+@closed=(s['closed'].to_i==1)
 @followed=(s['followed'].to_i==1)
 end
 def parent=(p)
 @parent=p
 if @parent.is_a?(Struct_ForumForum)
 @type=@parent.type
+@creation_types = [:audio] if @type==1
+@creation_types = [:audio, :text] if @type==2
 @editable=@parent.editable
 @writable = @parent.writable && !@closed
 end
@@ -267,7 +277,7 @@ _("New: %{newposts}", 'newposts'=>(@cnt_posts-@cnt_readposts))
 ].join(", ")
 end
 def refresh(&block)
-erequest("forum/posts", { "thread" => @id.to_s }, true) { |resp|
+erequest("forum/#{@id.to_s}", {}, true) { |resp|
 if resp.is_a?(Hash)
 if resp["code"] != 200
 UI.alert({ :title => _("Error occurred"), :message => resp["errmsg"] }) { }

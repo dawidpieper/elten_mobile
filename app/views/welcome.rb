@@ -26,11 +26,11 @@ class WelcomeScreen < UI::Screen
     label.color = :white
     label.text_alignment = :center
     label.header = true
-    label.height = self.view.height * 0.2
+    label.height = self.view.height * 0.1
     @background.add_child(label)
 
     @login_field = UI::TextInput.new
-    @login_field.height = self.view.height * 0.2
+    @login_field.height = self.view.height * 0.1
     @login_field.margin = [10, 5]
     @login_field.placeholder = _("Login")
     @login_field.background_color = :green
@@ -39,7 +39,7 @@ class WelcomeScreen < UI::Screen
 
     @pass_field = UI::TextInput.new
     @pass_field.secure = true
-    @pass_field.height = self.view.height * 0.2
+    @pass_field.height = self.view.height * 0.1
     @pass_field.margin = [60, 5]
     @pass_field.placeholder = _("Password")
     @pass_field.background_color = :red
@@ -47,7 +47,7 @@ class WelcomeScreen < UI::Screen
     @background.add_child(@pass_field)
 
     button = UI::Button.new
-    button.height = self.view.height * 0.2
+    button.height = self.view.height * 0.1
     button.margin = [0, 0]
     button.title = _("Submit")
     button.background_color = :blue
@@ -61,6 +61,7 @@ class WelcomeScreen < UI::Screen
       label.text = _("Signing in, please wait")
       erequest("login", { "name" => Store["name"], "token" => Store["autotoken"], "appid" => Store["appid"] }) do |rpl|
         if rpl["code"] != 200
+$ra=rpl
           UI.alert({ :title => _("Autologin failed"), :message => rpl["errmsg"], :cancel => "Close" }) { }
           Store.delete("autotoken")
           label.text = _("Autologin failed, please sign in manually")
@@ -125,20 +126,20 @@ class WelcomeScreen < UI::Screen
       twofaclabel.header = true
       @twofacbg.add_child(twofaclabel)
       twofacdsc = UI::Label.new
-      twofacdsc.height = 100
+      twofacdsc.height = self.view.height*0.1
       twofacdsc.text = _("The authentication code has been sent to the phone number associated with this account.\nEnter it below to proceed.")
       @twofacbg.add_child(twofacdsc)
       @twofaccode = UI::TextInput.new
-      @twofaccode.height = self.view.height * 0.2
+      @twofaccode.height = self.view.height*0.1
       @twofaccode.placeholder = _("Authentication code")
       @twofaccode.numbers = true
       @twofacbg.add_child(@twofaccode)
       @twofaccancel = UI::Button.new
-      @twofaccancel.height = self.view.height * 0.2
+      @twofaccancel.height = self.view.height * 0.1
       @twofaccancel.title = _("Cancel")
       @twofacbg.add_child(@twofaccancel)
       @twofacbutton = UI::Button.new
-      @twofacbutton.height = self.view.height * 0.2
+      @twofacbutton.height = self.view.height * 0.1
       @twofacbutton.title = _("Continue")
       @twofacbg.add_child(@twofacbutton)
       self.view.delete_child(@background)
@@ -157,8 +158,8 @@ class WelcomeScreen < UI::Screen
 
   def proceed
     return if $session == nil # ignore if no session established
-    forum_screen = Scene_Forum.new # ForumScreen.new
-    messages_screen = MessagesScreen.new
+    forum_screen = Scene_Forum.new
+    messages_screen = Scene_Messages.new
     main_screen = MainScreen.new
     navigations = [UI::Navigation.new(forum_screen), UI::Navigation.new(messages_screen), UI::Navigation.new(main_screen)]
     $app.tabbars([_("Forum"), _("Messages"), _("More")], navigations)

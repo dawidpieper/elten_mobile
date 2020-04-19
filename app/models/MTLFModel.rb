@@ -26,6 +26,8 @@ attr_accessor :date
 attr_accessor :searchable
 # Selected category
 attr_accessor :category
+# creation types
+attr_accessor :creation_types
 
 def inspect
 return "MTLF Object of type #{self.class.to_s}: id: #{@id}, name: #{@name}, children: #{count}"
@@ -50,7 +52,10 @@ def initialize(*arg)
 @pos=0
 @searchable=false
 @category=0
+@creation_types = []
 end
+
+def subregister(depth, o);end
 
 def setcategory(cat)
 end
@@ -139,7 +144,19 @@ return child
 end
 end
 add(child)
+i=0
+pr=self
+while pr!=nil
+pr.subregister(i, child)
+i+=1
+pr=pr.parent
+end
 return child
+end
+
+def final?
+@children.each {|ch| return true if ch.is_a?(Struct_MTLFEntry)}
+return false
 end
 end
 
@@ -149,12 +166,14 @@ class Struct_MTLFEntry < Struct_MTLFContainer
 attr_accessor :value
 # resource associated with this entry
 attr_accessor :resource
+# Determines if entry unread
+attr_accessor :unread
 # resource type
 attr_accessor :resource_type
-attr_accessor :unread
 
 def initialize(*arg)
 super
 @unread=false
+@resource_type = :text
 end
 end

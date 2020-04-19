@@ -78,13 +78,15 @@ end
       end
       edit(x, r, a)
       proxy.insertRowsAtIndexPaths(inses, withRowAnimation: UITableViewRowAnimationBottom)
+@changed=true
     end
 
-    def edit(x, r, a = [])
+    def edit(x, r, a = nil)
       return insert(x, r, a) if x >= @data_source.size
-if @data_source[x]!=r or actions[x]!=a
+if @data_source[x]!=r or (a!=nil && actions[x]!=a)
       @data_source[x] = r
-      actions[x] = a
+      actions[x] = a if a!=nil
+actions[x]||=[]
 @changed=true
 end
     end
@@ -104,7 +106,7 @@ selectedRows = proxy.indexPathsForSelectedRows
 proxy.reloadData
 if selectedRows!=nil
 for indexPath in selectedRows
-proxy.selectRowAt(indexPath, animated: false, scrollPosition: UITableViewScrollPositionNone)
+proxy.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: UITableViewScrollPositionNone)
 end
 end
 end
