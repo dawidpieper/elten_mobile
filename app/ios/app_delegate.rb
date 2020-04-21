@@ -10,7 +10,7 @@ class AppDelegate
 
   def application(application, didFinishLaunchingWithOptions: launchOptions)
 
-    $appcode = "ElMoIPB6"
+    $appcode = "ElMoIPB7"
 
     # An identifier used for two-factor authentication and APNS
     if Store["appid"] == nil

@@ -1,0 +1,639 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Elten Mobile\n"
+"POT-Creation-Date: 2020-04-20 02:26+0300\n"
+"PO-Revision-Date: 2020-04-20 02:29+0300\n"
+"Last-Translator: Burak <burakyuksek94@gmail.com>\n"
+"Language-Team: \n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: //MACBOOKPRO-CF59/dpieper/elten_mobile/app\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:16
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:346
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:441
+msgid "New thread"
+msgstr "Yeni konu"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:16
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:462
+msgid "Post"
+msgstr "Gönderi"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:16
+msgid "Thread name"
+msgstr "Konu adı"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:48
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:580
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:728
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:805
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:262
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:387
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:591
+msgid "Error while sending your reply"
+msgstr "Yanıtınız gönderilirken hata oluştu"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:61
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:135
+msgid "Members"
+msgstr "Üyeler"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:64
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:138
+msgid "Leave"
+msgstr "Çık"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:66
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:140
+msgid "Join"
+msgstr "Katıl"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:68
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:142
+msgid "Accept invitation"
+msgstr "Daveti kabul et"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:70
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:144
+msgid "Request"
+msgstr "İstek"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:75
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:389
+msgid "Follow thread"
+msgstr "Konuyu takip et"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:76
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:390
+msgid "Unfollow thread"
+msgstr "Konuyu takibi bırak"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:83
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:213
+msgid "Members of %{groupname}"
+msgstr "%{groupname} grubunun üyeleri"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:90
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:238
+msgid "moderator"
+msgstr "Moderatör"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:91
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:239
+msgid "administrator"
+msgstr "Yönetici"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:92
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:240
+msgid "invited"
+msgstr "Davet edildi"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:93
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:242
+msgid "banned"
+msgstr "Banlandı"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:104
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:187
+msgid "Are you sure you want to join %{groupname}?"
+msgstr "%{groupname} grubuna katılmak istediğinizden emin misiniz?"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:105
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:189
+msgid "Are you sure you want to request to join %{groupname}?"
+msgstr ""
+"%{groupname} grubuna katılım izni göndermek istediğinizden emin misiniz?"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:108
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:188
+msgid "Are you sure you want to leave %{groupname}?"
+msgstr "%{groupname} grubundan çıkmak istediğinizden emin misiniz?"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:114
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:136
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:161
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:120
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:215
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:195
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:232
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:413
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:767
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:359
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:542
+#: ../../../../Documents/github/elten_mobile/app/views/profile.rb:72
+msgid "Error"
+msgstr "Hata"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/MessagesController.rb:16
+msgid "New message to user %{user}"
+msgstr "%{user} kullanıcısına yeni mesaj"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/MessagesController.rb:16
+#: ../../../../Documents/github/elten_mobile/app/Controllers/MessagesController.rb:26
+msgid "Message"
+msgstr "Mesaj"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/MessagesController.rb:16
+#: ../../../../Documents/github/elten_mobile/app/Controllers/MessagesController.rb:26
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:441
+msgid "Subject"
+msgstr "Konu"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/MessagesController.rb:26
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:432
+msgid "Receiver"
+msgstr "Alıcı"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/MessagesController.rb:26
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:405
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:418
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:419
+msgid "New message"
+msgstr "Yeni mesaj"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/MessagesController.rb:54
+msgid "Error while sending message"
+msgstr "Mesaj gönderilirken hata oluştu"
+
+#: ../../../../Documents/github/elten_mobile/app/ios/app_delegate.rb:29
+msgid ""
+"If you wish, you can configure Elten to receive push notifications regarding "
+"new messages, posts in followed threads and so on."
+msgstr ""
+"İsterseniz Elten'ı yeni mesajlar, takip edilen konularda yeni gönderiler "
+"gibi olaylara dair  bildirim alacak şekilde ayarlayabilirsiniz."
+
+#: ../../../../Documents/github/elten_mobile/app/ios/app_delegate.rb:29
+#: ../../../../Documents/github/elten_mobile/app/ios/sound.rb:48
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:53
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:484
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:471
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:89
+msgid "Yes"
+msgstr "Evet"
+
+#: ../../../../Documents/github/elten_mobile/app/ios/app_delegate.rb:29
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:53
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:484
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:471
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:89
+msgid "No"
+msgstr "Hayır"
+
+#: ../../../../Documents/github/elten_mobile/app/ios/app_delegate.rb:29
+msgid "Do you want to enable notifications?"
+msgstr "Bildirimleri etkinleştirmek istiyor musunuz?"
+
+#: ../../../../Documents/github/elten_mobile/app/ios/app_delegate.rb:71
+msgid "Failed to register for Push Notifications"
+msgstr "Bildirimler için kayıt başarısız oldu"
+
+#: ../../../../Documents/github/elten_mobile/app/ios/sound.rb:48
+msgid ""
+"Elten requires microphone access in order to record audio data. Do you wish "
+"to grant it now?"
+msgstr ""
+"Ses verisi kaydetmek için Elten mikrofon iznine ihtiyaç duyar. Şimdi izin "
+"vermek istiyor musunuz?"
+
+#: ../../../../Documents/github/elten_mobile/app/ios/sound.rb:48
+msgid "Not now"
+msgstr "Şimdi değil"
+
+#: ../../../../Documents/github/elten_mobile/app/ios/sound.rb:48
+msgid "Do you wish to enable microphone access?"
+msgstr "Mikrofon erişimine izin vermek istiyor musunuz?"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:5
+#: ../../../../Documents/github/elten_mobile/app/views/main.rb:37
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:165
+msgid "Forum"
+msgstr "Forum"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:8
+msgid "Joined groups"
+msgstr "Katılınan gruplar"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:8
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:172
+msgid "Open groups"
+msgstr "Açık gruplar"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:8
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:171
+msgid "All groups"
+msgstr "Tüm gruplar"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:8
+msgid "Moderated groups"
+msgstr "Yönetilen gruplar"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:8
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:173
+msgid "Waiting invitations"
+msgstr "Bekleyen davetler"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:102
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:283
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:23
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:76
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:132
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:43
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:668
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:76
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:143
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:300
+msgid "Error occurred"
+msgstr "Hata oluştu"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:149
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:134
+msgid "Forums: %{cnt}"
+msgstr "Forumlar: %{cnt}"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:150
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:226
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:134
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:163
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:306
+msgid "Threads: %{cnt}"
+msgstr "Konular: %{cnt}"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:151
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:227
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:275
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:134
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:163
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:306
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:392
+msgid "Posts: %{cnt}"
+msgstr "Gönderiler: %{cnt}"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:152
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:228
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:276
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:134
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:163
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:306
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:392
+msgid "New: %{newposts}"
+msgstr "Yeni: %{newposts}"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:202
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:90
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:163
+msgid "Followed threads"
+msgstr "Takip edilen konular"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:273
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:318
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:55
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:112
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:158
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:47
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:392
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:84
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:152
+msgid "New"
+msgstr "Yeni"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:274
+msgid "Author: %{author}"
+msgstr "Oluşturan: %{author}"
+
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:4
+#: ../../../../Documents/github/elten_mobile/app/views/main.rb:37
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:41
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:165
+msgid "Messages"
+msgstr "Mesajlar"
+
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:56
+msgid "Last message: %{subj}, from: %{user}"
+msgstr "Son mesaj: %{subj}, kimden: %{user}"
+
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:113
+msgid "Last message from %{user}"
+msgstr "%{user} kullanıcısından son mesaj"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:35
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:38
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:59
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:125
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:61
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:197
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:560
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:782
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:247
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:478
+msgid "Send"
+msgstr "Gönder"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:46
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:476
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:463
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:139
+msgid "Cancel"
+msgstr "İptal"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:53
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:484
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:471
+msgid "All the typed text will be lost."
+msgstr "Yazılan tüm metin kaybolacak."
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:53
+msgid "Are you sure you want to cancel?"
+msgstr "İptal etmek istediğinizden emin misiniz?"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:60
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:133
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:65
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:221
+msgid "Record"
+msgstr "Kaydet"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:102
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:173
+msgid ""
+"Elten does not have permission to use your microphone. You can change it in "
+"your system settings."
+msgstr ""
+"Elten'ın mikrofonunuzu kullanmak için izni yok. Bunu sistem ayarlarından "
+"değiştirebilirsiniz."
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:115
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:210
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:540
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:762
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:354
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:537
+msgid "Stop recording"
+msgstr "Kaydı durdur"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:130
+msgid "Delete recording"
+msgstr "Kaydı sil"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:56
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:709
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:207
+msgid "Your reply"
+msgstr "Yanıtınız"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:184
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:232
+msgid ""
+"Hold this button to record message, release it once record is completed."
+msgstr ""
+"Mesaj kaydetmek için bu düğmeyi basılı tutun, kayıt bittiğinde bırakın."
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:184
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:232
+msgid "Information"
+msgstr "Bilgi"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:205
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:348
+msgid "Cancel recording"
+msgstr "Kaydı iptal et"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:22
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:21
+msgid "Refresh"
+msgstr "Yenile"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:185
+msgid "join"
+msgstr "katıl"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:186
+msgid "leave"
+msgstr "çık"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:241
+msgid "waiting"
+msgstr "Bekliyor"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:428
+msgid "New Thread"
+msgstr "Yeni konu"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:448
+msgid "Title"
+msgstr "Başlık"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:468
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:800
+msgid "Record post"
+msgstr "Gönderi kaydet"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:484
+msgid "Are you sure you want to cancel the creation of new thread?"
+msgstr "Yeni konu oluşturmayı iptal etmek istediğinizden emin misiniz?"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:492
+msgid "Create thread"
+msgstr "Konu oluştur"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:504
+msgid "Unexpected error occurred while creating thread"
+msgstr "Konu oluşturulurken beklenmeyen hata oluştu"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:553
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:775
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:551
+msgid "Record again"
+msgstr "Tekrar kaydet"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:555
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:777
+msgid "Play recorded post"
+msgstr "Kaydedilmiş gönderiyi çal"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:570
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:792
+msgid "Sending..."
+msgstr "Gönderiliyor..."
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:675
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:82
+msgid "Show profile"
+msgstr "Profili göster"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:680
+msgid "Record Post"
+msgstr "Gönderiyi kaydet"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:717
+msgid "Post reply"
+msgstr "Yanıt gönder"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:822
+msgid "Post by %{author}"
+msgstr "%{author} kişisinin gönderisi"
+
+#: ../../../../Documents/github/elten_mobile/app/views/main.rb:37
+msgid "Log out"
+msgstr "Çıkış yap"
+
+#: ../../../../Documents/github/elten_mobile/app/views/main.rb:37
+msgid "Show debug info"
+msgstr "Hata ayıklama bilgisini göster"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:33
+msgid "Compose new message"
+msgstr "Yeni mesaj oluştur"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:107
+msgid "Conversations with %{user}"
+msgstr "%{user} kişisiyle konuşma"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:219
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:245
+msgid "Record audio message"
+msgstr "Sesli mesaj kaydet"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:367
+msgid "Record Audio Message"
+msgstr "Sesli mesaj kaydet"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:421
+msgid "in topic %{subject}"
+msgstr "%{subject} konusunda"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:423
+msgid "to %{user}"
+msgstr "%{user} kişisine"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:451
+msgid "Your message"
+msgstr "Mesajınız"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:458
+msgid "Record message"
+msgstr "Mesaj kaydet"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:471
+msgid "Are you sure you want to cancel the compossing of new message?"
+msgstr "Yeni mesaj oluşturmayı iptal etmek istediğinizden emin misiniz?"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:494
+msgid "Unexpected error occurred while sending this message"
+msgstr "Mesaj gönderilirken beklenmeyen hata oluştu"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:554
+msgid "Play recorded message"
+msgstr "Kaydedilen mesajı çal"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:561
+msgid "Return to text editor"
+msgstr "Metin düzenleyiciye geri dön"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:606
+msgid "Message from %{sender}"
+msgstr "%{sender} kişisinden mesaj"
+
+#: ../../../../Documents/github/elten_mobile/app/views/profile.rb:28
+msgid "Send message"
+msgstr "Mesaj gönder"
+
+#: ../../../../Documents/github/elten_mobile/app/views/profile.rb:51
+msgid "male"
+msgstr "Erkek"
+
+#: ../../../../Documents/github/elten_mobile/app/views/profile.rb:51
+msgid "female"
+msgstr "Kadın"
+
+#: ../../../../Documents/github/elten_mobile/app/views/profile.rb:51
+msgid "Gender"
+msgstr "Cinsiyet"
+
+#: ../../../../Documents/github/elten_mobile/app/views/profile.rb:57
+msgid "Age"
+msgstr "Yaş"
+
+#: ../../../../Documents/github/elten_mobile/app/views/profile.rb:64
+msgid "Visitingcard"
+msgstr "Kartvizit"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:24
+msgid "Sign In to Elten"
+msgstr "Elten'a oturum aç"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:35
+msgid "Login"
+msgstr "Kullanıcı adı"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:44
+msgid "Password"
+msgstr "Şifre"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:52
+msgid "Submit"
+msgstr "Onayla"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:61
+msgid "Signing in, please wait"
+msgstr "Oturum açılıyor, lütfen bekleyin"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:65
+msgid "Autologin failed"
+msgstr "Otomatik giriş başarısız oldu"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:67
+msgid "Autologin failed, please sign in manually"
+msgstr "Otomatik giriş başarısız oldu, lütfen elle oturum açın"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:83
+msgid "Login failed"
+msgstr "Giriş başarısız oldu"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:89
+msgid ""
+"After enabling autologin, you would be no longer prompted for username and "
+"password everytime Elten is launched."
+msgstr ""
+"Otomatik girişi etkinleştirdikten sonra Elten her açıldığında kullanıcı "
+"adınız ve şifreniz sorulmaz."
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:89
+msgid "Do you wish to setup autologin?"
+msgstr "Otomatik girişi ayarlamak istiyor musunuz?"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:93
+msgid "Autologin verification failed"
+msgstr "Otomatik giriş doğrulaması başarısız oldu"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:125
+msgid "Two-Factor Authentication"
+msgstr "İki öğeli kimlik doğrulama"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:130
+msgid ""
+"The authentication code has been sent to the phone number associated with "
+"this account.\n"
+"Enter it below to proceed."
+msgstr ""
+"Bu hesapla ilişkilendirilmiş olan telefon numarasına doğrulama kodu "
+"gönderildi.\n"
+"Devam etmek için kodu girin."
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:134
+msgid "Authentication code"
+msgstr "Doğrulama kodu"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:143
+msgid "Continue"
+msgstr "Devam"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:165
+msgid "More"
+msgstr "Daha fazla"

@@ -17,7 +17,7 @@ sort_date!
 reverse!
 end
 def refresh(&block)
-erequest("messages/list", {'cat'=>'users'}, true) do |resp|
+erequest("messages", {'cat'=>'users'}, true) do |resp|
 if resp.is_a?(Hash)
 if resp["code"] != 200
 UI.alert(:title => _("Error occurred"), :message => resp["errmsg"]||resp["code"].to_s ) { }
@@ -70,7 +70,7 @@ sort_date!
 reverse!
 end
 def refresh(&block)
-erequest("messages/list", {'cat'=>'conversations', 'user'=>@id}, true) do |resp|
+erequest("messages", {'cat'=>'conversations', 'user'=>@id}, true) do |resp|
 if resp.is_a?(Hash)
 if resp["code"] != 200
 UI.alert(:title => _("Error occurred"), :message => resp["errmsg"]||resp["code"].to_s ) { }
@@ -126,7 +126,7 @@ end
 sort_date!
 end
 def refresh(&block)
-erequest("messages/list", {'cat'=>'messages', 'user'=>@user, 'subj'=>@id}, true) do |resp|
+erequest("messages", {'cat'=>'messages', 'user'=>@user, 'subj'=>@id}, true) do |resp|
 if resp.is_a?(Hash)
 if resp["code"] != 200
 UI.alert(:title => _("Error occurred"), :message => resp["errmsg"]||resp["code"].to_s ) { }

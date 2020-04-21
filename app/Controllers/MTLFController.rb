@@ -38,7 +38,7 @@ def setcategory(cat)
 end
 
 def fetch_actions(item)
-return []
+return {}
 end
 
 def show

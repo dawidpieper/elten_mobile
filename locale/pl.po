@@ -1,0 +1,639 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Elten Mobile\n"
+"POT-Creation-Date: 2020-04-19 23:19+0200\n"
+"PO-Revision-Date: 2020-04-19 23:23+0200\n"
+"Last-Translator: Dawid Pieper <dawidpieper@o2.pl>\n"
+"Language-Team: \n"
+"Language: pl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ../../../Documents/GitHub/elten_mobile/app\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 "
+"|| n%100>14) ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:16
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:346
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:441
+msgid "New thread"
+msgstr "Nowy wątek"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:16
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:462
+msgid "Post"
+msgstr "Wpis"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:16
+msgid "Thread name"
+msgstr "Tytuł wątku"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:48
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:580
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:728
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:805
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:262
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:387
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:591
+msgid "Error while sending your reply"
+msgstr "Błąd podczas wysyłania odpowiedzi"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:61
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:135
+msgid "Members"
+msgstr "Członkowie"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:64
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:138
+msgid "Leave"
+msgstr "Opuść"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:66
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:140
+msgid "Join"
+msgstr "Dołącz"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:68
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:142
+msgid "Accept invitation"
+msgstr "Przyjmij zaproszenie"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:70
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:144
+msgid "Request"
+msgstr "Poproś o zapisanie do grupy"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:75
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:389
+msgid "Follow thread"
+msgstr "Śledź ten wątek"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:76
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:390
+msgid "Unfollow thread"
+msgstr "Usuń ze śledzonych wątków"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:83
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:213
+msgid "Members of %{groupname}"
+msgstr "Członkowie grupy %{groupname}"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:90
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:238
+msgid "moderator"
+msgstr "Moderator"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:91
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:239
+msgid "administrator"
+msgstr "Administrator"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:92
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:240
+msgid "invited"
+msgstr "Zaproszony"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:93
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:242
+msgid "banned"
+msgstr "Zbanowany"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:104
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:187
+msgid "Are you sure you want to join %{groupname}?"
+msgstr "Czy jesteś pewien, że chcesz dołączyć do grupy %{groupname}?"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:105
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:189
+msgid "Are you sure you want to request to join %{groupname}?"
+msgstr "Czy chcesz wysłać prośbę o przyjęcie do grupy %{groupname}?"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:108
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:188
+msgid "Are you sure you want to leave %{groupname}?"
+msgstr "Czy jesteś pewien, że chcesz opuścić grupę %{groupname}?"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:114
+#: ../../../../Documents/github/elten_mobile/app/Controllers/ForumController.rb:136
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:161
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:120
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:215
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:195
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:232
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:413
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:767
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:359
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:542
+#: ../../../../Documents/github/elten_mobile/app/views/profile.rb:72
+msgid "Error"
+msgstr "Błąd"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/MessagesController.rb:16
+msgid "New message to user %{user}"
+msgstr "Nowa wiadomość do użytkownika %{user}"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/MessagesController.rb:16
+#: ../../../../Documents/github/elten_mobile/app/Controllers/MessagesController.rb:26
+msgid "Message"
+msgstr "Wiadomość"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/MessagesController.rb:16
+#: ../../../../Documents/github/elten_mobile/app/Controllers/MessagesController.rb:26
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:441
+msgid "Subject"
+msgstr "Temat"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/MessagesController.rb:26
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:432
+msgid "Receiver"
+msgstr "Odbiorca"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/MessagesController.rb:26
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:405
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:418
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:419
+msgid "New message"
+msgstr "Nowa wiadomość"
+
+#: ../../../../Documents/github/elten_mobile/app/Controllers/MessagesController.rb:54
+msgid "Error while sending message"
+msgstr "Błąd podczas wysyłania wiadomości"
+
+#: ../../../../Documents/github/elten_mobile/app/ios/app_delegate.rb:29
+msgid ""
+"If you wish, you can configure Elten to receive push notifications regarding "
+"new messages, posts in followed threads and so on."
+msgstr ""
+"Jeśli chcesz, możesz otrzymywać powiadomienia o nowych wiadomościach, "
+"wpisach w śledzonych wątkach itp."
+
+#: ../../../../Documents/github/elten_mobile/app/ios/app_delegate.rb:29
+#: ../../../../Documents/github/elten_mobile/app/ios/sound.rb:48
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:53
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:484
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:471
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:89
+msgid "Yes"
+msgstr "Tak"
+
+#: ../../../../Documents/github/elten_mobile/app/ios/app_delegate.rb:29
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:53
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:484
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:471
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:89
+msgid "No"
+msgstr "Nie"
+
+#: ../../../../Documents/github/elten_mobile/app/ios/app_delegate.rb:29
+msgid "Do you want to enable notifications?"
+msgstr "Czy chcesz włączyć powiadomienia?"
+
+#: ../../../../Documents/github/elten_mobile/app/ios/app_delegate.rb:71
+msgid "Failed to register for Push Notifications"
+msgstr "Nie udało się zarejestrować do powiadomień zdalnych"
+
+#: ../../../../Documents/github/elten_mobile/app/ios/sound.rb:48
+msgid ""
+"Elten requires microphone access in order to record audio data. Do you wish "
+"to grant it now?"
+msgstr ""
+"Elten wymaga dostępu do mikrofonu, aby nagrywać treści audio. Czy chcesz "
+"udzielić mu go teraz?"
+
+#: ../../../../Documents/github/elten_mobile/app/ios/sound.rb:48
+msgid "Not now"
+msgstr "Nie teraz"
+
+#: ../../../../Documents/github/elten_mobile/app/ios/sound.rb:48
+msgid "Do you wish to enable microphone access?"
+msgstr "Czy chcesz zezwolić aplikacji Elten na dostęp do mikrofonu?"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:5
+#: ../../../../Documents/github/elten_mobile/app/views/main.rb:37
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:165
+msgid "Forum"
+msgstr "Forum"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:8
+msgid "Joined groups"
+msgstr "Grupy, do których należysz"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:8
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:172
+msgid "Open groups"
+msgstr "Otwarte grupy"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:8
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:171
+msgid "All groups"
+msgstr "Wszystkie grupy"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:8
+msgid "Moderated groups"
+msgstr "Moderowane grupy"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:8
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:173
+msgid "Waiting invitations"
+msgstr "Oczekujące zaproszenia"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:102
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:283
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:23
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:76
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:132
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:43
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:668
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:76
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:143
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:300
+msgid "Error occurred"
+msgstr "Wystąpił błąd"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:149
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:134
+msgid "Forums: %{cnt}"
+msgstr "Fora: %{cnt}"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:150
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:226
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:134
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:163
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:306
+msgid "Threads: %{cnt}"
+msgstr "Wątki: %{cnt}"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:151
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:227
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:275
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:134
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:163
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:306
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:392
+msgid "Posts: %{cnt}"
+msgstr "Wpisy: %{cnt}"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:152
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:228
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:276
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:134
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:163
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:306
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:392
+msgid "New: %{newposts}"
+msgstr "Nowe: %{newposts}"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:202
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:90
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:163
+msgid "Followed threads"
+msgstr "Śledzone wątki"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:273
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:318
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:55
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:112
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:158
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:47
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:392
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:84
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:152
+msgid "New"
+msgstr "Nowy"
+
+#: ../../../../Documents/github/elten_mobile/app/models/ForumModel.rb:274
+msgid "Author: %{author}"
+msgstr "Autor: %{author}"
+
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:4
+#: ../../../../Documents/github/elten_mobile/app/views/main.rb:37
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:41
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:165
+msgid "Messages"
+msgstr "Wiadomości"
+
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:56
+msgid "Last message: %{subj}, from: %{user}"
+msgstr "Ostatnia wiadomość: %{subj}, od: %{user}"
+
+#: ../../../../Documents/github/elten_mobile/app/models/MessagesModel.rb:113
+msgid "Last message from %{user}"
+msgstr "Ostatnia wiadomość od %{user}"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:35
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:38
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:59
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:125
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:61
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:197
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:560
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:782
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:247
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:478
+msgid "Send"
+msgstr "Wyślij"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:46
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:476
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:463
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:139
+msgid "Cancel"
+msgstr "Anuluj"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:53
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:484
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:471
+msgid "All the typed text will be lost."
+msgstr "Wprowadzona treść zostanie utracona."
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:53
+msgid "Are you sure you want to cancel?"
+msgstr "Czy jesteś pewien, że chcesz anulować?"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:60
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:133
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:65
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:221
+msgid "Record"
+msgstr "Nagraj"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:102
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:173
+msgid ""
+"Elten does not have permission to use your microphone. You can change it in "
+"your system settings."
+msgstr ""
+"Elten nie ma uprawnień do używania mikrofonu. Możesz zmienić to w "
+"Ustawieniach twojego systemu."
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:115
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:210
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:540
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:762
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:354
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:537
+msgid "Stop recording"
+msgstr "Zatrzymaj nagrywanie"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFCreatorView.rb:130
+msgid "Delete recording"
+msgstr "Usuń nagranie"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:56
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:709
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:207
+msgid "Your reply"
+msgstr "Twoja odpowiedź"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:184
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:232
+msgid ""
+"Hold this button to record message, release it once record is completed."
+msgstr ""
+"Przytrzymaj ten przycisk podczas nagrywania wiadomości, puść go, gdy "
+"zakończysz."
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:184
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:232
+msgid "Information"
+msgstr "Informacja"
+
+#: ../../../../Documents/github/elten_mobile/app/views/MTLFView.rb:205
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:348
+msgid "Cancel recording"
+msgstr "Anuluj nagrywanie"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:22
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:21
+msgid "Refresh"
+msgstr "Odśwież"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:185
+msgid "join"
+msgstr "Dołącz"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:186
+msgid "leave"
+msgstr "Opuść"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:241
+msgid "waiting"
+msgstr "Oczekujący"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:428
+msgid "New Thread"
+msgstr "Nowy wątek"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:448
+msgid "Title"
+msgstr "Tytuł"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:468
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:800
+msgid "Record post"
+msgstr "Nagraj wpis audio"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:484
+msgid "Are you sure you want to cancel the creation of new thread?"
+msgstr "Czy jesteś pewien, że chcesz anulować tworzenie wątku?"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:492
+msgid "Create thread"
+msgstr "Utwórz wątek"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:504
+msgid "Unexpected error occurred while creating thread"
+msgstr "Wystąpił nieoczekiwany błąd podczas tworzenia wątku"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:553
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:775
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:551
+msgid "Record again"
+msgstr "Nagraj ponownie"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:555
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:777
+msgid "Play recorded post"
+msgstr "Odtwórz nagrany wpis"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:570
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:792
+msgid "Sending..."
+msgstr "Wysyłanie..."
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:675
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:82
+msgid "Show profile"
+msgstr "Pokaż profil"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:680
+msgid "Record Post"
+msgstr "Nagraj wpis audio"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:717
+msgid "Post reply"
+msgstr "Wyślij"
+
+#: ../../../../Documents/github/elten_mobile/app/views/forum.rb:822
+msgid "Post by %{author}"
+msgstr "Wpis użytkownika %{author}"
+
+#: ../../../../Documents/github/elten_mobile/app/views/main.rb:37
+msgid "Log out"
+msgstr "Wyloguj się"
+
+#: ../../../../Documents/github/elten_mobile/app/views/main.rb:37
+msgid "Show debug info"
+msgstr "Pokaż informacje diagnostyczne"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:33
+msgid "Compose new message"
+msgstr "Utwórz nową wiadomość"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:107
+msgid "Conversations with %{user}"
+msgstr "Konwersacje z %{user}"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:219
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:245
+msgid "Record audio message"
+msgstr "Nagraj wiadomość audio"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:367
+msgid "Record Audio Message"
+msgstr "Nagraj wiadomość audio"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:421
+msgid "in topic %{subject}"
+msgstr "o temacie %{subject}"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:423
+msgid "to %{user}"
+msgstr "do %{user}"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:451
+msgid "Your message"
+msgstr "Twoja wiadomość"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:458
+msgid "Record message"
+msgstr "Nagraj wiadomość audio"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:471
+msgid "Are you sure you want to cancel the compossing of new message?"
+msgstr "Czy jesteś pewien, że chcesz anulować tworzenie wiadomości?"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:494
+msgid "Unexpected error occurred while sending this message"
+msgstr "Podczas wysyłania wiadomości wystąpił nieoczekiwany błąd"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:554
+msgid "Play recorded message"
+msgstr "Odtwórz nagraną wiadomość"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:561
+msgid "Return to text editor"
+msgstr "Powróć do edytora tekstowego"
+
+#: ../../../../Documents/github/elten_mobile/app/views/messages.rb:606
+msgid "Message from %{sender}"
+msgstr "Wiadomość od %{sender}"
+
+#: ../../../../Documents/github/elten_mobile/app/views/profile.rb:28
+msgid "Send message"
+msgstr "Wyślij wiadomość"
+
+#: ../../../../Documents/github/elten_mobile/app/views/profile.rb:51
+msgid "male"
+msgstr "Mężczyzna"
+
+#: ../../../../Documents/github/elten_mobile/app/views/profile.rb:51
+msgid "female"
+msgstr "Kobieta"
+
+#: ../../../../Documents/github/elten_mobile/app/views/profile.rb:51
+msgid "Gender"
+msgstr "Płeć"
+
+#: ../../../../Documents/github/elten_mobile/app/views/profile.rb:57
+msgid "Age"
+msgstr "Wiek"
+
+#: ../../../../Documents/github/elten_mobile/app/views/profile.rb:64
+msgid "Visitingcard"
+msgstr "Wizytówka"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:24
+msgid "Sign In to Elten"
+msgstr "Zaloguj się do Eltena"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:35
+msgid "Login"
+msgstr "Login"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:44
+msgid "Password"
+msgstr "Hasło"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:52
+msgid "Submit"
+msgstr "Potwierdź"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:61
+msgid "Signing in, please wait"
+msgstr "Logowanie, proszę czekać..."
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:65
+msgid "Autologin failed"
+msgstr "Automatyczne logowanie nie powiodło się"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:67
+msgid "Autologin failed, please sign in manually"
+msgstr "Automatyczne logowanie nie powiodło się, zaloguj się ręcznie"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:83
+msgid "Login failed"
+msgstr "Logowanie nie powiodło się"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:89
+msgid ""
+"After enabling autologin, you would be no longer prompted for username and "
+"password everytime Elten is launched."
+msgstr ""
+"Po włączeniu automatycznego logowania nie będziesz pytany o nazwę "
+"użytkownika oraz hasło aż do ręcznego wylogowania się z aplikacji."
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:89
+msgid "Do you wish to setup autologin?"
+msgstr "Czy chcesz włączyć automatyczne logowanie?"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:93
+msgid "Autologin verification failed"
+msgstr "Weryfikacja automatycznego logowania nie powiodła się"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:125
+msgid "Two-Factor Authentication"
+msgstr "Uwierzytelnianie dwuetapowe"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:130
+msgid ""
+"The authentication code has been sent to the phone number associated with "
+"this account.\n"
+"Enter it below to proceed."
+msgstr ""
+"Na numer telefonu skojarzony z tym kontem został wysłany kod "
+"uwierzytelniający. Wprowadź go poniżej, aby kontynuować."
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:134
+msgid "Authentication code"
+msgstr "Kod uwierzytelniający"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:143
+msgid "Continue"
+msgstr "Kontynuuj"
+
+#: ../../../../Documents/github/elten_mobile/app/views/welcome.rb:165
+msgid "More"
+msgstr "Więcej"

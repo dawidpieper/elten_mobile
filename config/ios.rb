@@ -9,12 +9,12 @@
 
 require 'rubygems'
 require 'motion-cocoapods'
-require 'motion-i18n'
+require("./config/ios_translate.rb")
 
 Motion::Project::App.setup do |app|
     app.name = 'Elten'
-app.version='0.06'
-app.short_version = '0.04'
+app.version='0.07'
+app.short_version = '0.07'
 
 app.identifier='eu.elten-net.eltenmobile'
 #app.libs<<'/usr/lib/libstdc++.6.0.9.dylib'

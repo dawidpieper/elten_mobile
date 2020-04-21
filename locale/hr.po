@@ -1,0 +1,462 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Elten Mobile\n"
+"POT-Creation-Date: 2020-02-16 23:44+0100\n"
+"PO-Revision-Date: 2020-03-21 14:17+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.10\n"
+"X-Poedit-Basepath: //MACBOOKPRO-CF59/dpieper/elten_mobile/app\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: hr\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: ios/app_delegate.rb:28
+msgid "Do you want to enable notifications?"
+msgstr "Želite li uključiti obavjesti?"
+
+#: ios/app_delegate.rb:28
+msgid ""
+"If you wish, you can configure Elten to receive push notifications regarding "
+"new messages, posts in followed threads and so on."
+msgstr ""
+"Ako želite, možete konfigurirati obavjesti o novim porukama, postovima u "
+"praćenim postovima i tako dalje."
+
+#: ios/app_delegate.rb:28 ios/sound.rb:48 views/forum.rb:495
+#: views/messages.rb:472 views/welcome.rb:88
+msgid "Yes"
+msgstr "Da"
+
+#: ios/app_delegate.rb:28 views/forum.rb:495 views/messages.rb:472
+#: views/welcome.rb:88
+msgid "No"
+msgstr "Ne"
+
+#: ios/app_delegate.rb:70
+msgid "Failed to register for Push Notifications"
+msgstr "Nije moguća registracija za primanje obavjesti"
+
+#: ios/sound.rb:48
+msgid "Do you wish to enable microphone access?"
+msgstr "Želite li uključiti pristup mikrofonu?"
+
+#: ios/sound.rb:48
+msgid ""
+"Elten requires microphone access in order to record audio data. Do you wish "
+"to grant it now?"
+msgstr "Elten treba mikrofon za snimanje audio zapisa. Želite mu ga dati sada?"
+
+#: ios/sound.rb:48
+msgid "Not now"
+msgstr "Ne sad"
+
+#: views/forum.rb:23 views/messages.rb:21
+msgid "Refresh"
+msgstr "Osvježi"
+
+#: views/forum.rb:44 views/forum.rb:681 views/messages.rb:78
+#: views/messages.rb:151 views/messages.rb:306
+msgid "Error occurred"
+msgstr "Dogodila se pogreška"
+
+#: views/forum.rb:137
+#, python-brace-format
+msgid "Forums: %{cnt}"
+msgstr "Forumi: %{cnt}"
+
+#: views/forum.rb:137 views/forum.rb:166 views/forum.rb:311
+#, python-brace-format
+msgid "Threads: %{cnt}"
+msgstr "Teme: %{cnt}"
+
+#: views/forum.rb:137 views/forum.rb:166 views/forum.rb:311 views/forum.rb:403
+#, python-brace-format
+msgid "Posts: %{cnt}"
+msgstr "Postovi: %{cnt}"
+
+#: views/forum.rb:137 views/forum.rb:166 views/forum.rb:311 views/forum.rb:403
+#, python-brace-format
+msgid "New: %{newposts}"
+msgstr "Nove: %{newposts}"
+
+#: views/forum.rb:138
+msgid "Members"
+msgstr "Članovi"
+
+#: views/forum.rb:141
+msgid "Leave"
+msgstr "Izađi"
+
+#: views/forum.rb:143
+msgid "Join"
+msgstr "Uđi"
+
+#: views/forum.rb:145
+msgid "Accept invitation"
+msgstr "Prihvati pozivnicu"
+
+#: views/forum.rb:147
+msgid "Request"
+msgstr "Zahtjev"
+
+#: views/forum.rb:166
+msgid "Followed threads"
+msgstr "Praćeni postovi"
+
+#: views/forum.rb:174
+msgid "All groups"
+msgstr "Sve grupe"
+
+#: views/forum.rb:175
+msgid "Open groups"
+msgstr "Otvorene grupe"
+
+#: views/forum.rb:176
+msgid "Waiting invitations"
+msgstr "Očekuje pozivnicu"
+
+#: views/forum.rb:188
+msgid "join"
+msgstr "Pridruži se"
+
+#: views/forum.rb:189
+msgid "leave"
+msgstr "Izađi"
+
+#: views/forum.rb:190
+#, python-brace-format
+msgid "Are you sure you want to join %{groupname}?"
+msgstr "Jeste li sigurni da se želite pridružiti grupi %{groupname}?"
+
+#: views/forum.rb:191
+#, python-brace-format
+msgid "Are you sure you want to leave %{groupname}?"
+msgstr "Jeste li sigurni da želite izaći iz %{groupname}?"
+
+#: views/forum.rb:192
+#, python-brace-format
+msgid "Are you sure you want to request to join %{groupname}?"
+msgstr ""
+"Jeste li sigurni da želite poslati zahtjev za pridruživanje u grupu "
+"%{groupname}?"
+
+#: views/forum.rb:198 views/forum.rb:235 views/forum.rb:424 views/forum.rb:780
+#: views/messages.rb:360 views/messages.rb:543 views/profile.rb:72
+msgid "Error"
+msgstr "Greška"
+
+#: views/forum.rb:216
+#, python-brace-format
+msgid "Members of %{groupname}"
+msgstr "Članovi %{groupname}"
+
+#: views/forum.rb:241
+msgid "moderator"
+msgstr "Moderator"
+
+#: views/forum.rb:242
+msgid "administrator"
+msgstr "administrator"
+
+#: views/forum.rb:243
+msgid "invited"
+msgstr "Pozvan"
+
+#: views/forum.rb:244
+msgid "waiting"
+msgstr "Očekuje"
+
+#: views/forum.rb:245
+msgid "banned"
+msgstr "baniran"
+
+#: views/forum.rb:355 views/forum.rb:452
+msgid "New thread"
+msgstr "Nova tema"
+
+#: views/forum.rb:400
+msgid "Follow thread"
+msgstr "Prati temu"
+
+#: views/forum.rb:401
+msgid "Unfollow thread"
+msgstr "Nemoj pratiti temu"
+
+#: views/forum.rb:403 views/messages.rb:86 views/messages.rb:157
+msgid "New"
+msgstr "Novo"
+
+#: views/forum.rb:439
+msgid "New Thread"
+msgstr "Nova tema"
+
+#: views/forum.rb:459
+msgid "Title"
+msgstr "Naslov"
+
+#: views/forum.rb:473
+msgid "Post"
+msgstr "Post"
+
+#: views/forum.rb:479 views/forum.rb:813
+msgid "Record post"
+msgstr "Snimi post"
+
+#: views/forum.rb:487 views/messages.rb:464 views/welcome.rb:138
+msgid "Cancel"
+msgstr "Odustani"
+
+#: views/forum.rb:495
+msgid "Are you sure you want to cancel the creation of new thread?"
+msgstr "Želite li odustati od stvaranja nove teme?"
+
+#: views/forum.rb:495 views/messages.rb:472
+msgid "All the typed text will be lost."
+msgstr "Sav upisani tekst bit će izgubljen."
+
+#: views/forum.rb:503
+msgid "Create thread"
+msgstr "Stvori temu"
+
+#: views/forum.rb:515
+msgid "Unexpected error occurred while creating thread"
+msgstr "Dogodila se neočekivana pogreška pri stvaranju teme"
+
+#: views/forum.rb:551 views/forum.rb:775 views/messages.rb:355
+#: views/messages.rb:538
+msgid "Stop recording"
+msgstr "Zaustavi snimanje"
+
+#: views/forum.rb:564 views/forum.rb:788 views/messages.rb:552
+msgid "Record again"
+msgstr "Snimi opet"
+
+#: views/forum.rb:566 views/forum.rb:790
+msgid "Play recorded post"
+msgstr "Reproduciraj snimljeni post"
+
+#: views/forum.rb:571 views/forum.rb:795 views/messages.rb:252
+#: views/messages.rb:479
+msgid "Send"
+msgstr "Pošalji"
+
+#: views/forum.rb:581 views/forum.rb:805
+msgid "Sending..."
+msgstr "Šaljem..."
+
+#: views/forum.rb:591 views/forum.rb:741 views/forum.rb:818
+#: views/messages.rb:267 views/messages.rb:388 views/messages.rb:592
+msgid "Error while sending your reply"
+msgstr "Greška prilikom slanja vašeg odgovora"
+
+#: views/forum.rb:688 views/messages.rb:84
+msgid "Show profile"
+msgstr "Prikaži profil"
+
+#: views/forum.rb:693
+msgid "Record Post"
+msgstr "Snimi post"
+
+#: views/forum.rb:722 views/messages.rb:212
+msgid "Your reply"
+msgstr "Vaš odgovor"
+
+#: views/forum.rb:730
+msgid "Post reply"
+msgstr "Odgovor na post"
+
+#: views/forum.rb:835
+#, python-brace-format
+msgid "Post by %{author}"
+msgstr "Post od %{author}"
+
+#: views/main.rb:37 views/messages.rb:41 views/welcome.rb:164
+msgid "Messages"
+msgstr "Poruke"
+
+#: views/main.rb:37 views/welcome.rb:164
+msgid "Forum"
+msgstr "Forum"
+
+#: views/main.rb:37
+msgid "Log out"
+msgstr "Odjava"
+
+#: views/main.rb:37
+msgid "Show debug info"
+msgstr "Pokaži informaciju o otklanjanju pogrešaka"
+
+#: views/messages.rb:33
+msgid "Compose new message"
+msgstr "Stvori novu poruku"
+
+#: views/messages.rb:108
+#, python-brace-format
+msgid "Conversations with %{user}"
+msgstr "Razgovor sa korisnikom %{user}"
+
+#: views/messages.rb:224 views/messages.rb:250
+msgid "Record audio message"
+msgstr "Snimi audio poruku"
+
+#: views/messages.rb:237
+msgid "Information"
+msgstr "Informacija"
+
+#: views/messages.rb:237
+msgid ""
+"Hold this button to record message, release it once record is completed."
+msgstr "Držite ovaj gumb za snimanje poruke, otpustite ga kada završite."
+
+#: views/messages.rb:349
+msgid "Cancel recording"
+msgstr "Odustani od snimanja"
+
+#: views/messages.rb:368
+msgid "Record Audio Message"
+msgstr "Snimi audio poruku"
+
+#: views/messages.rb:406 views/messages.rb:419 views/messages.rb:420
+msgid "New message"
+msgstr "Nova poruka"
+
+#: views/messages.rb:422
+#, python-brace-format
+msgid "in topic %{subject}"
+msgstr "U rubrici %{subject}"
+
+#: views/messages.rb:424
+#, python-brace-format
+msgid "to %{user}"
+msgstr "korisniku %{user}"
+
+#: views/messages.rb:433
+msgid "Receiver"
+msgstr "Primatelj"
+
+#: views/messages.rb:442
+msgid "Subject"
+msgstr "Naslov"
+
+#: views/messages.rb:452
+msgid "Your message"
+msgstr "Vaša poruka"
+
+#: views/messages.rb:459
+msgid "Record message"
+msgstr "Snimi poruku"
+
+#: views/messages.rb:472
+msgid "Are you sure you want to cancel the compossing of new message?"
+msgstr "Jeste li sigurni da želite stvoriti novu poruku?"
+
+#: views/messages.rb:495
+msgid "Unexpected error occurred while sending this message"
+msgstr "Dogodila se neočekivana pogreška prilikom slanje poruke"
+
+#: views/messages.rb:555
+msgid "Play recorded message"
+msgstr "Reproduciraj snimljenu poruku"
+
+#: views/messages.rb:562
+msgid "Return to text editor"
+msgstr "Vrati se na tekstualni editor"
+
+#: views/messages.rb:607
+#, python-brace-format
+msgid "Message from %{sender}"
+msgstr "Poruka od %{sender}"
+
+#: views/profile.rb:28
+msgid "Send message"
+msgstr "Pošalji poruku"
+
+#: views/profile.rb:51
+msgid "male"
+msgstr "Muško"
+
+#: views/profile.rb:51
+msgid "female"
+msgstr "Žensko"
+
+#: views/profile.rb:64
+msgid "Visitingcard"
+msgstr "Vizitka"
+
+#: views/welcome.rb:24
+msgid "Sign In to Elten"
+msgstr "Prijavite se u elten"
+
+#: views/welcome.rb:35
+msgid "Login"
+msgstr "Korisničk oime"
+
+#: views/welcome.rb:44
+msgid "Password"
+msgstr "Lozinka"
+
+#: views/welcome.rb:52
+msgid "Submit"
+msgstr "Prijava"
+
+#: views/welcome.rb:61
+msgid "Signing in, please wait"
+msgstr "Prijavljujem, molimo pričekajte"
+
+#: views/welcome.rb:64
+msgid "Autologin failed"
+msgstr "Neuspješna automatska prijava"
+
+#: views/welcome.rb:66
+msgid "Autologin failed, please sign in manually"
+msgstr "Neuspješna automatska prijava, prijavite se ručno"
+
+#: views/welcome.rb:82
+msgid "Login failed"
+msgstr "Neuspjela prijava"
+
+#: views/welcome.rb:88
+msgid "Do you wish to setup autologin?"
+msgstr "Želite li postaviti automatsku prijavu"
+
+#: views/welcome.rb:88
+msgid ""
+"After enabling autologin, you would be no longer prompted for username and "
+"password everytime Elten is launched."
+msgstr ""
+"Poslije uključenja automatske prijave, neće biti potrebe za unošenjem "
+"korisničkog imena i lozinke svak i put kad se elten pokrene."
+
+#: views/welcome.rb:92
+msgid "Autologin verification failed"
+msgstr "Verifikacija automatske prijave nije uspjela"
+
+#: views/welcome.rb:124
+msgid "Two-Factor Authentication"
+msgstr "Dvofaktorna autentifikacija"
+
+#: views/welcome.rb:129
+msgid ""
+"The authentication code has been sent to the phone number associated with "
+"this account.\n"
+"Enter it below to proceed."
+msgstr ""
+"Autentifikacijski kod bio je poslan na telefonski broj povezan sa ovim "
+"nalogomUpišite ga ispod za nastavak"
+
+#: views/welcome.rb:133
+msgid "Authentication code"
+msgstr "Autentifikacijski kod"
+
+#: views/welcome.rb:142
+msgid "Continue"
+msgstr "Nastavi"
+
+#: views/welcome.rb:164
+msgid "More"
+msgstr "Više"

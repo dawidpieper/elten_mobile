@@ -8,3 +8,5 @@ vendor/*
 *.mobileprovision
 provisioning
 gemfile.lock
+resources/*.lproj
+*.mo

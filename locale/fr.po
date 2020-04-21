@@ -1,0 +1,466 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Elten Mobile\n"
+"POT-Creation-Date: 2020-02-16 23:44+0100\n"
+"PO-Revision-Date: 2020-02-17 11:01+0100\n"
+"Last-Translator: Julita Bartosiak <julita.bartosiak@o2.pl>\n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-Basepath: ../../../Documents/GitHub/elten_mobile/app\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: ios/app_delegate.rb:28
+msgid "Do you want to enable notifications?"
+msgstr "Voulez-vous activer les notifications?"
+
+#: ios/app_delegate.rb:28
+msgid ""
+"If you wish, you can configure Elten to receive push notifications regarding "
+"new messages, posts in followed threads and so on."
+msgstr ""
+"Si vous le souhaitez, vous pouvez configurer Elten pour recevoir des "
+"notifications push concernant les nouveaux messages, les posts dans les fils "
+"suivis, etc."
+
+#: ios/app_delegate.rb:28 ios/sound.rb:48 views/forum.rb:495
+#: views/messages.rb:472 views/welcome.rb:88
+msgid "Yes"
+msgstr "Oui"
+
+#: ios/app_delegate.rb:28 views/forum.rb:495 views/messages.rb:472
+#: views/welcome.rb:88
+msgid "No"
+msgstr "Non"
+
+#: ios/app_delegate.rb:70
+msgid "Failed to register for Push Notifications"
+msgstr "Échec de l'inscription aux notifications push"
+
+#: ios/sound.rb:48
+msgid "Do you wish to enable microphone access?"
+msgstr "Voulez-vous activer l'accès au microphone?"
+
+#: ios/sound.rb:48
+msgid ""
+"Elten requires microphone access in order to record audio data. Do you wish "
+"to grant it now?"
+msgstr ""
+"Elten nécessite un accès au microphone pour enregistrer des données audio. "
+"Souhaitez-vous l'accorder maintenant?"
+
+#: ios/sound.rb:48
+msgid "Not now"
+msgstr "Pas maintenant"
+
+#: views/forum.rb:23 views/messages.rb:21
+msgid "Refresh"
+msgstr "Rafraîchir"
+
+#: views/forum.rb:44 views/forum.rb:681 views/messages.rb:78
+#: views/messages.rb:151 views/messages.rb:306
+msgid "Error occurred"
+msgstr "Erreur est survenue"
+
+#: views/forum.rb:137
+#, python-brace-format
+msgid "Forums: %{cnt}"
+msgstr "Forums: %{cnt}"
+
+#: views/forum.rb:137 views/forum.rb:166 views/forum.rb:311
+#, python-brace-format
+msgid "Threads: %{cnt}"
+msgstr "Fils: %{cnt}"
+
+#: views/forum.rb:137 views/forum.rb:166 views/forum.rb:311 views/forum.rb:403
+#, python-brace-format
+msgid "Posts: %{cnt}"
+msgstr "Posts: %{cnt}"
+
+#: views/forum.rb:137 views/forum.rb:166 views/forum.rb:311 views/forum.rb:403
+#, python-brace-format
+msgid "New: %{newposts}"
+msgstr "Nouveau: %{newposts}"
+
+#: views/forum.rb:138
+msgid "Members"
+msgstr "Membres"
+
+#: views/forum.rb:141
+msgid "Leave"
+msgstr "Quitter"
+
+#: views/forum.rb:143
+msgid "Join"
+msgstr "Joindre"
+
+#: views/forum.rb:145
+msgid "Accept invitation"
+msgstr "Accepter l'invitation"
+
+#: views/forum.rb:147
+msgid "Request"
+msgstr "Demande"
+
+#: views/forum.rb:166
+msgid "Followed threads"
+msgstr "Fils suivis"
+
+#: views/forum.rb:174
+msgid "All groups"
+msgstr "Tous les groupes"
+
+#: views/forum.rb:175
+msgid "Open groups"
+msgstr "Groupes ouverts"
+
+#: views/forum.rb:176
+msgid "Waiting invitations"
+msgstr "Invitations en attente"
+
+#: views/forum.rb:188
+msgid "join"
+msgstr "Joindre"
+
+#: views/forum.rb:189
+msgid "leave"
+msgstr "Quitter"
+
+#: views/forum.rb:190
+#, python-brace-format
+msgid "Are you sure you want to join %{groupname}?"
+msgstr "Êtes-vous sûr de vouloir joindre %{groupname}?"
+
+#: views/forum.rb:191
+#, python-brace-format
+msgid "Are you sure you want to leave %{groupname}?"
+msgstr "Êtes-vous sûr de vouloir quitter %{groupname}?"
+
+#: views/forum.rb:192
+#, python-brace-format
+msgid "Are you sure you want to request to join %{groupname}?"
+msgstr "Êtes-vous sûr de vouloir demander à joindre %{groupname}?"
+
+#: views/forum.rb:198 views/forum.rb:235 views/forum.rb:424 views/forum.rb:780
+#: views/messages.rb:360 views/messages.rb:543 views/profile.rb:72
+msgid "Error"
+msgstr "Erreur"
+
+#: views/forum.rb:216
+#, python-brace-format
+msgid "Members of %{groupname}"
+msgstr "Membres de %{groupname}"
+
+#: views/forum.rb:241
+msgid "moderator"
+msgstr "modérateur"
+
+#: views/forum.rb:242
+msgid "administrator"
+msgstr "administrateur"
+
+#: views/forum.rb:243
+msgid "invited"
+msgstr "invité"
+
+#: views/forum.rb:244
+msgid "waiting"
+msgstr "En attente"
+
+#: views/forum.rb:245
+msgid "banned"
+msgstr "banné"
+
+#: views/forum.rb:355 views/forum.rb:452
+msgid "New thread"
+msgstr "Nouveau fil"
+
+#: views/forum.rb:400
+msgid "Follow thread"
+msgstr "Suivre ce fil"
+
+#: views/forum.rb:401
+msgid "Unfollow thread"
+msgstr "Supprimer des fils suivis"
+
+#: views/forum.rb:403 views/messages.rb:86 views/messages.rb:157
+msgid "New"
+msgstr "Nouveau"
+
+#: views/forum.rb:439
+msgid "New Thread"
+msgstr "Nouveau fil"
+
+#: views/forum.rb:459
+msgid "Title"
+msgstr "Titre"
+
+#: views/forum.rb:473
+msgid "Post"
+msgstr "Post"
+
+#: views/forum.rb:479 views/forum.rb:813
+msgid "Record post"
+msgstr "Enregistrer le post"
+
+#: views/forum.rb:487 views/messages.rb:464 views/welcome.rb:138
+msgid "Cancel"
+msgstr "Annuler"
+
+#: views/forum.rb:495
+msgid "Are you sure you want to cancel the creation of new thread?"
+msgstr "Voulez-vous vraiment annuler la création d'un nouveau fil?"
+
+#: views/forum.rb:495 views/messages.rb:472
+msgid "All the typed text will be lost."
+msgstr "Tout le texte tapé sera perdu."
+
+#: views/forum.rb:503
+msgid "Create thread"
+msgstr "Créer un fil"
+
+#: views/forum.rb:515
+msgid "Unexpected error occurred while creating thread"
+msgstr "Une erreur inattendue s'est produite lors de la création du thread"
+
+#: views/forum.rb:551 views/forum.rb:775 views/messages.rb:355
+#: views/messages.rb:538
+msgid "Stop recording"
+msgstr "Arrêter d'enregistrer"
+
+#: views/forum.rb:564 views/forum.rb:788 views/messages.rb:552
+msgid "Record again"
+msgstr "enregistrer à nouveau"
+
+#: views/forum.rb:566 views/forum.rb:790
+msgid "Play recorded post"
+msgstr "Lire le post enregistré"
+
+#: views/forum.rb:571 views/forum.rb:795 views/messages.rb:252
+#: views/messages.rb:479
+msgid "Send"
+msgstr "Envoyer"
+
+#: views/forum.rb:581 views/forum.rb:805
+msgid "Sending..."
+msgstr "Envoi en cours..."
+
+#: views/forum.rb:591 views/forum.rb:741 views/forum.rb:818
+#: views/messages.rb:267 views/messages.rb:388 views/messages.rb:592
+msgid "Error while sending your reply"
+msgstr "Erreur lors de l'envoi de votre réponse"
+
+#: views/forum.rb:688 views/messages.rb:84
+msgid "Show profile"
+msgstr "Montrer le profile"
+
+#: views/forum.rb:693
+msgid "Record Post"
+msgstr "Enregistrer un post"
+
+#: views/forum.rb:722 views/messages.rb:212
+msgid "Your reply"
+msgstr "Votre réponse"
+
+#: views/forum.rb:730
+msgid "Post reply"
+msgstr "Envoyer une réponse"
+
+#: views/forum.rb:835
+#, python-brace-format
+msgid "Post by %{author}"
+msgstr "Post par %{author}"
+
+#: views/main.rb:37 views/messages.rb:41 views/welcome.rb:164
+msgid "Messages"
+msgstr "Messages"
+
+#: views/main.rb:37 views/welcome.rb:164
+msgid "Forum"
+msgstr "Forum"
+
+#: views/main.rb:37
+msgid "Log out"
+msgstr "Se déconnecter"
+
+#: views/main.rb:37
+msgid "Show debug info"
+msgstr "Afficher les informations de débogage"
+
+#: views/messages.rb:33
+msgid "Compose new message"
+msgstr "Créer un nouveau message"
+
+#: views/messages.rb:108
+#, python-brace-format
+msgid "Conversations with %{user}"
+msgstr "Conversations avec %{user}"
+
+#: views/messages.rb:224 views/messages.rb:250
+msgid "Record audio message"
+msgstr "Enregistrer un message audio"
+
+#: views/messages.rb:237
+msgid "Information"
+msgstr "Information"
+
+#: views/messages.rb:237
+msgid ""
+"Hold this button to record message, release it once record is completed."
+msgstr ""
+"Maintenez ce bouton pour enregistrer le message, relâchez-le une fois "
+"l'enregistrement terminé."
+
+#: views/messages.rb:349
+msgid "Cancel recording"
+msgstr "Annuler l'enregistrement"
+
+#: views/messages.rb:368
+msgid "Record Audio Message"
+msgstr "Enregistrer un message audio"
+
+#: views/messages.rb:406 views/messages.rb:419 views/messages.rb:420
+msgid "New message"
+msgstr "Nouveau message"
+
+#: views/messages.rb:422
+#, python-brace-format
+msgid "in topic %{subject}"
+msgstr "dans le sujet%{subject}"
+
+#: views/messages.rb:424
+#, python-brace-format
+msgid "to %{user}"
+msgstr "à %{user}"
+
+#: views/messages.rb:433
+msgid "Receiver"
+msgstr "Destinataire"
+
+#: views/messages.rb:442
+msgid "Subject"
+msgstr "Sujet"
+
+#: views/messages.rb:452
+msgid "Your message"
+msgstr "Ton message"
+
+#: views/messages.rb:459
+msgid "Record message"
+msgstr "Enregistrer un message"
+
+#: views/messages.rb:472
+msgid "Are you sure you want to cancel the compossing of new message?"
+msgstr "Voulez-vous vraiment annuler la création d'un nouveau message?"
+
+#: views/messages.rb:495
+msgid "Unexpected error occurred while sending this message"
+msgstr "Une erreur inattendue s'est produite lors de l'envoi de ce message"
+
+#: views/messages.rb:555
+msgid "Play recorded message"
+msgstr "Jouer un message enregistré"
+
+#: views/messages.rb:562
+msgid "Return to text editor"
+msgstr "Retourner à l'éditeur de texte"
+
+#: views/messages.rb:607
+#, python-brace-format
+msgid "Message from %{sender}"
+msgstr "Message de %{sender}"
+
+#: views/profile.rb:28
+msgid "Send message"
+msgstr "Envoyer"
+
+#: views/profile.rb:51
+msgid "male"
+msgstr "Homme"
+
+#: views/profile.rb:51
+msgid "female"
+msgstr "Femme"
+
+#: views/profile.rb:64
+msgid "Visitingcard"
+msgstr "Carte de visite"
+
+#: views/welcome.rb:24
+msgid "Sign In to Elten"
+msgstr "Connecter à Elten"
+
+#: views/welcome.rb:35
+msgid "Login"
+msgstr "Nom d'utilisateur"
+
+#: views/welcome.rb:44
+msgid "Password"
+msgstr "Mot de passe"
+
+#: views/welcome.rb:52
+msgid "Submit"
+msgstr "Envoyer"
+
+#: views/welcome.rb:61
+msgid "Signing in, please wait"
+msgstr "Connexion en cours, veuillez patienter"
+
+#: views/welcome.rb:64
+msgid "Autologin failed"
+msgstr "Échec de la connexion automatique"
+
+#: views/welcome.rb:66
+msgid "Autologin failed, please sign in manually"
+msgstr ""
+"Échec de la connexion automatique, veuillez vous connecter manuellement"
+
+#: views/welcome.rb:82
+msgid "Login failed"
+msgstr "Échec de la connexion"
+
+#: views/welcome.rb:88
+msgid "Do you wish to setup autologin?"
+msgstr "Voulez-vous activer la connexion automatique?"
+
+#: views/welcome.rb:88
+msgid ""
+"After enabling autologin, you would be no longer prompted for username and "
+"password everytime Elten is launched."
+msgstr ""
+"Après avoir activé la connexion automatique, vous ne serez plus obligé à "
+"entrer le nom d'utilisateur et le mot de passe à chaque lancement d'Elten."
+
+#: views/welcome.rb:92
+msgid "Autologin verification failed"
+msgstr "Échec de la vérification de la connexion automatique"
+
+#: views/welcome.rb:124
+msgid "Two-Factor Authentication"
+msgstr "Authentification en deux étapes"
+
+#: views/welcome.rb:129
+msgid ""
+"The authentication code has been sent to the phone number associated with "
+"this account.\n"
+"Enter it below to proceed."
+msgstr ""
+"Le code d'authentification a été envoyé au numéro de téléphone associé à ce "
+"compte.\n"
+"Saisissez-le ci-dessous pour continuer."
+
+#: views/welcome.rb:133
+msgid "Authentication code"
+msgstr "Code d'authentification"
+
+#: views/welcome.rb:142
+msgid "Continue"
+msgstr "Continuer"
+
+#: views/welcome.rb:164
+msgid "More"
+msgstr "Plus"

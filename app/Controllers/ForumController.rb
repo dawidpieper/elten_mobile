@@ -31,15 +31,15 @@ Net.post(url, { :body => rece, :headers => head }) {|rsp|post_rsp(rsp)}
 end
 def post_makeurl(forum, title, thread, audio=false)
 q={ "ac" => "add"}
-q["threadid"] = thread.to_s if thread!=nil
 q['forum']=forum.to_s if forum!=nil
 q['threadname']=title.to_s if title!=nil
-q['threadid']='new' if thread==nil
 if audio
 q['src']="-"
 q['type']='audio'
 end
-              url = create_query("forum/edit", q)
+sect="forum"
+s+="/"+thread.to_s if thread!=nil
+              url = create_query(sect, q)
 return url
 end
 def post_rsp(rsp)
@@ -107,7 +107,7 @@ if group.role==1 or group.role==2
 ac = "leave"
 s = _("Are you sure you want to leave %{groupname}?", "groupname"=>group.name)
 end
-UI.alert(:title => "Group membership", :message => s, :default => "Yes", :cancel => "No") { |n|
+UI.alert(:title => _("Group membership"), :message => s, :default => "Yes", :cancel => "No") { |n|
 if n == :default
 erequest("forum/groups", { "ac" => ac, "groupid" => group.id.to_s }) { |rsp|
 if rsp["code"] != 200

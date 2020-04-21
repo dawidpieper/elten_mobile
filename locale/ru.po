@@ -1,0 +1,385 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Elten Mobile\n"
+"POT-Creation-Date: 2020-02-14 01:11+0100\n"
+"PO-Revision-Date: 2020-02-14 10:25+0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: ../../../Documents/GitHub/elten_mobile/app\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Last-Translator: Александр Яшин <a.jaszyn@ya.ru>\n"
+"Language: ru\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: ios/app_delegate.rb:28
+msgid "Do you want to enable notifications?"
+msgstr "Вы хотите включить уведомления?"
+
+#: ios/app_delegate.rb:28
+msgid ""
+"If you wish, you can configure Elten to receive push notifications regarding "
+"new messages, posts in followed threads and so on."
+msgstr ""
+"Elten может отправлять вам уведомления о новых сообщениях, постах в группах "
+"и на блогах и так далее. Включите уведомления, чтобы это стало возможным."
+
+#: ios/app_delegate.rb:28 ios/sound.rb:48 views/forum.rb:494
+#: views/messages.rb:472 views/welcome.rb:88
+msgid "Yes"
+msgstr "Да"
+
+#: ios/app_delegate.rb:28 views/forum.rb:494 views/messages.rb:472
+#: views/welcome.rb:88
+msgid "No"
+msgstr "Нет"
+
+#: ios/app_delegate.rb:70
+msgid "Failed to register for Push Notifications"
+msgstr "Ошибка доступа к уведомлениям"
+
+#: ios/sound.rb:48
+msgid "Do you wish to enable microphone access?"
+msgstr "Вы хотите разрешить доступ к микрофону?"
+
+#: ios/sound.rb:48
+msgid ""
+"Elten requires microphone access in order to record audio data. Do you wish "
+"to grant it now?"
+msgstr "Это нужно для голосового общения."
+
+#: ios/sound.rb:48
+msgid "Not now"
+msgstr "Не сейчас"
+
+#: views/forum.rb:23 views/messages.rb:21
+msgid "Refresh"
+msgstr "Обновить"
+
+#: views/forum.rb:42 views/forum.rb:680 views/messages.rb:78
+#: views/messages.rb:151 views/messages.rb:306
+msgid "Error occurred"
+msgstr "Ошибка"
+
+#: views/forum.rb:136
+msgid "Members"
+msgstr "Участники"
+
+#: views/forum.rb:139
+msgid "Leave"
+msgstr "Выйти"
+
+#: views/forum.rb:141
+msgid "Join"
+msgstr "Присоединиться"
+
+#: views/forum.rb:143
+msgid "Accept invitation"
+msgstr "Принять приглашение"
+
+#: views/forum.rb:145
+msgid "Request"
+msgstr "Заявка"
+
+#: views/forum.rb:164
+msgid "Followed threads"
+msgstr "Избранные темы"
+
+#: views/forum.rb:172
+msgid "All groups"
+msgstr "Все группы"
+
+#: views/forum.rb:173
+msgid "Open groups"
+msgstr "Открытые группы"
+
+#: views/forum.rb:174
+msgid "Waiting invitations"
+msgstr "Приглашения"
+
+#: views/forum.rb:186
+msgid "join"
+msgstr "Присоединиться"
+
+#: views/forum.rb:187
+msgid "leave"
+msgstr "Выйти"
+
+#: views/forum.rb:188
+msgid "Are you sure you want to join "
+msgstr "Вы действительно хотите присоединиться?"
+
+#: views/forum.rb:189
+msgid "Are you sure you want to leave "
+msgstr "Вы действительно хотите выйти из группы?"
+
+#: views/forum.rb:190
+msgid "Are you sure you want to request to join "
+msgstr "Вы действительно хотите отправить заявку на вступление?"
+
+#: views/forum.rb:197 views/forum.rb:234 views/forum.rb:423 views/forum.rb:779
+#: views/messages.rb:360 views/messages.rb:543 views/profile.rb:72
+msgid "Error"
+msgstr "Ошибка"
+
+#: views/forum.rb:215
+msgid "Members of"
+msgstr "Участники"
+
+#: views/forum.rb:354 views/forum.rb:451
+msgid "New thread"
+msgstr "Новая тема"
+
+#: views/forum.rb:399
+msgid "Follow thread"
+msgstr "Добавить в избранное"
+
+#: views/forum.rb:400
+msgid "Unfollow thread"
+msgstr "Удалить из избранного"
+
+#: views/forum.rb:438
+msgid "New Thread"
+msgstr "Новая тема"
+
+#: views/forum.rb:458
+msgid "Title"
+msgstr "Название"
+
+#: views/forum.rb:472
+msgid "Post"
+msgstr "Текст поста"
+
+#: views/forum.rb:478 views/forum.rb:812
+msgid "Record post"
+msgstr "Записать Аудиопост"
+
+#: views/forum.rb:486 views/messages.rb:464 views/welcome.rb:138
+msgid "Cancel"
+msgstr "Отменить"
+
+#: views/forum.rb:494
+msgid "Are you sure you want to cancel the creation of new thread?"
+msgstr "Вы действительно хотите отменить создание темы?"
+
+#: views/forum.rb:494 views/messages.rb:472
+msgid "All the typed text will be lost."
+msgstr "Введённые данные будут потеряны"
+
+#: views/forum.rb:502
+msgid "Create thread"
+msgstr "Создать тему"
+
+#: views/forum.rb:514
+msgid "Unexpected error occurred while creating thread"
+msgstr "Ошибка при создании темы"
+
+#: views/forum.rb:550 views/forum.rb:774 views/messages.rb:355
+#: views/messages.rb:538
+msgid "Stop recording"
+msgstr "Завершить запись"
+
+#: views/forum.rb:563 views/forum.rb:787 views/messages.rb:552
+msgid "Record again"
+msgstr "Перезаписать"
+
+#: views/forum.rb:565 views/forum.rb:789
+msgid "Play recorded post"
+msgstr "Воспроизвести записанный пост"
+
+#: views/forum.rb:570 views/forum.rb:794 views/messages.rb:252
+#: views/messages.rb:479
+msgid "Send"
+msgstr "Отправить"
+
+#: views/forum.rb:580 views/forum.rb:804
+msgid "Sending..."
+msgstr "Подождите, идёт отправка."
+
+#: views/forum.rb:590 views/forum.rb:740 views/forum.rb:817
+#: views/messages.rb:267 views/messages.rb:388 views/messages.rb:592
+msgid "Error while sending your reply"
+msgstr "Ошибка при отправке"
+
+#: views/forum.rb:687 views/messages.rb:84
+msgid "Show profile"
+msgstr "Показать профиль"
+
+#: views/forum.rb:692
+msgid "Record Post"
+msgstr "Записать аудиопост"
+
+#: views/forum.rb:721 views/messages.rb:212
+msgid "Your reply"
+msgstr "Ваш ответ"
+
+#: views/forum.rb:729
+msgid "Post reply"
+msgstr "Ответить на пост"
+
+#: views/main.rb:37 views/messages.rb:41
+msgid "Messages"
+msgstr "Сообщения"
+
+#: views/main.rb:37
+msgid "Forum"
+msgstr "Группы"
+
+#: views/main.rb:37
+msgid "Log out"
+msgstr "Выйти"
+
+#: views/main.rb:37
+msgid "Show debug info"
+msgstr "Показать информацию об отладке"
+
+#: views/messages.rb:33
+msgid "Compose new message"
+msgstr "Написать сообщение"
+
+#: views/messages.rb:224 views/messages.rb:250
+msgid "Record audio message"
+msgstr "Записать голосовое сообщение"
+
+#: views/messages.rb:237
+msgid "Information"
+msgstr "Информация"
+
+#: views/messages.rb:237
+msgid ""
+"Hold this button to record message, release it once record is completed."
+msgstr ""
+"Чтобы записать сообщение, удерживайте эту кнопку. Отпустите её, когда "
+"закончите говорить. "
+
+#: views/messages.rb:349
+msgid "Cancel recording"
+msgstr "Отменить запись"
+
+#: views/messages.rb:368
+msgid "Record Audio Message"
+msgstr "Записать голосовое сообщение"
+
+#: views/messages.rb:406 views/messages.rb:419 views/messages.rb:420
+msgid "New message"
+msgstr "Новое сообщение"
+
+#: views/messages.rb:433
+msgid "Receiver"
+msgstr "Получатель"
+
+#: views/messages.rb:442
+msgid "Subject"
+msgstr "Тема"
+
+#: views/messages.rb:452
+msgid "Your message"
+msgstr "Сообщение"
+
+#: views/messages.rb:459
+msgid "Record message"
+msgstr "Записать голосовое сообщение"
+
+#: views/messages.rb:472
+msgid "Are you sure you want to cancel the compossing of new message?"
+msgstr "Вы действительно хотите отменить  создание сообщения?"
+
+#: views/messages.rb:495
+msgid "Unexpected error occurred while sending this message"
+msgstr "Ошибка при отправке сообщения"
+
+#: views/messages.rb:555
+msgid "Play recorded message"
+msgstr "Воспроизвести записанное сообщение"
+
+#: views/messages.rb:562
+msgid "Return to text editor"
+msgstr "Вернуться в текстовый редактор"
+
+#: views/profile.rb:28
+msgid "Send message"
+msgstr "Отправить"
+
+#: views/profile.rb:51
+msgid "male"
+msgstr "Мужчина"
+
+#: views/profile.rb:51
+msgid "female"
+msgstr "Женщина"
+
+#: views/profile.rb:64
+msgid "Visitingcard"
+msgstr "Визитная карточка"
+
+#: views/welcome.rb:24
+msgid "Sign In to Elten"
+msgstr "Войти в Elten"
+
+#: views/welcome.rb:35
+msgid "Login"
+msgstr "Имя пользователя"
+
+#: views/welcome.rb:44
+msgid "Password"
+msgstr "Пароль"
+
+#: views/welcome.rb:52
+msgid "Submit"
+msgstr "Войти"
+
+#: views/welcome.rb:61
+msgid "Signing in, please wait"
+msgstr "Производится вход. Пожалуйста, подождите."
+
+#: views/welcome.rb:64
+msgid "Autologin failed"
+msgstr "Автовход не удался"
+
+#: views/welcome.rb:66
+msgid "Autologin failed, please sign in manually"
+msgstr "Автовход не удался, попробуйте войти вручную."
+
+#: views/welcome.rb:82
+msgid "Login failed"
+msgstr "Ошибка входа"
+
+#: views/welcome.rb:88
+msgid "Do you wish to setup autologin?"
+msgstr "Вы хотите входить в систему автоматически?"
+
+#: views/welcome.rb:88
+msgid ""
+"After enabling autologin, you would be no longer prompted for username and "
+"password everytime Elten is launched."
+msgstr ""
+"Если включить эту опцию, Elten не станет запрашивать имя пользователя и "
+"пароль при каждом запуске."
+
+#: views/welcome.rb:92
+msgid "Autologin verification failed"
+msgstr "Проверка автовхода не удалась"
+
+#: views/welcome.rb:124
+msgid "Two-Factor Authentication"
+msgstr "Двухфакторная аутентификация"
+
+#: views/welcome.rb:129
+msgid ""
+"The authentication code has been sent to the phone number associated with "
+"this account.\n"
+"Enter it below to proceed."
+msgstr ""
+"Код подтверждения был выслан на номер, закреплённый за этой учётной записью. "
+"Введите его здесь"
+
+#: views/welcome.rb:133
+msgid "Authentication code"
+msgstr "Код подтверждения"
+
+#: views/welcome.rb:142
+msgid "Continue"
+msgstr "Продолжить"
